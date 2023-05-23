@@ -1,6 +1,12 @@
 .App {
-  text-align: center;
+  /* background-color: #b30d52; */
+  /* text-align: center; */
+  /* padding-bottom: N; */
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
+
+
 
 .App-logo {
   height: 40vmin;
