@@ -14,6 +14,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Link } from '@mui/material';
+
 
 const drawerWidth = 240;
 const navItems = ['Home', 'About', 'Contact'];
@@ -46,10 +48,15 @@ function DrawerAppBar(props) {
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
+
+  const appBarStyle = {
+    background: 'linear-gradient(to right,rgb(101,96,210),rgb(96,247,227))'
+}
+
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar component="nav">
+      <AppBar component="nav" style={appBarStyle}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -68,11 +75,22 @@ function DrawerAppBar(props) {
             MUI
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+            
+              <Button  sx={{ color: '#fff' }}>
+              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
+
+              <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
               </Button>
-            ))}
+
+              <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+
+              <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+
+              <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
+
+              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button></Link>
+              
+          
           </Box>
         </Toolbar>
       </AppBar>
@@ -94,7 +112,7 @@ function DrawerAppBar(props) {
         </Drawer>
       </Box>
       <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
+        
         
       </Box>
     </Box>

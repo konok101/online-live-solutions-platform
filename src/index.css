@@ -13,3 +13,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.faqs .faq {
+  /* margin: 15px; */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px gray;
+
+}
+
+.faqs .htag {
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px gray;
+}
+
+.faqs .faq .faq-question {
+  position: relative;
+  padding-right: 20px;
+  transition: all 0.4s ease;
+}
+
+.faqs .faq .faq-question::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-image: url(../src/images/arrow.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: all 0.4s ease-out;
+
+}
+
+.faqs .faq .faq-answer {
+  opacity: 0;
+  max-height: 0;
+  overflow-y: hidden;
+
+  transition: all 0.4s ease-out;
+}
+
+.faqs .faq.open .faq-question {
+  margin-bottom: 15px;
+}
+
+.faqs .faq.open .faq-question::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faqs .faq.open .faq-answer {
+  max-height: 100%;
+  opacity: 1;
+  margin-bottom: 2px;
+}
