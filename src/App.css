@@ -20,6 +20,11 @@
   color: #b30d52;
 }
 
+.viewMoreButtonHover:hover{
+  background-color: #08929c9f;
+  /* color: white; */
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
