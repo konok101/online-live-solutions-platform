@@ -2,7 +2,6 @@ import React from 'react'
 import Banner from './Banner';
 import Navigation from '../Shared/Navigation';
 import Services from './Services';
-
 import FaqQuestions from './FAQ/FaqQuestions';
 import ContactUs from '../Contact/ContactUs';
 import Footer from '../Shared/Footer';

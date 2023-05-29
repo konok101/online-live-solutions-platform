@@ -72,15 +72,15 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Educational Live solutions platform
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             
-              <Button  sx={{ color: '#fff' }}>
+           
               <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
 
               <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
-              </Button>
+              
 
               <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
 
