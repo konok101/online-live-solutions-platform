@@ -9,32 +9,32 @@ function FaqQuestions() {
     const [faqs, setfaqs] = useState([
         {
             question: "	Do you have the Government approval?",
-            answer: 'Yes. M. P Hospital is approved by the Government of Bangladesh on September 2002.',
+            answer: 'Yes. Education live solutions is approved by the Government of Bangladesh on September 2012.',
             open: true
         },
         {
-            question: "What is the full name of the Hospital?",
-            answer: 'Medical Program Hospital ',
+            question: "What is the full name of the platform?",
+            answer: 'Educational live solutions Platform ',
             open: false
         },
         {
-            question: "Hospital Address?",
-            answer: 'TB Gate, Tultikor, Sylhet, Bangladesh.',
+            question: "Address?",
+            answer: 'Dhanmondi 27, Dhaka, Bangladesh.',
             open: false
         },
         {
             question: "	Contact Number?",
-            answer: '+88 01720 532169, 01766 857322',
+            answer: '+88 01795598566, 01947473492',
             open: false
         },
         {
             question: "	E-mail Address?",
-            answer: 'info@m.p.hospital.bd',
+            answer: 'livesolutionssupport@gmail.com',
             open: false
         },
         {
             question: "	Website Address?",
-            answer: 'http://www.m.p.hospital.bd/',
+            answer: 'http://www.education.live.solutions.bd/',
             open: false
         }
     ]);

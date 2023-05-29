@@ -1,9 +1,9 @@
 import { Grid } from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
-import ambulance from '../../images/car2.jpg';
-import note from '../../images/note4.jpg';
-import injection from '../../images/injection5.jpg';
+import ambulance from '../../images/live.png';
+import note from '../../images/paid.png';
+import injection from '../../images/prblm.png';
 
 function Services() {
   return (
@@ -17,9 +17,6 @@ function Services() {
     </div>
         
 
-
-
-
         <Grid container spacing={{ xs: 2, md: 3 }} 
         direction="row"
         justifyContent="center"
@@ -28,24 +25,24 @@ function Services() {
        
         <Grid item xs={12} sm={12} md={4}>
         
-        <img style={{borderRadius:'100%'}}  src={injection}></img>
-        <h4 style={{color:'#472ca7'}}>Online Emergency</h4>
+        <img style={{borderRadius:'100%'}} width="33%"  src={injection}></img>
+        <h4 style={{color:'#472ca7'}}>Live Solutions</h4>
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-       
+  
         </Grid>
         
         <Grid item xs={12} sm={12} md={4}>
        
-        <img style={{borderRadius:'90%'}} src={ambulance} ></img>
-        <h4 style={{color:'#472ca7'}}>Medication Service</h4>
+        <img style={{borderRadius:'90%'}} width="33%"  src={ambulance} ></img>
+        <h4 style={{color:'#472ca7'}}>Problem Solving</h4>
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
         
         </Grid>
         
         <Grid item xs={12} sm={12} md={4}>
         
-        <img style={{borderRadius:'90%', }} src={note}></img>
-        <h4 style={{color:'#472ca7'}}>24h Health Program</h4>
+        <img style={{borderRadius:'90%', }} width="33%"  src={note}></img>
+        <h4 style={{color:'#472ca7'}}> 24h supports</h4>
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.
         </p>
        

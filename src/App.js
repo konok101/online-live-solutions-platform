@@ -1,11 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import Home from './Pages/Home/Home';
-// import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
-// import { Route, Routes } from 'react-router';
-
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,14 +9,12 @@ import {
   useRoutes,
 } from "react-router-dom";
 
-
 import Dashboard from './Pages/Dashboard/Dashboard';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import ContactUs from './Pages/Contact/ContactUs';
 import AboutUs from './Pages/About/AboutUs';
-
-const Appw = () => {
+const Apps = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
     { path: "/home", element: <Home /> },
@@ -35,9 +29,8 @@ const Appw = () => {
 
 function App() {
   return (
-
     <Router>
-      <Appw />
+      <Apps />
     </Router>
     
   );
