@@ -5,8 +5,9 @@ import Services from './Services';
 import FaqQuestions from './FAQ/FaqQuestions';
 import ContactUs from '../Contact/ContactUs';
 import Footer from '../Shared/Footer';
+import WhyChose from './WhyChoose/WhyChose';
 import TotalUserCount from './TotalUserCount/TotalUserCount';
-
+ 
 function Home() {
 
   const homeStyle = {
@@ -17,6 +18,7 @@ function Home() {
 
       <Navigation />
       <Banner />
+      <WhyChose/>
       <TotalUserCount/>
       <Services />
       <FaqQuestions />
