@@ -5,6 +5,7 @@ import Services from './Services';
 import FaqQuestions from './FAQ/FaqQuestions';
 import ContactUs from '../Contact/ContactUs';
 import Footer from '../Shared/Footer';
+import TotalUserCount from './TotalUserCount/TotalUserCount';
 
 function Home() {
 
@@ -16,6 +17,7 @@ function Home() {
 
       <Navigation />
       <Banner />
+      <TotalUserCount/>
       <Services />
       <FaqQuestions />
       <ContactUs/>
