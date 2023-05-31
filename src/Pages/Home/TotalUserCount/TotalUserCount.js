@@ -5,7 +5,6 @@ const TotalUserCount = () => {
 
     return (
         <Grid sx={{backgroundColor:'#747474', p:5}} >
-
               <Box sx={{ flexGrow: 1,p:5 }} style={{width:"80%", margin:"auto"}}>
       <Grid container spacing={2}>
         <Grid item xs={3} >
