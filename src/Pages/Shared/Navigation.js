@@ -18,7 +18,7 @@ import { Link } from '@mui/material';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+
 
 
 
@@ -101,9 +101,18 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Educational Live solutions platform
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+
+
+            
+           
+              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
+
+              <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
+              
 
 
             <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>

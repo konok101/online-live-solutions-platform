@@ -33,12 +33,9 @@ const ContactUsForm = () => {
             id="standard-basic"
             style={{margin:18, width:'50vw'}} 
             label="Say something about us" 
-            // color="secondary" 
-           
             name='review'
             required
             variant="standard" 
-
             />
 
             <br></br>
@@ -61,13 +58,11 @@ const ContactUsForm = () => {
             name='email'
             id="standard-basic"
             variant="standard" 
-            
-            
              />
             <br></br>
            
 
-            <Button variant="contained" type="submit" style={{marginLeft:'20%', marginTop:'2%',   padding:'15px 55px', color:'white',
+            <Button variant="contained" type="submit" style={{  marginTop:'2%',   padding:'15px 55px', color:'white',
             fontWeight:'400',
             background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
             borderRadius:'15px'}}>Submit</Button> <br></br>

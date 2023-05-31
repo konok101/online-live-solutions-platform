@@ -70,17 +70,15 @@ const Footer = () => {
 
            </Grid>
 
-           <Grid item xs={12} sm={12} md={4}  style={{  paddingLeft:'5%' }}>
-               <Typography variant="h6" component="div"  style={{ paddingBottom:'5%',fontWeight:'bold',color:'#b30d52', }} >
+           <Grid item xs={12} sm={12} md={4}  style={{  paddingLeft:'5%', marginBottom:"7%" }}>
+               <Typography variant="h6" component="div"  style={{ paddingBottom:'3%',  fontWeight:'bold',color:'#b30d52', }} >
                   Useful Links
                </Typography>
               
                <Link href="/home" color="inherit" style={{ textDecoration: 'none', fontWeight: 425, }}>
                    Home
                </Link><br></br>
-               <Link href="/about" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 }}>
-                   About Us
-               </Link><br></br>
+              
                <Link href="/contact" color="inherit" style={{ textDecoration: 'none',fontWeight: 425 , marginBottom:'4%'}}>
                    Contact Us
                </Link><br></br>
@@ -101,7 +99,7 @@ const Footer = () => {
                      <p>Victoria 8007 Bangladesh</p>
                      
                      <p >   +91 458 654 528a</p>
-                     <p  > healthcare@gmail.com</p> 
+                     <p  > educationlivesolutions@gmail.com</p> 
 
           </Grid>
  
@@ -111,7 +109,7 @@ const Footer = () => {
          
        <Divider sx={{ backgroundColor: 'gray', width: "90%" }} style={{ marginBottom: '4%', marginTop:'2%' }}></Divider>
 
-            <Typography style={{  paddingBottom: '5%',paddingTop:'1%', textAlign:'center' }}>© 2022 Health Care. All rights reserved. Sylhet, Bangladesh.  </Typography>
+            <Typography style={{  paddingBottom: '5%',paddingTop:'1%', textAlign:'center' }}>© 2023 Education Live Solutions platform. All rights reserved. Dhaka, Bangladesh.  </Typography>
        </Box >
         </>
     );
