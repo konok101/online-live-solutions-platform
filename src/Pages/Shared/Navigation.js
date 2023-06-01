@@ -37,7 +37,7 @@ function DrawerAppBar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+       Education Live solutions platform
       </Typography>
       <Divider />
       <List>
@@ -105,18 +105,15 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            Educational Live solutions platform
-          </Typography>
+{/*             Educational Live solutions platform
+ */}          </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
             <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
-
             <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
-
-
             <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
-
             <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+
 
 
             <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
@@ -125,18 +122,12 @@ function DrawerAppBar(props) {
 
 
 
+
             {user?.uid ?
               <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
-
               :
               <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
             }
-
-
-
-
-
-
           </Box>
         </Toolbar>
       </AppBar>
@@ -158,7 +149,6 @@ function DrawerAppBar(props) {
         </Drawer>
       </Box>
       <Box component="main" sx={{ p: 3 }}>
-
 
       </Box>
     </Box>

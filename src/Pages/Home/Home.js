@@ -7,6 +7,7 @@ import ContactUs from '../Contact/ContactUs';
 import Footer from '../Shared/Footer';
 import WhyChose from './WhyChoose/WhyChose';
 import TotalUserCount from './TotalUserCount/TotalUserCount';
+import Events from './Events/Events';
  
 function Home() {
 
@@ -21,6 +22,7 @@ function Home() {
       <WhyChose/>
       <TotalUserCount/>
       <Services />
+      <Events/>
       <FaqQuestions />
       <ContactUs/>
       
