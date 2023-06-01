@@ -56,6 +56,10 @@ function DrawerAppBar(props) {
 
             <Link href="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
 
+            <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+
+            <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+
             {user?.uid ?
               <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'green' }}>Logout</Button>
 
@@ -104,10 +108,21 @@ function DrawerAppBar(props) {
 {/*             Educational Live solutions platform
  */}          </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
             <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
             <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
             <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
             <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+
+
+
+            <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+
+            <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+
+
+
+
             {user?.uid ?
               <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
               :
