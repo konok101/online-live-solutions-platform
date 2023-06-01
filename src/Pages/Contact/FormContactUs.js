@@ -22,6 +22,7 @@ const ContactUsForm = () => {
 
     return (
     <>
+    
             <Container style={bannerBackground } sx={{ height:'100vh' }} >
             <Box container justifyContent='center' style={{textAlign: 'center',paddingTop:'5%',borderBottom:  "2px solid #472ca7", paddingBottom:'5%'}}>
 
