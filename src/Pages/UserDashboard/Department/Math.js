@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navigation from '../../Shared/Navigation';
 import Footer from '../../Shared/Footer';
 import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
@@ -12,6 +12,7 @@ import teacher6 from '../../../images/teacher5.jpg';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import MathModal from './ModalOpen/MathModal';
 function Math() {
 
   const dashboardHomeStyle = {
@@ -19,24 +20,19 @@ function Math() {
     width: '100vw'
   }
 
+  const [openModal, setOpenModal] = React.useState(false);
+  const handleModalOpen = () => setOpenModal(true);
+  const handleModalClose = () => setOpenModal(false);
+  const [regSuccess, setRegSuccess] = useState(false);
+
   return (
     <div>
       <Navigation />
-      <h1>Our Math Tutors Available</h1>
+      
 
-      <div style={dashboardHomeStyle}>
-        <Grid container spacing={15} style={{ margin: '8%', textAlign: 'center' }}>
-
-          <Grid style={{ height: '100%' }}>
-            <Calender></Calender>
-          </Grid>
-
-          <Grid>
-          </Grid>
-
-        </Grid>
-      </div>
-
+      <Typography  style={{ textAlign: 'center', marginTop:'5%', color:'#ed0ef3' }} sx={{ m: 2 }} variant="h4" component="h2">
+      Our Math Tutors Available Here for Today
+                        </Typography>
 
 
 
@@ -84,25 +80,27 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours</h5> 
+                  <h5>1.5 Hours</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
-                    marginTop: '2%', padding: '8px 35px', color: '#16255d',
-                    fontWeight: '600',
-                    fontSize: '18px',
-                    borderRadius: '4px',
-                    marginBottom: '5px'
-                  }}>ADD</button>
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit"
+                    onClick={handleModalOpen}
+                    style={{
+                      marginTop: '2%', padding: '8px 35px', color: '#16255d',
+                      fontWeight: '600',
+                      fontSize: '18px',
+                      borderRadius: '4px',
+                      marginBottom: '5px'
+                    }}>ADD</button>
 
                 </Grid>
               </CardContent>
             </CardActionArea>
           </Card>
         </Grid>
-        
+
         <Grid component="div" item xs={4} sm={6} md={4} style={{ padding: '8%' }}>
           <Card style={{ borderBottom: "8px solid #756c08" }}>
             <CardActionArea>
@@ -142,12 +140,12 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours...</h5> 
+                  <h5>1.5 Hours...</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
                     fontSize: '18px',
@@ -200,12 +198,12 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours</h5> 
+                  <h5>1.5 Hours</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
                     fontSize: '18px',
@@ -258,12 +256,12 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours</h5> 
+                  <h5>1.5 Hours</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
                     fontSize: '18px',
@@ -316,12 +314,12 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours</h5> 
+                  <h5>1.5 Hours</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
                     fontSize: '18px',
@@ -334,7 +332,7 @@ function Math() {
             </CardActionArea>
           </Card>
         </Grid>
-        
+
         <Grid component="div" item xs={4} sm={6} md={4} style={{ padding: '8%' }}>
           <Card style={{ borderBottom: "8px solid #41d02d" }}>
             <CardActionArea>
@@ -374,12 +372,12 @@ function Math() {
                         />
                       </Link>
                     </Box>
-                    
+
                   </Grid>
-                  <h5>1.5 Hours</h5> 
+                  <h5>1.5 Hours</h5>
                   <br></br>
                   <h5>$80</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit" style={{
+                  <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
                     fontSize: '18px',
@@ -393,10 +391,14 @@ function Math() {
           </Card>
         </Grid>
 
-      
+
       </Grid>
 
-
+      <MathModal
+        openModal={openModal}
+        handleModalClose={handleModalClose}
+        setRegSuccess={setRegSuccess}
+      ></MathModal>
 
 
       <Footer />

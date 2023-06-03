@@ -123,12 +123,7 @@ function AdminDashboard() {
           </Link>
 
 
-          <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Gallery</Button>
-            </ListItem>
-          </Link>
+          
 
           <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
@@ -191,7 +186,12 @@ function AdminDashboard() {
 
           </TreeView>
 
-
+          <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+          <ListItem >
+            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+            <Button style={{ color: '#08558b' }}>Gallery</Button>
+          </ListItem>
+        </Link>
 
         </Container>
       </Box>
