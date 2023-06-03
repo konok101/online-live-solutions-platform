@@ -24,6 +24,10 @@ import AboutUs from './Pages/About/AboutUs';
 import Review from './Pages/UserDashboard/Review/CarouselStudentReview';
 import PrivateRoute from './Pages/Login/privateRoute/privateRoute';
 import Math from './Pages/UserDashboard/Department/Math';
+import English from './Pages/UserDashboard/Department/English';
+import Science from './Pages/UserDashboard/Department/Science';
+import AddTeacher from './Pages/AdminDashboard/AddTeacher';
+import AllUsers from './Pages/AdminDashboard/AllUsers/AllUsers';
 
 const Appw = () => {
   let routes = useRoutes([
@@ -38,6 +42,10 @@ const Appw = () => {
     { path: "/adminDashboard", element: <AdminDashboard /> },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
+    { path: "/english", element: <English /> },
+    { path: "/science", element: <Science /> },
+    { path: "/addTeacher", element: <AddTeacher /> },
+    { path: "/allUsers", element: <AllUsers /> },
   ]);
   return routes;
 };

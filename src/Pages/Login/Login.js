@@ -36,7 +36,6 @@ const Login = () => {
 
         setLoginError('');
         // console.log(loginData);
-
         signIn(loginData.email, loginData.password)
         .then(result => {
             const user = result.user;
@@ -47,20 +46,15 @@ const Login = () => {
             console.log(error.message)
             // setLoginError(error.message);
         });
-        // loginUser(loginData.email, loginData.password, location, history);
-        // e.preventDefault();
-
     }
-    // const handleLoginSubmit = e => {
 
-    //     signIn(loginData.email, loginData.password)
-    //     e.preventDefault();
-
-        
-    // }
-//    const handleGoogleSignIn = () => {
-//         signInWithGoogle(location, history);
-//     }
+    const handleLoginSubmit = e => { 
+        signIn(loginData.email, loginData.password,  from);
+        e.preventDefault();
+    }
+    
+    // const saveUser = 
+    
     const handleForgetPassword = () => {
         resetPassword(loginData.email);
     }
@@ -84,7 +78,7 @@ const Login = () => {
                             Login
                         </Typography>
                         <form 
-                        // onSubmit={handleLoginSubmit}
+                        onSubmit={handleLoginSubmit}
                         >
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
