@@ -11,7 +11,7 @@ function AboutUs() {
   }
   return (
     <div style={homeStyle}>
-
+      
     <Navigation></Navigation>
     <FounderSays></FounderSays>
     <FaqQuestions></FaqQuestions>

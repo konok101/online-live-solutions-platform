@@ -56,7 +56,7 @@ bgcolor: "green",
           </Box>
          </Grid>
 
-         <Grid item xs={6} >
+         <Grid item sm={12} md={6} xs={6} >
         <Box>
 <h3 style={{color:'#FFFFFF', marginTop:"-8px"}}>            10th july 2023, 10 p.m
 </h3>        <Card sx={{ minWidth: 275, bgcolor:"#2db6a3", color: "white", ":hover": {
@@ -73,7 +73,7 @@ bgcolor: "green",
     </Card>
           </Box>
          </Grid>
-         <Grid item xs={6} >
+         <Grid item sm={12} md={6} xs={6} >
         <Box>
 <h3 style={{color:'#FFFFFF', marginTop:"-8px"}}>            10th july 2023, 10 p.m
 </h3>        <Card sx={{ minWidth: 275, bgcolor:"#2db6a3", color: "white", ":hover": {
@@ -83,7 +83,7 @@ bgcolor: "green",
       <CardContent>
   
         <Typography variant="h6">
-  Carrer Guidline for <span style={{color:"#FFD700", fontSize:"20px"}}>web develpoment</span> course. Discuss and dicount first 10 enrolled this course.
+  Carrer Guidline for <span style={{color:"#FFD700", fontSize:"20px"}}>web develpoment sm={12}</span> course. Discuss and dicount first 10 enrolled this course.
         </Typography>
       </CardContent>
     
