@@ -18,11 +18,14 @@ const Login = () => {
 
     const [loginError, setLoginError] = useState('');
 
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+
     const {signIn,signInWithGoogle,resetPassword} = useContext(AuthContext);
     
     // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    const location = useLocation();
-    const history = useNavigate();
+    // const history = useNavigate();
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -38,6 +41,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            navigate(from, {replace: true});
         })
         .catch(error => {
             console.log(error.message)
