@@ -174,6 +174,15 @@ function UserDashboard() {
 
 
 
+
+          <Link to='/review' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Review</Button>
+            </ListItem>
+          </Link>
+
+
         </Container>
       </Box>
     </div >
