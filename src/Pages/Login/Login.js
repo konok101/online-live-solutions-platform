@@ -20,10 +20,10 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/';
+    // const from = location.state?.from?.pathname || '/';
 
-    const {signIn,signInWithGoogle,resetPassword} = useContext(AuthContext);
-    
+    const { signIn, signInWithGoogle, resetPassword } = useContext(AuthContext);
+
     // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     // const history = useNavigate();
 
@@ -37,48 +37,48 @@ const Login = () => {
         setLoginError('');
         // console.log(loginData);
         signIn(loginData.email, loginData.password)
-        .then(result => {
-            const user = result.user;
-            console.log(user);
-            navigate(from, {replace: true});
-        })
-        .catch(error => {
-            console.log(error.message)
-            // setLoginError(error.message);
-        });
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                // navigate(from, { replace: true });
+            })
+            .catch(error => {
+                console.log(error.message)
+                // setLoginError(error.message);
+            });
     }
 
-    const handleLoginSubmit = e => { 
-        signIn(loginData.email, loginData.password,  from);
+    const handleLoginSubmit = e => {
+        signIn(loginData.email, loginData.password);
         e.preventDefault();
     }
-    
+
     // const saveUser = 
-    
+
     const handleForgetPassword = () => {
         resetPassword(loginData.email);
     }
     const imgStyle = {
         borderRadius: 400,
         width: '40%',
-        
+
     }
     return (
-        <div style={{ background: 'rgb(112,242,226)', textAlign:'center'}} >
+        <div style={{ background: 'rgb(112,242,226)', textAlign: 'center' }} >
 
 
             <Navigation></Navigation>
             <Container>
                 <Grid container justifyContent={'center'} spacing={2} >
-                <Grid item xs={12} md={12} sx={{ mt: 10 }}>
-                <img style={imgStyle} src={loginImg} alt="" />
-            </Grid>
-                    <Grid item sx={{ mt: 5, mb:10 }} xs={12} md={8}>
+                    <Grid item xs={12} md={12} sx={{ mt: 10 }}>
+                        <img style={imgStyle} src={loginImg} alt="" />
+                    </Grid>
+                    <Grid item sx={{ mt: 5, mb: 10 }} xs={12} md={8}>
                         <Typography variant="h4" gutterBottom >
                             Login
                         </Typography>
-                        <form 
-                        onSubmit={handleLoginSubmit}
+                        <form
+                            onSubmit={handleLoginSubmit}
                         >
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
@@ -106,19 +106,19 @@ const Login = () => {
                                 required
                                 onChange={handleOnChange}
                                 variant="standard" />
-                                <br></br>
+                            <br></br>
 
-                            <Button sx={{ width: '75%',  m: 3}}
-                                type="submit" style={{backgroundColor:'#0d4ef2'}} variant="contained">Login
+                            <Button sx={{ width: '75%', m: 3 }}
+                                type="submit" style={{ backgroundColor: '#0d4ef2' }} variant="contained">Login
                             </Button>
                             <br></br>
-                                <Button variant="link" sx={{}} 
+                            <Button variant="link" sx={{}}
                                 onClick={handleForgetPassword}
-                                >Forgotten Password?</Button>
-                          
-                            <Link style={{ textDecoration: 'none' }}  href='/register'>
-                            <Button variant="text" sx={{ml:'14%', color:'black'}} >Create New account</Button>
-                        </Link>
+                            >Forgotten Password?</Button>
+
+                            <Link style={{ textDecoration: 'none' }} href='/register'>
+                                <Button variant="text" sx={{ ml: '14%', color: 'black' }} >Create New account</Button>
+                            </Link>
                             <br></br><br></br>
 
                             {/*
@@ -130,15 +130,15 @@ const Login = () => {
                             {/* <p>--------------------------------------</p> */} <br></br>
 
 
-                            <Button 
-                            onClick={signInWithGoogle} 
-                            sx={{ml:8,p:1}} variant="contained" style={{   width: '45%',  alignItems:'center', backgroundColor:'#b30d52'}}>Login with Google</Button><br></br>
+                            <Button
+                                onClick={signInWithGoogle}
+                                sx={{ ml: 8, p: 1 }} variant="contained" style={{ width: '45%', alignItems: 'center', backgroundColor: '#b30d52' }}>Login with Google</Button><br></br>
                         </form>
                     </Grid>
                 </Grid>
             </Container>
 
-           <Footer></Footer>
+            <Footer></Footer>
         </div>
     );
 };

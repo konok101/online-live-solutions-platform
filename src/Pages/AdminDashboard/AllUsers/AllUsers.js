@@ -35,13 +35,13 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const AllUsers = () => {
     const [allUser, setAllUser] = useState([]);
-    // useEffect(() => {
-    //     const url = `http://localhost:5000/users`;
-    //     fetch(url)
-    //         .then((res) => res.json())
-    //         .then((data) => setAllUser(data));
+    useEffect(() => {
+        const url = `http://localhost:5000/users`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setAllUser(data));
 
-    // }, []);
+    }, []);
 
 
     return (
@@ -67,7 +67,7 @@ const AllUsers = () => {
                                 </StyledTableRow>
                             </TableHead>
 
-                            {/*
+                            
                             <TableBody>
                                 {
                                     allUser.map((allUser, index) => <AllUserRow
@@ -80,7 +80,7 @@ const AllUsers = () => {
                                     ></AllUserRow>)
                                 }
                             </TableBody>
-                            */}
+                            
                         </Table>
                     </TableContainer>
                 </Paper>
