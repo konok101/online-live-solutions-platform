@@ -14,7 +14,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link } from '@mui/material';
+import { Link, MenuItem } from '@mui/material';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const drawerWidth = 240;
@@ -26,51 +26,55 @@ const drawerWidth = 240;
 function DrawerAppBar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  // const [anchorElNav, setAnchorElNav] = React.useState(null);
+  // const [anchorElUser, setAnchorElUser] = React.useState(null);
+  const { user,adminn, logOut } = useContext(AuthContext);
 
-  const { user, logOut } = useContext(AuthContext);
-
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+    <Box
+      onClick={handleDrawerToggle}
+      sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-       Education Live solutions platform
+        Education Live solutions
       </Typography>
       <Divider />
       <List>
 
-        <ListItem style={{alignItems: 'center'}} >
+        <ListItem style={{ alignItems: 'center' }} >
 
-          <Box style={{ textAlign: "center", paddingLeft:'25%'}}>
-          
-            <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green', }}>Home</Button></Link><br />
-
-
-
-            <Link href="/about"><Button color="inherit" sx={{ color: 'green' }}>About</Button></Link><br />
-
-            <Link href="/contact"><Button color="inherit" sx={{ color: 'green' }}>Contact</Button></Link><br />
-
-            <Link href="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
-
-            <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
-
-            <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
-
-            {user?.uid ?
-              <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'green' }}>Logout</Button>
-
-              :
-              <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green' }}>Login</Button></Link>
-            }
-
-
-
-          </Box>
-
+          <MenuItem
+          // onClick={handleCloseNavMenu}
+          >
+            <Box style={{ textAlign: "center", paddingLeft: '25%' }}>
+              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green', }}>Home</Button></Link><br />
+              <Link href="/about"><Button color="inherit" sx={{ color: 'green' }}>About</Button></Link><br />
+              <Link href="/contact"><Button color="inherit" sx={{ color: 'green' }}>Contact</Button></Link><br />
+              <Link href="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
+              <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+              <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+              {user?.email ?
+                <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'green' }}>Logout</Button>
+                :
+                <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green' }}>Login</Button></Link>
+              }
+            </Box>
+          </MenuItem>
         </ListItem>
 
       </List>
@@ -105,30 +109,47 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-{/*             Educational Live solutions platform
- */}          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-
-            <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
-            <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
-            <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
-            <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+            Educational Live solution
+            
+          </Typography>
 
 
-
-            <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
-
-            <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
-
-
+          <Button
+            onClick={handleDrawerToggle}
+            sx={{ my: 2 }}
+          >
 
 
-            {user?.uid ?
-              <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
-              :
-              <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
-            }
-          </Box>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+
+              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
+              <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
+              <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+              <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+              
+              <Link href="/course" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Course</Button></Link>
+
+              {adminn &&
+              <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+              }
+
+              <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+
+
+
+              
+            
+
+             {
+                user?.email ?
+                    <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
+                  :  
+                    <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
+              }
+
+            </Box>
+          </Button>
+
         </Toolbar>
       </AppBar>
       <Box component="nav">
@@ -137,6 +158,8 @@ function DrawerAppBar(props) {
           variant="temporary"
           open={mobileOpen}
           onClose={handleDrawerToggle}
+
+
           ModalProps={{
             keepMounted: true, // Better open performance on mobile.
           }}
@@ -153,7 +176,7 @@ function DrawerAppBar(props) {
       </Box>
     </Box>
   );
-}
+};
 
 DrawerAppBar.propTypes = {
   /**

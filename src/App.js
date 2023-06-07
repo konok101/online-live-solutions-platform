@@ -1,14 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import React from 'react';
+import React, {Fragment}  from 'react';
 import Home from './Pages/Home/Home';
 // import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
 // import { Route, Routes } from 'react-router';
 
 import {
-  BrowserRouter as Router,
+  Router,
   Routes,
+  BrowserRouter,
   Route,
   useRoutes,
 } from "react-router-dom";
@@ -28,18 +29,26 @@ import English from './Pages/UserDashboard/Department/English';
 import Science from './Pages/UserDashboard/Department/Science';
 import AddTeacher from './Pages/AdminDashboard/AddTeacher';
 import AllUsers from './Pages/AdminDashboard/AllUsers/AllUsers';
+import AdminRoute from './Pages/Login/privateRoute/AdminRoute';
+import Course from './Pages/Course/Course';
 
-const Appw = () => {
+
+
+function Appw() {
+  
   let routes = useRoutes([
+    
     { path: "/", element: <Home /> },
     { path: "/home", element: <Home /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/contact", element: <ContactUs /> },
     { path: "/review", element: <Review/> },
-    { path: "/dashboard", element: <PrivateRoute><Dashboard /></PrivateRoute>  },
+    { path: "/course", element: <PrivateRoute><Course />  </PrivateRoute>},
+    { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
     { path: "/login", element: <Login /> },
     { path: "/teacherDashboard", element: <TeacherDashboard/> },
-    { path: "/adminDashboard", element: <AdminDashboard /> },
+    { path: "/adminDashboard", 
+    element: <PrivateRoute><AdminDashboard /> </PrivateRoute>  },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
     { path: "/english", element: <English /> },
@@ -47,17 +56,80 @@ const Appw = () => {
     { path: "/addTeacher", element: <AddTeacher /> },
     { path: "/allUsers", element: <AllUsers /> },
   ]);
-  return routes;
+  return routes; 
 };
 
 function App() {
   return (
 
-    <Router>
+    <BrowserRouter>
       <Appw />
-    </Router>
+    </BrowserRouter>
     
   );
 }
 
 export default App;
+
+
+// function App() {
+//     return (
+//         <div>
+//         <Router>
+       
+//           <Routes>
+//           <Route path='/'  element={<Home/>} />
+//             </Routes>
+//             </Router>
+            
+          
+//         </div>
+//     );
+// }
+// export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const Appw = () => {
+//   let routes = useRoutes([
+//     { path: "/", element: <Home /> },
+//     { path: "/home", element: <Home /> },
+//     { path: "/about", element: <AboutUs /> },
+//     { path: "/contact", element: <ContactUs /> },
+//     { path: "/review", element: <Review/> },
+//     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
+//     { path: "/login", element: <Login /> },
+//     { path: "/teacherDashboard", element: <TeacherDashboard/> },
+//     { path: "/adminDashboard", 
+//     element: <AdminDashboard />  },
+//     { path: "/register", element: <Register /> },
+//     { path: "/math", element: <Math /> },
+//     { path: "/english", element: <English /> },
+//     { path: "/science", element: <Science /> },
+//     { path: "/addTeacher", element: <AddTeacher /> },
+//     { path: "/allUsers", element: <AllUsers /> },
+//   ]);
+//   return routes; 
+// };
+
+// function App() {
+//   return (
+
+//     <Router>
+//       <Appw />
+//     </Router>
+    
+//   );
+// }
+
+// export default App;

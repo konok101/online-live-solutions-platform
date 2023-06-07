@@ -13,23 +13,23 @@ const AddTeacher = ({ course, setCourse }) => {
         setEmail(e.target.value);
     }
 
-    // const handleDoctorSubmit = e => {
-    //     const user = { email };
-    //     fetch('http://localhost:5000/users/addDoctor', {
-    //         method: 'PUT',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             if (data.modifiedCount) {
-    //                 setSuccess(true);
-    //             }
-    //         })
-    //     e.preventDefault()
-    // }
+    const handleTeacherSubmit = e => {
+        const user = { email };
+        fetch('http://localhost:5000/users/addTeacher', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    setSuccess(true);
+                }
+            })
+        e.preventDefault()
+    }
 
     return (
         <>
@@ -37,7 +37,7 @@ const AddTeacher = ({ course, setCourse }) => {
             <Container style={{ height: '45vh', marginLeft: '8%' }}>
                 <h2 style={{ marginTop: '8%', textAlign: 'center' }}>Add Teacher </h2>
                 <form
-                    // onSubmit={handleTeacherSubmit}
+                    onSubmit={handleTeacherSubmit}
                     style={{ marginTop: '8%' }}>
                     <TextField
                         sx={{ width: '60vw' }}
