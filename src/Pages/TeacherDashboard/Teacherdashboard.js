@@ -114,7 +114,6 @@ function TeacherDashboard() {
         <Toolbar />
         <Container style={{ marginLeft: '5%' }}>
 
-
           <Link to='/' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
               <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
@@ -122,6 +121,12 @@ function TeacherDashboard() {
             </ListItem>
           </Link>
 
+          <Link to='/regStudentTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Registered</Button>
+            </ListItem>
+          </Link>
 
           <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
