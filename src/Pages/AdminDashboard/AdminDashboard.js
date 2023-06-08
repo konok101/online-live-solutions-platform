@@ -121,6 +121,12 @@ function AdminDashboard() {
               <Button style={{ color: '#08558b' }}>Home</Button>
             </ListItem>
           </Link>
+          <Link to='/regStudent' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Registered</Button>
+            </ListItem>
+          </Link>
 
 
           
@@ -137,6 +143,12 @@ function AdminDashboard() {
           <ListItem >
             <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
             <Button style={{ color: '#08558b' }}>All Users</Button>
+          </ListItem>
+        </Link>
+          <Link to='/studentReview' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+          <ListItem >
+            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+            <Button style={{ color: '#08558b' }}>Student Review</Button>
           </ListItem>
         </Link>
 
