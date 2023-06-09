@@ -20,12 +20,19 @@ const Login = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    // const from = location.state?.from?.pathname || '/';
+     const from = location.state?.from?.pathname || '/';
 
     const { signIn, signInWithGoogle, resetPassword } = useContext(AuthContext);
 
     // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     // const history = useNavigate();
+
+    const handleSignInWithGoogle = () => {
+        signInWithGoogle()
+          .then((user) => {
+            navigate(from, { replace: true })
+          })
+      }
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -131,7 +138,7 @@ const Login = () => {
 
 
                             <Button
-                                onClick={signInWithGoogle}
+                                onClick={handleSignInWithGoogle}
                                 sx={{ ml: 8, p: 1 }} variant="contained" style={{ width: '45%', alignItems: 'center', backgroundColor: '#b30d52' }}>Login with Google</Button><br></br>
                         </form>
                     </Grid>
