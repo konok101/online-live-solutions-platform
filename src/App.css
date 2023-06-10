@@ -27,7 +27,7 @@
 
 .viewMoreButtonHoverBanner:hover{
    border: 4px solid wheat;
-   color: #F5DEB3;
+   color: #fff;
    background-color: #2db6a3;
    /* color: white; */
 }

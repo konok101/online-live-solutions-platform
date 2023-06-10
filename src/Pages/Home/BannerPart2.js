@@ -17,7 +17,7 @@ function BannerPart2() {
           <h2  >REQUEST A BROCHURE</h2>
           <p>Entry level, degree, format, language, campus...</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
-            marginTop: '2%', padding: '8px 35px', color: '#16255d',
+            marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
             fontSize: '18px',
             borderRadius: '4px'
@@ -29,7 +29,7 @@ function BannerPart2() {
           <h2>CHOOSE A PROGRAMME</h2>
           <p>Entry level, degree, format, language, campus...</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
-            marginTop: '2%', padding: '8px 35px', color: '#16255d',
+            marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
             fontSize: '18px',
             borderRadius: '4px'
@@ -40,7 +40,7 @@ function BannerPart2() {
           <h2>SCHOLARSHIPS</h2>
           <p>Our commitment to excellence and diversity</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
-            marginTop: '2%', padding: '8px 35px', color: '#16255d',
+            marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
             fontSize: '18px',
             borderRadius: '4px'
