@@ -13,7 +13,7 @@ function BannerPart2() {
         direction="row"
         justifyContent="center"
         alignItems="center" spacing={{ xs: 2, md: 3 }} style={{ paddingTop: '2%' }}>
-        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' }}>
+        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color:'#fff' }}>
           <h2  >REQUEST A BROCHURE</h2>
           <p>Entry level, degree, format, language, campus...</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
@@ -25,7 +25,7 @@ function BannerPart2() {
 
         </Grid>
 
-        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' }}>
+        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' , color:'#fff'}}>
           <h2>CHOOSE A PROGRAMME</h2>
           <p>Entry level, degree, format, language, campus...</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
@@ -36,7 +36,7 @@ function BannerPart2() {
           }}>VIEW MORE</button>
         </Grid>
 
-        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' }}>
+        <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color:'#fff' }}>
           <h2>SCHOLARSHIPS</h2>
           <p>Our commitment to excellence and diversity</p>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
