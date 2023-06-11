@@ -45,7 +45,7 @@ function Banner() {
 
                 </div>
             </div>
-            <BannerPart2 />
+           
         </>
     )
 }

@@ -10,6 +10,7 @@ import TotalUserCount from './TotalUserCount/TotalUserCount';
 import Events from './Events/Events';
 import Course from '../Course/Course';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import BannerPart2 from './BannerPart2';
 function Home() {
 
   const homeStyle = {
@@ -21,6 +22,7 @@ function Home() {
 
       <Navigation />
       <Banner />
+      <BannerPart2 />
       <WhyChose />
       <TotalUserCount />
       {

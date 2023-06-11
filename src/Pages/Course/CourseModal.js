@@ -93,6 +93,7 @@ const CourseModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 name='name'
                                 onBlur={handleOnBlur}
                                 variant="outlined"
+                                defaultValue={user.displayName}
                                 required
                             />
 
@@ -104,7 +105,8 @@ const CourseModal = ({ openModal, handleModalClose, setRegSuccess }) => {
                                 name='email'
                                 onBlur={handleOnBlur}
                                 variant="outlined"
-                                
+                                defaultValue={user.email}
+                                // disabled
                                 required
                             />
                             <TextField
