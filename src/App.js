@@ -34,6 +34,7 @@ import Course from './Pages/Course/Course';
 import StudentReview from './Pages/AdminDashboard/StudentReview/StudentReview';
 import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
+import MyEnrollment from './Pages/UserDashboard/MyEnrollment/MyEnrollment';
 
 
 
@@ -64,6 +65,7 @@ function Appw() {
     { path: "/allUsers", element: <AllUsers /> },
     { path: "/regStudent", element: <RegStudent /> },
     { path: "/regStudentTeacher", element: <StudentRegisted /> },
+    { path: "/myEnrollment", element: <MyEnrollment /> },
   ]);
   return routes; 
 };

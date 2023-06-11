@@ -4,9 +4,10 @@ import React from 'react'
 function BannerPart2() {
   return (
     <div style={{
-      width: '100vw', height: '300px',
+      width: '100vw', height: '45vh',
       backgroundColor:'#2db6a3',
-      color:'#16255d'
+      color:'#16255d',
+      paddingTop:'3%'
     }}>
 
       <Grid container
