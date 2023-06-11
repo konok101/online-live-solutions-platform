@@ -58,45 +58,54 @@ const AddCourse = () => {
             <div >
                 
                 <div style={{maxWidth:"50%", margin:"auto", marginTop:"50px"}} >
-                    <Box sx={{ml:5 }}>
-               <h2>Admin: {user?.displayName} !!! .</h2> 
-                         <h5 style={{width:"250px", margin:"0", fontSize:'30px'}}>Added Course</h5>
+                    <Box sx={{maxWidth:"80%", margin:"auto", }}>
+               <h2> Add by Admin: {user?.displayName} !!! .</h2> 
+                         <h5 style={{maxWidth:"50%", margin:"auto", fontSize:'30px'}}> Course Details</h5>
                     </Box>
                     <Box>
                         <form onSubmit={handleSubmit(onSubmit)}>
                         <TextField
                             style={{ margin: 18, width: '50vw' }}   label="Teacher Name"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("teacherName")}
+                             textColor="white" variant="standard" required  {...register("teacherName")}
                         />                        <br/>
                             <TextField
-                            style={{ margin: 18, width: '50vw' }}   label="Couse Name"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }} required   label="Couse Name"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("couseName")}
                         />                        <br/>
 
 <TextField
-                            style={{ margin: 18, width: '50vw' }}   label="Hours"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }} required  label="Hours"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("hours")}
                         />    
                                             <br/>
                         
                         
                         <TextField
-                            style={{ margin: 18, width: '50vw' }}   label="Price"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }} required  label="Price"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("price")}
                         />                        <br/>
                    
  
                    <TextField
-                            style={{ margin: 18, width: '50vw' }}   label="Url"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }}    label="Url"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("socialUrl")}
                         />                        <br/>
                    
  
-                        <input name="exampleRequired" type="file" onChange={handleImageUpload}/>
+                        <input name="exampleRequired" type="file" required onChange={handleImageUpload}/>
                         <br/>
                        
 
-                        <button type="submit" className="btn btn-light">Save</button>
+                       
+
+                        <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
+                        marginTop: '2%', padding: '15px 44px', color: 'white',
+                        fontWeight: '300',
+                        fontSize: '20px',
+                        background: "#2db6a3",
+                        
+                        borderRadius: '4px'
+                    }}>Submit</button>
                         </form>
                     </Box>
                 </div>
