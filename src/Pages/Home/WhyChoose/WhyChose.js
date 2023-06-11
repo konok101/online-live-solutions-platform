@@ -17,7 +17,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const WhyChose = () => {
 
     return (
-       <div  style={{ marginTop:'5%', paddingTop:"2%", paddingBottom:'4%', backgroundColor:"#FFFFFF", overflow:'hidden'}}>
+       <div  style={{  paddingTop:"5%", paddingBottom:'4%', backgroundColor:"#FFFFFF", overflow:'hidden'}}>
       <Box style={{maxWidth:"80%", margin:"auto"}}>
     <h1 style={{maxWidth:"400px", margin:"auto", marginTop:"30px" }}> WHY CHOOSE US</h1>
     <h5 style={{maxWidth:"600px", margin:"auto", marginTop:"3px" }}> Are you thinking about completing a higher education programme?</h5>
