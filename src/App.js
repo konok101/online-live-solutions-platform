@@ -55,7 +55,7 @@ function Appw() {
    },
 
     { path: "/adminDashboard", 
-    element: <PrivateRoute><AdminDashboard /> </PrivateRoute>  },
+    element: <AdminRoute><AdminDashboard/> </AdminRoute>  },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
     { path: "/english", element: <English /> },

@@ -399,7 +399,7 @@ function Course() {
     ></CourseModal>
 
 
-      <Footer />
+     
     </div>
   )
 }
