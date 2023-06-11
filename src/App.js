@@ -30,10 +30,11 @@ import Science from './Pages/UserDashboard/Department/Science';
 import AddTeacher from './Pages/AdminDashboard/AddTeacher';
 import AllUsers from './Pages/AdminDashboard/AllUsers/AllUsers';
 import AdminRoute from './Pages/Login/privateRoute/AdminRoute';
-import Course from './Pages/Course/Course';
+import CourseFooter from './Pages/Course/CouseWithFooter';
 import StudentReview from './Pages/AdminDashboard/StudentReview/StudentReview';
 import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
+import AddCourse from './Pages/Course/AddCouse';
 
 
 
@@ -47,7 +48,7 @@ function Appw() {
     { path: "/contact", element: <ContactUs /> },
     { path: "/review", element: <Review/> },
     { path: "/studentReview", element: <StudentReview/> },
-    { path: "/course", element: <PrivateRoute><Course />  </PrivateRoute>},
+    { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute>},
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
     { path: "/login", element: <Login /> },
     { path: "/teacherDashboard", element: <PrivateRoute>  <TeacherDashboard/>
@@ -58,6 +59,7 @@ function Appw() {
     element: <AdminRoute><AdminDashboard/> </AdminRoute>  },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
+    { path: "/addCourse", element: <AddCourse /> },
     { path: "/english", element: <English /> },
     { path: "/science", element: <Science /> },
     { path: "/addTeacher", element: <AddTeacher /> },
