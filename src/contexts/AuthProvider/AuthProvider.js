@@ -11,6 +11,7 @@ const AuthProvider = ({ children }) => {
     const [token, setToken] = useState('');
     const [loading, setLoading] = useState(true);
     const [admin, setAdmin] = useState(false);
+    const [teacher, setTeacher] = useState(false);
     const provider = new GoogleAuthProvider();
 
     const registerUser = (email, Password, name, history) => {
@@ -68,21 +69,7 @@ const resetPassword = (email) => {
             // ..
         });
 }
-// const signInWithGoogle = () => {
-//     return signInWithPopup(auth, provider)
-//         .then((result) => {
-//             // This gives you a Google Access Token. You can use it to access the Google API.
-//             const credential = GoogleAuthProvider.credentialFromResult(result);
-//             const token = credential.accessToken;
-//             const user = result.user;
-//             saveUser(user.email,  user.displayName,'PUT');
-//             // const destination = location?.state?.from || '/';
-//         })
-//         .catch((error) => {
-//             // setAuthError(error.message);
-//         })
-//     // .finally(() => setIsLoading(false));
-// }
+ 
 
 
 
@@ -104,38 +91,7 @@ const signInWithGoogle = (location, navigate) => {
 }
 
 
-
-//             const credential = GoogleAuthProvider.credentialFromResult(result);
-//             const token = credential.accessToken;
-//             // const destination = location?.state?.from || '/';
-//         })
-//         .catch((error) => {
-//             // setAuthError(error.message);
-//         })
-//     // .finally(() => setIsLoading(false));
-// }
-
-// const signInWithGoogle = (location, history) => {
-//     setIsLoading(true);
-//     signInWithPopup(auth, googleProvider)
-//         .then((result) => {
-//             const user = result.user;
-
-//              //save user to the database
-//              saveUser(user.email, user.displayName, 'PUT');
-
-//             setAuthError('');
-//             const destination = location?.state?.from || '/';
-//             history.replace(destination);
-//         }).catch((error) => {
-//             setAuthError(error.message);
-//         })
-//         .finally(() => setIsLoading(false));
-// }
-
-
-
-
+ 
 
 
 
@@ -201,6 +157,7 @@ useEffect(() => {
 
 
 
+console.log('user 111', user);
 
 
 
@@ -208,16 +165,33 @@ useEffect(() => {
 
 
 
-
-// useEffect(() => {
+/*  useEffect(() => {
 const adminn = (email) => {
     const user = { email };
-    fetch(`http://localhost:5000/users/${user.email}`)
+    fetch(`http://localhost:5000http://localhost:5000/users/${user?.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
 }
-// // }, [user.email])
+ }, [user?.email])
 
+ */
+
+ useEffect(() => {
+
+    fetch(`http://localhost:5000/users/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setAdmin(data.admin))
+}, [user?.email])
+
+
+
+useEffect(() => {
+    fetch(`http://localhost:5000/users/teacher/${user?.email}`)
+        .then(res => res.json())
+        .then(data => setTeacher(data.teacher))
+}, [user?.email])
+
+ console.log('admin auth', admin);
 // useEffect(() => {
 
 //     fetch(`http://localhost:5000/users/${user.email}`)
@@ -225,13 +199,14 @@ const adminn = (email) => {
 //         .then(data => setAdmin(data.admin))
 // }, [user.email])
 
-
+ 
 const authInfo = {
     registerUser,
     verifyEmail,
     signIn,
     updateUser,
-    adminn,
+    admin,
+    teacher,
     resetPassword,
     loading,
     signInWithGoogle,

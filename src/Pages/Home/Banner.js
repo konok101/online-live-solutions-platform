@@ -12,7 +12,7 @@ function Banner() {
 
         // backgroundImage: `url(${bgImg}) no repeat center`,
         backgroundSize: 'cover',
-        height: '100vh',
+        height: '85vh',
         // overflow: 'hidden'
     }
 
@@ -35,11 +35,11 @@ function Banner() {
                     <h1 style={{ fontSize: '60px' }}>EDUCATION FAIR</h1>
 
 
-                    <button variant="contained" type="submit" style={{
+                    <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
                         marginTop: '2%', padding: '15px 55px', color: 'white',
                         fontWeight: '600',
                         fontSize: '20px',
-                        background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
+                        background: "#2db6a3",
                         borderRadius: '4px'
                     }}>LEARN MORE</button>
 

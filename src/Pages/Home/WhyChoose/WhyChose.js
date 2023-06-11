@@ -17,12 +17,12 @@ const Item = styled(Paper)(({ theme }) => ({
 const WhyChose = () => {
 
     return (
-       <div  style={{ marginTop:'5%', paddingTop:"2%", paddingBottom:'4%'  , backgroundColor:"#FFFFFF"}}>
+       <div  style={{ marginTop:'5%', paddingTop:"2%", paddingBottom:'4%', backgroundColor:"#FFFFFF", overflow:'hidden'}}>
       <Box style={{maxWidth:"80%", margin:"auto"}}>
-    <h1 style={{maxWidth:"300px", margin:"auto", marginTop:"30px" }}> WHY CHOOSE US</h1>
-    <h5 style={{maxWidth:"450px", margin:"auto", marginTop:"3px" }}> Are you thinking about completing a higher education programme?</h5>
+    <h1 style={{maxWidth:"400px", margin:"auto", marginTop:"30px" }}> WHY CHOOSE US</h1>
+    <h5 style={{maxWidth:"600px", margin:"auto", marginTop:"3px" }}> Are you thinking about completing a higher education programme?</h5>
       <Grid container spacing={2}>
-        <Grid item xs={4}>
+        <Grid item xs={12} sm={12} md={6} lg={4} >
   <Box sx={{ width: '100%' }}>
       <Stack spacing={5}>
 
@@ -86,10 +86,10 @@ const WhyChose = () => {
       </Stack>
     </Box>
       </Grid>
-        <Grid item xs={4} sx={{marginTop:"20px"}}>      
+        <Grid item xs={12}  sm={12} md={6} lg={4} sx={{marginTop:"20px"}}>      
           <img src="https://htmldemo.net/educan/educan/images/choose/1.png" alt="" />
         </Grid>
-     <Grid item xs={4}>
+     <Grid item xs={12}  lg={4}  sm={12} md={6}>
         <Stack spacing={5}>
         <Grid sx={{display:'flex' , alignItems:"center"}} style={{marginLeft:"120px"}}>
 
