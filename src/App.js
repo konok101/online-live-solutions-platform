@@ -50,7 +50,10 @@ function Appw() {
     { path: "/course", element: <PrivateRoute><Course />  </PrivateRoute>},
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
     { path: "/login", element: <Login /> },
-    { path: "/teacherDashboard", element: <TeacherDashboard/> },
+    { path: "/teacherDashboard", element: <PrivateRoute>  <TeacherDashboard/>
+    </PrivateRoute>
+   },
+
     { path: "/adminDashboard", 
     element: <PrivateRoute><AdminDashboard /> </PrivateRoute>  },
     { path: "/register", element: <Register /> },
