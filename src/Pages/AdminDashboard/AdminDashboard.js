@@ -137,9 +137,10 @@ function AdminDashboard() {
               <Button style={{ color: '#08558b' }}>AddTeacher</Button>
             </ListItem>
           </Link>
-
+        
 
           <Link to='/allUsers' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+
           <ListItem >
             <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
             <Button style={{ color: '#08558b' }}>All Users</Button>
@@ -151,7 +152,12 @@ function AdminDashboard() {
             <Button style={{ color: '#08558b' }}>Student Review</Button>
           </ListItem>
         </Link>
-
+        <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+        <ListItem >
+            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+            <Button style={{ color: '#08558b' }}>Add Course</Button>
+          </ListItem>
+          </Link>
           <TreeView
             style={{ textAlign: 'left', marginLeft: '0%' }}
             aria-label="file system navigator"
