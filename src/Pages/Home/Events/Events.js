@@ -1,5 +1,5 @@
 import React from 'react';
-import bgImg from '../../../images/kk.jpeg';
+import bgImg from '../../../images/one.jpg';
 import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
 
 
@@ -8,7 +8,7 @@ function Events() {
             position: 'relative',
             // backgroundColor:'blue',
             backgroundImage: `url(${bgImg})`,
-
+            marginTop: '2%',
             backgroundSize: 'cover',
             height: '90vh',
       }
