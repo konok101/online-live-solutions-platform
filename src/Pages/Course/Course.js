@@ -13,8 +13,8 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 // import MathModal from './ModalOpen/MathModal';
- import CourseModal from './CourseModal';
- import CourseRow from './CourseRow';
+import CourseModal from './CourseModal';
+import CourseRow from './CourseRow';
 
 function Course() {
 
@@ -29,10 +29,10 @@ function Course() {
 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-      const url = `http://localhost:5000/addCourse`;
-      fetch(url)
-          .then((res) => res.json())
-          .then((data) => setCourses(data));
+    const url = `http://localhost:5000/addCourse`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
 
   }, []);
 
@@ -40,46 +40,44 @@ function Course() {
   return (
     <div>
       <Navigation />
-      
-
-      <Typography  style={{ textAlign: 'center', marginTop:'5%', color:'#756c08' }} sx={{ m: 2 }} variant="h4" component="h2">
-      Our Tutors Available Here for Today
-                        </Typography>
 
 
-       
-         <Grid   direction="row"
-         alignItems="center"  >
-         
-         <Grid>
-     {
-          courses?.map((course, index)=>   <Grid item md={4}>
-        <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
-          </Grid> )
-        }
-         </Grid>
-     
-          {/* {
-          courses?.map((course, index)=>  <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>)
-        } */}
+      <Typography style={{ textAlign: 'center', marginTop: '5%', color: '#756c08' }} sx={{ m: 2 }} variant="h4" component="h2">
+        Our Tutors Available Here for Today
+      </Typography>
+
+
+
+      <div>
+      <Grid container direction="row"
+        justifyContent="space-around"
+        alignItems="center"  >
+          {
+            courses?.map((course, index) =>
+              <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
+            )
+          }
         </Grid>
        
- 
-        
-
-      
-    
+        </div>
        
- 
+
+
+
+
+
+
+
+
 
       <CourseModal
-      openModal={openModal}
-      handleModalClose={handleModalClose}
-      setRegSuccess={setRegSuccess}
-    ></CourseModal>
+        openModal={openModal}
+        handleModalClose={handleModalClose}
+        setRegSuccess={setRegSuccess}
+      ></CourseModal>
 
 
-     
+
     </div>
   )
 }
