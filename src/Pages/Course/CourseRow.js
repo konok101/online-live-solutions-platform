@@ -5,13 +5,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 
 function CourseRow({course, handleModalOpen}) {
     return (
-        <div>
-                 <Grid container direction="row"
-        justifyContent="space-around"
-        alignItems="center"  >
+        <>
+        
 
 
-            <Grid   item xs={4} sm={6} md={4}   style={{ padding: '8%' }}>
+    <Grid   item xs={4} sm={6} md={4}   style={{ padding: '8%' }}>
           <Card style={{ borderBottom: "8px solid #f17917" }}>
             <CardActionArea>
               <CardMedia
@@ -68,8 +66,7 @@ function CourseRow({course, handleModalOpen}) {
             </CardActionArea>
           </Card>
         </Grid>
-        </Grid> 
-        </div>
+        </>
     );
 }
 
