@@ -30,7 +30,7 @@ function FounderSays() {
             src={founderImg} alt="book is not found"></img>
         </Grid>
         <Grid container item xs={4} sm={6} md={8} style={{ textAlign: 'center', padding: '5%' }} >
-          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one hospital in 2002, Thumbay Group’s Healthcare Division has today grown to 5 major hospitals and six family clinics in UAE and India. As per our strategic plan, we plan to have more than 15 hospitals and clinics operational in about 5 years. With our experience in education, healthcare and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
+          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one Online Education Tuition in 2009, Thumbay Group’s Education Division has today grown to 5 major Online platforms and six tutors in UAE and India. As per our strategic plan, we plan to have more than 50 experienced totors and experticed admin operational in about 5 years. With our experience in education, tuition and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
         </Grid>
       </Grid>
 
@@ -42,7 +42,7 @@ function FounderSays() {
 
 
         <Grid container item xs={4} sm={6} md={8} style={{ textAlign: 'center', padding: '5%' }} >
-          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one hospital in 2002, Thumbay Group’s Healthcare Division has today grown to 5 major hospitals and six family clinics in UAE and India. As per our strategic plan, we plan to have more than 15 hospitals and clinics operational in about 5 years. With our experience in education, healthcare and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
+          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one Online Education Tuition in 2009, Thumbay Group’s Education Division has today grown to 5 major Online platforms and six tutors in UAE and India. As per our strategic plan, we plan to have more than 50 experienced totors and experticed admin operational in about 5 years. With our experience in education, tuition and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
         </Grid>
 
 
@@ -70,7 +70,7 @@ function FounderSays() {
             src={principleImg} alt="book is not found"></img>
         </Grid>
         <Grid container item xs={4} sm={6} md={8} style={{ textAlign: 'center', padding: '5%' }} >
-          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one hospital in 2002, Thumbay Group’s Healthcare Division has today grown to 5 major hospitals and six family clinics in UAE and India. As per our strategic plan, we plan to have more than 15 hospitals and clinics operational in about 5 years. With our experience in education, healthcare and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
+          <p style={{ paddingTop: '5%', textAlign: 'left' }}>Educational Live solutions platforms. Starting with one Online Education Tuition in 2009, Thumbay Group’s Education Division has today grown to 5 major Online platforms and six tutors in UAE and India. As per our strategic plan, we plan to have more than 50 experienced totors and experticed admin operational in about 5 years. With our experience in education, tuition and research, we are determined to expand our horizons to various other countries including India, Middle East and the African continent.</p>
         </Grid>
       </Grid>
 

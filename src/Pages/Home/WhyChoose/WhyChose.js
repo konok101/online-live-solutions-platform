@@ -6,6 +6,10 @@ import Grid from '@mui/material/Grid';
 import { Button, IconButton, Stack } from '@mui/material';
 import DinnerDiningIcon from '@mui/icons-material/DinnerDining';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
+import PublicIcon from '@mui/icons-material/Public';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+import SchoolIcon from '@mui/icons-material/School';
+import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Tooltip from '@mui/material/Tooltip';
 const Item = styled(Paper)(({ theme }) => ({
      backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -29,10 +33,12 @@ const WhyChose = () => {
 
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
-                                             <Box  >
+                                             <Box style={{paddingTop:'10%'}}  >
                                                   Meals Provided
                                              </Box>
-                                             <Tooltip title=" Provided tip Meals tip Meals Provided tip"
+                                             <Tooltip title=" The propagation of universities was not necessarily a steady progression.
+
+                                             "
                                                   ____
                                                   placement="left" sx={{ mt: 5 }}>
                                                   <Button>
@@ -43,15 +49,16 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <DinnerDiningIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                            <LocalDiningIcon sx={{ fontSize: 70, 
+                                                                 padding:'22%', borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
                                         </Grid>
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
-                                             <Box  >
-                                                  Meals Provided
+                                             <Box style={{paddingTop:'10%',paddingRight:'12%' }} >
+                                             Lessons
                                              </Box>
                                              <Tooltip title=" Provided tip Meals tip Meals Provided tip"
                                                   ____
@@ -64,15 +71,15 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <DirectionsBusIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                            <PublicIcon sx={{ fontSize: 70,  padding:'22%',borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
                                         </Grid>
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
-                                             <Box  >
-                                                  Meals Provided
+                                             <Box style={{paddingTop:'10%'}} >
+                                             Transportation
                                              </Box>
                                              <Tooltip title=" Provided tip Meals tip Meals Provided tip"
                                                   ____
@@ -85,7 +92,7 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <DinnerDiningIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                            <DirectionsBusIcon  sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
@@ -111,13 +118,13 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <DinnerDiningIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                       <DirectionsBusIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
+                                        <Box style={{paddingTop:'10%',paddingLeft:'8%'}}>
 
-                                        <Box  >
-                                             Meals Provided
+                                        Full Day Session
                                         </Box>
                                    </Grid>
 
@@ -134,13 +141,13 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <DinnerDiningIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                       <BookmarkIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
 
-                                        <Box  >
-                                             Meals Provided
+                                        <Box  style={{paddingTop:'10%',paddingLeft:'8%'}}>
+                                        Special Education
                                         </Box>
                                    </Grid>
 
@@ -160,12 +167,12 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <DinnerDiningIcon sx={{ fontSize: 70, borderRadius: '50%' }} />
+                                                       <SchoolIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
-                                        <Box  >
-                                             Meals Provided
+                                        <Box  style={{paddingTop:'10%', paddingLeft:'8%'}}>
+                                        Qualified Teachers
                                         </Box>
                                    </Grid>
 
