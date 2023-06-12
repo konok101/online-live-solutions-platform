@@ -29,14 +29,7 @@ function Home() {
         user?.email && 
           <Course />
       }
-      {
-        teacher && 
-          <Course />
-      }
-      {
-        admin && 
-          <Course />
-      }
+    
       <Services />
       <Events />
       <FaqQuestions />
