@@ -24,7 +24,7 @@ function CourseRow({course, handleModalOpen}) {
                   alignItems="center" spacing={{ xs: 3, md: 0 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                   <Grid component="div" item xs={4} sm={6} md={4}  >
                     <Typography gutterBottom variant="h5" component="div">
-                      {course?.teacherName}
+                      {course?.teacherName?.slice(0,12)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                     {course?.course}
@@ -32,7 +32,7 @@ function CourseRow({course, handleModalOpen}) {
                   </Grid>
                   <Grid container justifyContent='flex-end' item xs={4} sm={6} md={8} style={{}} >
                     <Box>
-                      <Link href={course?.socialUrl} color="inherit">
+                      <Link href={course?.socialUrl}  style={{width:"300px", height:"20px"}} color="inherit">
                         <InstagramIcon
                           style={{ color: ' #f17917 ', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
                         />
@@ -50,9 +50,9 @@ function CourseRow({course, handleModalOpen}) {
                     </Box>
                     
                   </Grid>
-                  <h5>{course?.hours || 1.5} Hours</h5> 
+                  <h5>{course?.hours || 1.5} Hours</h5>  
                   <br></br>
-                  <h5>${course?.price}</h5>
+                  <h5 style={{marginLeft:'4px'}}>${course?.price}</h5>
                   <button variant="outlined" className='viewMoreButtonHover' type="submit" onClick={handleModalOpen} style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
