@@ -9,7 +9,7 @@ function Events() {
             // backgroundColor:'blue',
             backgroundImage: `url(${bgImg})`,
             marginTop: '2%',
-            backgroundSize: 'cover',
+            // backgroundSize: 'cover',
             height: '90vh',
       }
 
