@@ -1,9 +1,7 @@
 import React from 'react';
 import bgImg from '../../images/HeaderImgOne.webp';
 import BannerPart2 from './BannerPart2';
-// import { Container, } from '@mui/material';
-// import { Translate } from '@mui/icons-material';
-
+import Link  from '@mui/material/Link';
 function Banner() {
     const backgroundStyle = {
         position: 'relative',
@@ -34,7 +32,7 @@ function Banner() {
                     <h2 style={{ fontSize: '30px' }}>STUDY OVERSEAS GLOBAL</h2>
                     <h1 style={{ fontSize: '60px' }}>EDUCATION FAIR</h1>
 
-
+                    <Link style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/konok-majamder/'>
                     <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
                         marginTop: '2%', padding: '15px 55px', color: 'white',
                         fontWeight: '600',
@@ -42,6 +40,7 @@ function Banner() {
                         background: "#2db6a3",
                         borderRadius: '4px'
                     }}>LEARN MORE</button>
+                    </Link>
 
                 </div>
             </div>
