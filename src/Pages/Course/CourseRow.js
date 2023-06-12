@@ -9,7 +9,7 @@ function CourseRow({course, handleModalOpen}) {
         
 
 
-    <Grid   item xs={4} sm={6} md={4}   style={{ padding: '8%' }}>
+    <Grid   item xs={12} sm={6} md={4}   style={{ padding: '8%' }}>
           <Card style={{ borderBottom: "8px solid #f17917" }}>
             <CardActionArea>
               <CardMedia

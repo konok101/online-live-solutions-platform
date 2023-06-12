@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router";
 // import { useSignInWithGithub, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../Pages/Login/Firebase/firebase.init'
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { useSnackbar } from "notistack";
 
 
 
@@ -24,14 +25,15 @@ const Login = () => {
 
     const { signIn, signInWithGoogle, resetPassword } = useContext(AuthContext);
 
-    // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-    // const history = useNavigate();
+    const { enqueueSnackbar } = useSnackbar();
 
-    const handleSignInWithGoogle = () => {
+     const handleSignInWithGoogle = () => {
         signInWithGoogle()
           .then((user) => {
             navigate(from, { replace: true })
           })
+          enqueueSnackbar("Login Success", { variant: 'success' })  
+
       }
 
     const handleOnChange = e => {
@@ -69,7 +71,10 @@ const Login = () => {
         borderRadius: 400,
         width: '40%',
 
+
     }
+
+ 
     return (
         <div style={{ background: 'rgb(112,242,226)', textAlign: 'center' }} >
 
@@ -122,6 +127,7 @@ const Login = () => {
                             <Button variant="link" sx={{}}
                                 onClick={handleForgetPassword}
                             >Forgotten Password?</Button>
+
 
                             <Link style={{ textDecoration: 'none' }} href='/register'>
                                 <Button variant="text" sx={{ ml: '14%', color: 'black' }} >Create New account</Button>
