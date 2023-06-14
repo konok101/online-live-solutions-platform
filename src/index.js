@@ -5,18 +5,25 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import { SnackbarProvider } from 'notistack';
-
+import {
+  Router,
+  Routes,
+  BrowserRouter,
+  Route,
+  useRoutes,
+} from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <SnackbarProvider>
      <React.StrictMode>
-    <AuthProvider>
-      <App />
-    </AuthProvider>
-
+     <App />
+     
   </React.StrictMode>
   </SnackbarProvider>
- 
+  // <BrowserRouter>
+  // <AuthProvider>
+  // </AuthProvider>
+  // </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

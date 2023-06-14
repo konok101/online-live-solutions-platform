@@ -30,11 +30,9 @@ const Login = () => {
 
      const handleSignInWithGoogle = () => {
         signInWithGoogle()
-          .then((user) => {
+          .then(() => {
             navigate(from, { replace: true })
           })
-          enqueueSnackbar("Login Success", { variant: 'success' })  
-
       }
 
     const handleOnChange = e => {
@@ -46,17 +44,17 @@ const Login = () => {
     }
 
     const handleLoginSubmit = e => {
-        signIn(loginData.email, loginData.password)
-        .then((user) => {
-            navigate(from, { replace: true })
-          })
-          
+        signIn(loginData.email, loginData.password,navigate)
+        // .then(({loginData}) => {
+        //     navigate(from, { replace: true })
+        //   })
+          enqueueSnackbar("Login Success", { variant: 'success' })   
         e.preventDefault();
-        
-        
     }
 
-    
+    // if(!loginData.email){
+    //     navigate(from, { replace: false })
+    // }
 
     // const saveUser = 
 

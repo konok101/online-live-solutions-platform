@@ -2,6 +2,7 @@ import React, { createContext, useEffect, useState } from 'react'
 import auth from '../../Pages/Login/Firebase/firebase.init';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, sendEmailVerification, sendPasswordResetEmail, updateProfile, getIdToken } from 'firebase/auth';
 // import { useNavigate,  useLocation } from 'react-router';
+import { useLocation, useNavigate } from "react-router";
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -14,7 +15,9 @@ const AuthProvider = ({ children }) => {
     const [teacher, setTeacher] = useState(false);
     const provider = new GoogleAuthProvider();
 
-    
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     const registerUser = (email, Password, name) => {
         setLoading(true);
@@ -51,11 +54,12 @@ const verifyEmail = () => {
 
 
 
-const signIn = (email, Password) => {
+const signIn = (email, Password,navigate) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, Password)
+    signInWithEmailAndPassword(auth, email, Password)
     .then((userCredential) => {
         setAuthError('');
+        navigate(from, { replace: true })
     })
     .catch((error) => {
         setAuthError(error.message);

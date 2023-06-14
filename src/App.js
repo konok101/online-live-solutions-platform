@@ -36,7 +36,7 @@ import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
 import AddCourse from './Pages/Course/AddCouse';
 import MyEnrollment from './Pages/UserDashboard/MyEnrollment/MyEnrollment';
-
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 
 function Appw() {
@@ -75,9 +75,12 @@ function Appw() {
 function App() {
   return (
 
+    
     <BrowserRouter>
+    <AuthProvider>
       <Appw />
-    </BrowserRouter>
+      </AuthProvider>
+      </BrowserRouter>
     
   );
 }
