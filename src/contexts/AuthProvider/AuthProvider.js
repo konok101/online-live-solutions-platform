@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react'
 import auth from '../../Pages/Login/Firebase/firebase.init';
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, signOut, sendEmailVerification, sendPasswordResetEmail, updateProfile, getIdToken } from 'firebase/auth';
-
+// import { useNavigate,  useLocation } from 'react-router';
 export const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
@@ -14,9 +14,11 @@ const AuthProvider = ({ children }) => {
     const [teacher, setTeacher] = useState(false);
     const provider = new GoogleAuthProvider();
 
-    const registerUser = (email, Password, name, history) => {
+    
+
+    const registerUser = (email, Password, name) => {
         setLoading(true);
-         createUserWithEmailAndPassword(auth, email, Password)
+         return createUserWithEmailAndPassword(auth, email, Password)
             .then(() => {
                  // const user = userCredential.user;
                 setAuthError('');
@@ -30,7 +32,7 @@ const AuthProvider = ({ children }) => {
                 }).then(() => {
                 }).catch((error) => {
                 });
-                history.replace('/');
+                // history.replace('/');
             }).catch((error) => {
                 setAuthError(error.message);
             })
@@ -51,8 +53,30 @@ const verifyEmail = () => {
 
 const signIn = (email, Password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, Password);
+    return signInWithEmailAndPassword(auth, email, Password)
+    .then((userCredential) => {
+        setAuthError('');
+    })
+    .catch((error) => {
+        setAuthError(error.message);
+    })
+    .finally(() => setLoading(false)); 
 }
+
+const signInWithGoogle = (location, navigate) => {
+    setLoading(true);
+    return signInWithPopup(auth, provider)
+        .then((result) => {
+            const user = result.user;
+            //save user to the database
+            saveUser(user.email, user.displayName, 'PUT');
+            setAuthError('');
+        }).catch((error) => {
+            setAuthError(error.message);
+        })
+        .finally(() => setLoading(false));
+}
+
 
 const updateUser = (userInfo) => {
     return updateProfile(user, userInfo);
@@ -74,21 +98,7 @@ const resetPassword = (email) => {
 
 
 
-const signInWithGoogle = (location, navigate) => {
-    setLoading(true);
-    return signInWithPopup(auth, provider)
-        .then((result) => {
-            const user = result.user;
-            //save user to the database
-            saveUser(user.email, user.displayName, 'PUT');
-            setAuthError('');
-            const destination = location?.state?.from || '/';
-            navigate.replace(destination);
-        }).catch((error) => {
-            setAuthError(error.message);
-        })
-        .finally(() => setLoading(false));
-}
+
 
 
  

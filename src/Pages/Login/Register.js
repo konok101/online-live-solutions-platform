@@ -9,7 +9,7 @@ import Navigation from "../Shared/Navigation";
 import Footer from "../Shared/Footer";
 import Link from '@mui/material/Link';
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
-import { useNavigate } from "react-router";
+import {useLocation, useNavigate } from "react-router";
 
 // import useAuth from "../../hooks/useAuth";
 // import { Link, NavLink } from "react-router-dom";
@@ -19,37 +19,15 @@ import { useNavigate } from "react-router";
 
 const Register = () => {
 
-    const history = useNavigate();
+    
     const [loginData, setLoginData] = useState({})
     const [error, setError] = useState('');
     const { registerUser, authError, loading, user, updateUser, verifyEmail } = useContext(AuthContext);
 
 
-    // const handleOnBlur = e => {
-    //     const field = e.target.name;
-    //     const value = e.target.value;
-    //     const newLoginData = { ...loginData };
-    //     newLoginData[field] = value;
-    //     setLoginData(newLoginData);
-    //     createUser(loginData.email, loginData.password)
-    //         .then(result => {
-    //             verifyEmail();
-    //             const user = result.user;
-    //             console.log(user);
-    //             const userInfo = {
-    //                 displayName: loginData.name
-    //             }
-    //             updateUser(userInfo)
-    //             .then(() => {
-    //                 // saveUser();
-    //             })
-    //             .catch(err => console.log(err));   
-    //             // console.log(loginData);
-    //         })
-    //     .catch (error => console.log(error));
-    //     // console.log(newLoginData);
-    //     }
-
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -59,53 +37,8 @@ const Register = () => {
         setLoginData(newLoginData);
     }
 
-
-
-
-
-
-
-
-
-
-    //     const saveUser = (name, email) =>{
-    //         const user = {name,email};
-    //         fetch('http://localhost:5000/users',{
-
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //     .then()
-    // }
-
-
-    // const saveUser = (email, displayName, method) => {
-    //     const user = { email, displayName };
-    //     fetch('http://localhost:5000/users', {
-    //         method: method,
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     })
-    //         .then()
-    // }
-
-
-
-
-
-
-
-
-
-
-
     const handleRegisterSubmit = e => {
-        e.preventDefault();
+        
         if (loginData.password.length < 6) {
             setError('Password Must be at least 6 characters long');
             return;
@@ -120,8 +53,11 @@ const Register = () => {
             alert("your password didn't match!!!");
             return;
         }
-        registerUser(loginData.email, loginData.password, loginData.name, history);
-
+        registerUser(loginData.email, loginData.password, loginData.name)
+        .then((user) => {
+            navigate(from, { replace: true })
+          })
+          e.preventDefault();
 
     }
 
