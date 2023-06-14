@@ -23,10 +23,11 @@ const style = {
 };
 
 const CourseModal = ({ openModal, handleModalClose, setRegSuccess }) => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [success, setSuccess] = useState(false);
-    
-    const [courseInfo, setCourseInfo] = useState();
+    const initialInfo = { name: user.displayName, email: user.email }
+   
+    const [courseInfo, setCourseInfo] = useState(initialInfo);
 
     const handleOnBlur = e => {
 
