@@ -13,17 +13,18 @@ import { useSnackbar } from "notistack";
 
 
 
+
 const Login = () => {
 
     const [loginData, setLoginData] = useState({})
 
-    const [loginError, setLoginError] = useState('');
+    // const [loginError, setLoginError] = useState('');
 
     const location = useLocation();
     const navigate = useNavigate();
-     const from = location.state?.from?.pathname || '/';
+    const from = location.state?.from?.pathname || '/';
 
-    const { signIn, signInWithGoogle, resetPassword } = useContext(AuthContext);
+    const { signIn, authError,signInWithGoogle, resetPassword } = useContext(AuthContext);
 
     const { enqueueSnackbar } = useSnackbar();
 
@@ -42,25 +43,20 @@ const Login = () => {
         const newLoginData = { ...loginData };
         newLoginData[field] = value;
         setLoginData(newLoginData);
-
-        setLoginError('');
-        // console.log(loginData);
-        signIn(loginData.email, loginData.password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-                // navigate(from, { replace: true });
-            })
-            .catch(error => {
-                console.log(error.message)
-                // setLoginError(error.message);
-            });
     }
 
     const handleLoginSubmit = e => {
-        signIn(loginData.email, loginData.password);
+        signIn(loginData.email, loginData.password)
+        .then((user) => {
+            navigate(from, { replace: true })
+          })
+          
         e.preventDefault();
+        
+        
     }
+
+    
 
     // const saveUser = 
 
@@ -139,7 +135,8 @@ const Login = () => {
 
                         {user?.email && <Alert severity="success"  >Login successfully!!! </Alert>} */}
 
-                            {loginError && <Alert severity="error">{loginError}</Alert>}
+                        
+                            {authError && <Alert severity="error">{authError}</Alert>}
                             {/* <p>--------------------------------------</p> */} <br></br>
 
 
