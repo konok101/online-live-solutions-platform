@@ -14,7 +14,9 @@ function CourseRow({course, handleModalOpen}) {
             <CardActionArea>
               <CardMedia
                 component="img"
-                height='90%'
+                // height='90%'
+
+                style={{height:'250px', width:'250px', margin:'auto', paddingTop:'2%'}}
                 image={course?.imageURL}
                 alt="green iguana"
               />
