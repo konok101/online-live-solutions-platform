@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StudentReview = () => {
   const [allReview, setAllReview] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/review`;
+    const url = `https://educational-live-solutions-sever.vercel.app/review`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllReview(data));
@@ -48,7 +48,7 @@ const StudentReview = () => {
     <>
       <Navigation />
       <div style={{ textAlign: 'center', marginTop: '2%' }}>
-        <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Review: {allReview.length} </h1>
+        <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Quearies: {allReview.length} </h1>
       </div>
 
 
@@ -60,9 +60,9 @@ const StudentReview = () => {
               <TableHead>
                 <StyledTableRow>
                   <StyledTableCell></StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Name</StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Email</StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Review</StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Name</StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Quearies</StyledTableCell>
                  
                 </StyledTableRow>
               </TableHead>

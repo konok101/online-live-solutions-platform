@@ -20,7 +20,7 @@
 //     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
 //     const handleDelete = () => {
-//         fetch(`http://localhost:5000/users/${email}`,{
+//         fetch(`https://educational-live-solutions-sever.vercel.app/users/${email}`,{
 //             method:'DELETE',
 //             headers: {
 //                 'authorization': `Bearer ${token}`,
@@ -38,7 +38,7 @@
 //     }
 
 //     const makeAdmin = () => {
-//         fetch(`http://localhost:5000/users/admin/${email}`, {
+//         fetch(`https://educational-live-solutions-sever.vercel.app/users/admin/${email}`, {
 //             method: 'PUT',
 //             headers: {
 //                 'authorization': `Bearer ${token}`,

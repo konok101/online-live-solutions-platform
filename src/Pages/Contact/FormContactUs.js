@@ -5,6 +5,7 @@ import { Button, Typography, Alert, Container } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
+import { useSnackbar } from "notistack";
 
 
 
@@ -23,7 +24,8 @@ const ContactUsForm = () => {
 
     // const { user } = useContext(AuthContext);
     const initialInfo = { review:'',name:'', email:'' }
-    
+    const { enqueueSnackbar } = useSnackbar();
+
     const [userInfo, setUserInfo] = useState(initialInfo);
 
     const handleOnBlur = e => {
@@ -44,7 +46,7 @@ const ContactUsForm = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/review', {
+        fetch('https://educational-live-solutions-sever.vercel.app/review', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -60,6 +62,8 @@ const ContactUsForm = () => {
     });
 
     e.preventDefault();
+    enqueueSnackbar("Contact submit Success", { variant: 'success' })   
+
     }
 
     return (

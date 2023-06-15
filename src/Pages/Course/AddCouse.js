@@ -4,11 +4,15 @@ import axios from 'axios';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Navigation from '../Shared/Navigation';
 import { Box, TextField } from '@mui/material';
+import { useSnackbar } from "notistack";
+
 
 const AddCourse = () => {
     const { user, admin, teacher, logOut } = useContext(AuthContext);
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL,setImageURL] = useState(null);
+    const { enqueueSnackbar } = useSnackbar();
+
 
     const onSubmit = data => {
         console.log(data);
@@ -20,7 +24,7 @@ const AddCourse = () => {
             price   : data?.price,
             socialUrl   : data?.socialUrl
         };
-        const url = `http://localhost:5000/addCourse`;
+        const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -30,6 +34,8 @@ const AddCourse = () => {
             body: JSON.stringify(eventData)
         })
         .then(res => console.log('server side response',res))
+        enqueueSnackbar("Course added Success", { variant: 'success' })   
+
     };
 
 

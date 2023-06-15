@@ -149,7 +149,7 @@ function AdminDashboard() {
           <Link to='/studentReview' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
           <ListItem >
             <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-            <Button style={{ color: '#08558b' }}>Student Review</Button>
+            <Button style={{ color: '#08558b' }}>Contact lists  </Button>
           </ListItem>
         </Link>
         <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>

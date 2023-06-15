@@ -29,7 +29,7 @@ function Course() {
 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/addCourse`;
+    const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCourses(data));
@@ -53,7 +53,7 @@ function Course() {
         justifyContent="space-around"
         alignItems="center"  >
           {
-            courses?.map((course, index) =>
+            courses?.slice(0,6).map((course, index) =>
               <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
             )
           }

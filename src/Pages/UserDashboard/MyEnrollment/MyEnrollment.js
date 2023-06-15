@@ -44,7 +44,7 @@ function MyEnrollment() {
     
              const email = user?.email;
             useEffect(() => {
-                const url = `http://localhost:5000/myCourse?email=${email}`;
+                const url = `https://educational-live-solutions-sever.vercel.app/myCourse?email=${email}`;
                 fetch(url)
                     .then((res) => res.json())
                     .then((data) => setMycourses(data));
