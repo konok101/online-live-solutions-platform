@@ -11,6 +11,7 @@ import Events from './Events/Events';
 import Course from '../Course/Course';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import BannerPart2 from './BannerPart2';
+import MessageBox from '../Shared/MessageBox';
 function Home() {
 
   const homeStyle = {
@@ -34,7 +35,7 @@ function Home() {
       <Events />
       <FaqQuestions />
       <ContactUs />
-
+<MessageBox/>
     </div>
   )
 }

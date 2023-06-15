@@ -14,8 +14,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Link, MenuItem } from '@mui/material';
+import {  MenuItem } from '@mui/material';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
+
 
 const drawerWidth = 240;
 
@@ -51,7 +53,7 @@ function DrawerAppBar(props) {
       onClick={handleDrawerToggle}
       sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Education Live solutions
+        Education Live solutions chk
       </Typography>
       <Divider />
       <List>
@@ -62,9 +64,9 @@ function DrawerAppBar(props) {
           // onClick={handleCloseNavMenu}
           >
             <Box style={{ textAlign: "center", paddingLeft: '25%' }}>
-              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green', }}>Home</Button></Link><br />
-              <Link href="/about"><Button color="inherit" sx={{ color: 'green' }}>About</Button></Link><br />
-              <Link href="/contact"><Button color="inherit" sx={{ color: 'green' }}>Contact</Button></Link><br />
+               <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green', }}>Home </Button></Link><br />  
+              <Link href="/about"><Button color="inherit" sx={{ color: 'green' }}> About <acronym title=""></acronym></Button></Link><br />
+              <Link href="/contact"><Button color="inherit" sx={{ color: 'green' }}>Contact </Button></Link><br />
               <Link href="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
               <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
               <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
@@ -122,20 +124,20 @@ function DrawerAppBar(props) {
 
             <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
 
-              <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home</Button></Link>
-              <Link href="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About</Button></Link>
-              <Link href="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
-              <Link href="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
+              <Link to="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Home </Button></Link>
+              <Link to="/about" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>About </Button></Link>
+              <Link to="/contact" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Contact</Button></Link>
+              <Link to="/dashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Dashboard</Button></Link>
 
-              <Link href="/course" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Course</Button></Link>
+              <Link to="/course" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Course</Button></Link>
 
               {admin &&
-              <Link href="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+              <Link to="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
               }
 
               {
                 teacher && 
-                <Link href="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+                <Link to="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
 
               }
 
@@ -149,7 +151,7 @@ function DrawerAppBar(props) {
                 user?.email ?
                     <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}>Logout</Button>
                   :  
-                    <Link href="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
+                    <Link to="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
               }
 
             </Box>

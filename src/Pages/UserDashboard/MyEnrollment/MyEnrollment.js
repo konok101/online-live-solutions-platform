@@ -41,7 +41,7 @@ function MyEnrollment() {
     const { user  } = useContext(AuthContext);
 
      const [myCourses, setMycourses] = useState([]);
-    
+    console.log('myCourses', myCourses);
              const email = user?.email;
             useEffect(() => {
                 const url = `https://educational-live-solutions-sever.vercel.app/myCourse?email=${email}`;
