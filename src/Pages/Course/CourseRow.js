@@ -27,7 +27,7 @@ function CourseRow({course, handleModalOpen}) {
                       {course?.teacherName?.slice(0,12)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                    {course?.course}
+                    {course?.couseName}
                     </Typography>
                   </Grid>
                   <Grid container justifyContent='flex-end' item xs={4} sm={6} md={8} style={{}} >
