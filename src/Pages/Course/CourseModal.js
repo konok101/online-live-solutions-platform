@@ -45,7 +45,7 @@ const CourseModal = ({ openModal, handleModalClose, setRegSuccess }) => {
             ...courseInfo,
         }
         // send to the server
-        fetch('https://educational-live-solutions-sever.vercel.app/courseSubmit', {
+        fetch('http://localhost:5000/courseSubmit', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

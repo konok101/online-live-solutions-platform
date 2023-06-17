@@ -31,6 +31,12 @@
    background-color: #2db6a3;
    /* color: white; */
 }
+.readMoreButtonHoverBanner:hover{
+  border: 4px solid wheat;
+  color: #fff;
+  background-color: rgb(34,37,71);
+  /* color: white; */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

@@ -32,7 +32,7 @@ function Banner() {
                     <h2 style={{ fontSize: '30px' }}>STUDY OVERSEAS GLOBAL</h2>
                     <h1 style={{ fontSize: '60px' }}>EDUCATION FAIR</h1>
 
-                    <Link style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/konok-majamder/'>
+                    <Link style={{ textDecoration: 'none' }} target="_blank" href='https://www.linkedin.com/in/konok-majamder/'>
                     <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
                         marginTop: '2%', padding: '15px 55px', color: 'white',
                         fontWeight: '600',

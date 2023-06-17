@@ -20,7 +20,7 @@ function BannerPart2() {
           <h2  >REQUEST A BROCHURE</h2>
           <p>Entry level, degree, format, language, campus...</p>
 
-          <Link style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/konok-majamder/'>
+          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
 
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
             marginTop: '2%', padding: '8px 35px',  
@@ -36,7 +36,7 @@ function BannerPart2() {
         <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' , color:'#fff',borderRight:  "2px solid #e7dcd9"}}>
           <h2>CHOOSE A PROGRAMME</h2>
           <p>Entry level, degree, format, language, campus...</p>
-          <Link style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/konok-majamder/'>
+          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
             marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
@@ -49,7 +49,7 @@ function BannerPart2() {
         <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color:'#fff' }}>
           <h2>SCHOLARSHIPS</h2>
           <p>Our commitment to excellence and diversity</p>
-          <Link style={{ textDecoration: 'none' }} href='https://www.linkedin.com/in/konok-majamder/'>
+          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
             marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',

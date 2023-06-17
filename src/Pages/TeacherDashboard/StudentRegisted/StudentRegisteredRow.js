@@ -17,7 +17,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
     // const handleDelete = () => {
-    //     fetch(`https://educational-live-solutions-sever.vercel.app/courseSubmit/${email}`,{
+    //     fetch(`http://localhost:5000/courseSubmit/${email}`,{
     //         method:'DELETE',
     //         headers: {
     //             'authorization': `Bearer ${token}`,

@@ -15,7 +15,7 @@ const AddTeacher = ({ course, setCourse }) => {
 
     const handleTeacherSubmit = e => {
         const user = { email };
-        fetch('https://educational-live-solutions-sever.vercel.app/users/addTeacher', {
+        fetch('http://localhost:5000/users/addTeacher', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
