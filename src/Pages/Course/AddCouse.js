@@ -24,7 +24,7 @@ const AddCourse = () => {
             price   : data?.price,
             socialUrl   : data?.socialUrl
         };
-        const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
+        const url = `http://localhost:5000/addCourse`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
