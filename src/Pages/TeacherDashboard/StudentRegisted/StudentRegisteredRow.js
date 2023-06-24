@@ -9,33 +9,15 @@ import TableRow from '@mui/material/TableRow';
 import { Button , Alert } from '@mui/material';
 
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { Link } from 'react-router-dom';
 
 
 const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher} = regStudent;
+    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher, approveData} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
-    
-    // const handleDelete = () => {
-    //     fetch(`http://localhost:5000/courseSubmit/${email}`,{
-    //         method:'DELETE',
-    //         headers: {
-    //             'authorization': `Bearer ${token}`,
-    //             'content-type': 'application/json'
-    //         }
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=> {
-    //         console.log(data);
-    //         if(data.deletedCount){
-    //             setDeleteSuccess(true);
-    //         }
-    //     })
-
-    // }
-
-   
+ 
 
     return (
         
@@ -68,6 +50,19 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
           {institution}
+        </StyledTableCell>
+        <StyledTableCell align='center' style={{display:"flex"}} component="th" scope="row">
+          {approveData && <>Approved</>}
+          {!approveData && <>pending</>}
+        
+          {approveData && <><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Message</Button></>}
+         
+     
+          {approveData &&
+          
+          <>              <Link to="/addReview" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          </>}
+         
         </StyledTableCell>
         
 

@@ -47,14 +47,14 @@ const StudentRegisted = () => {
     return (
         <>
             <Navigation />
-            <div style={{ textAlign: 'center', marginTop: '4%' }}>
+            <div style={{ textAlign: 'center', marginTop: '4%', width: '97vw' }}>
                 <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {regStudent.length} </h1>
             </div>
 
 
             <Container style={{ margin: '4%' }}>
                 <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-                    <TableContainer sx={{ height: '80vh', width: '80vw' }}>
+                    <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
                             <TableHead>
@@ -95,7 +95,7 @@ const StudentRegisted = () => {
                 </Paper>
             </Container>
 
-
+ 
             <Footer />
         </>
     );

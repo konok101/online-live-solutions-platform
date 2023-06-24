@@ -12,12 +12,13 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution} = regStudent;
+    const {name, email, phnNumber,TrxID,classes,subject,institution, _id, approveData} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
-    const handleDelete = () => {
-        fetch(`http://localhost:5000/courseSubmit/${email}`,{
+    const handleDelete = (id) => {
+      console.log('id',id);
+        fetch(`http://localhost:5000/myCourse/${id}`,{
             method:'DELETE',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -33,6 +34,25 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
         })
 
     }
+
+
+    const handleApprove = (id) => {
+      fetch(`http://localhost:5000/myCourse/${id}`, {
+          method: 'PUT',
+          headers: {
+              'authorization': `Bearer ${token}`,
+              'content-type': 'application/json'
+          }
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log(data);
+          if(data.modifiedCount){
+              /* setAdminSuccess(true); */
+          }
+      })
+  }
+
 
    
 
@@ -66,12 +86,18 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
           {institution}
         </StyledTableCell>
         
-
-        
-        
-        <StyledTableCell ><Button onClick={handleDelete} variant="contained" size="small" style={{fontWeight: '400',
+        <StyledTableCell style={{display:"flex"}}><Button onClick={()=>handleDelete(_id)} variant="contained" size="small" style={{fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(198,42,66), rgb(198,105,42))',
-        borderRadius: '15px'}}>Remove </Button></StyledTableCell>
+        borderRadius: '15px'}}>Remove </Button>
+        
+         { approveData !=='approve' && <Button onClick={()=>handleApprove(_id)} variant="contained" size="small" style={{fontWeight: '400',marginLeft:"10px",
+        background: 'MediumSeaGreen',
+        borderRadius: '15px'}}>Approve </Button>
+
+         }
+        
+        </StyledTableCell>
+
         </StyledTableRow>
 
         {deleteSuccess && <Alert severity="success"  >{regStudent.displayName} is deleted!!...</Alert>}

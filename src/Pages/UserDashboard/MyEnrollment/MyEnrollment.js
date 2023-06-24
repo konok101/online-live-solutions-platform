@@ -54,12 +54,12 @@ function MyEnrollment() {
         <>
             <Navigation />
 
-             <Container style={{width:"99%", margin: 'auto', marginTop:"70px" }}>
+             <Container style={{width:"100%", margin: 'auto', marginTop:"70px" }}>
              <h1 style={{width:"250px", margin:"auto", marginBottom:"10px"}}>My Courses</h1>
 
                 <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                 {
-                    myCourses?.length > 0 ?     <TableContainer sx={{ height: '80vh',  }}>
+                    myCourses?.length > 0 ?     <TableContainer sx={{ height: '80vh', width:"100%"  }}>
                     <Table stickyHeader aria-label="sticky table"
                         position="static">
                         <TableHead>
@@ -73,8 +73,8 @@ function MyEnrollment() {
                                 <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Class</StyledTableCell>
                                 <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
                                 <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Institution</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Status</StyledTableCell>
-                                
+                                <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34'  }}>Status</StyledTableCell>
+                               
 
                                
                                 <StyledTableCell></StyledTableCell>
