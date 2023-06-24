@@ -43,23 +43,25 @@ function Course() {
       
 
       <Typography  style={{ textAlign: 'center', marginTop:'5%', color:'#756c08' }} sx={{ m: 2 }} variant="h4" component="h2">
-      Our Tutors Available Here for Today
+      Our Tutors Available Here for Today 
                         </Typography>
 
 
-
-                        <div>
-      <Grid container direction="row"
-        justifyContent="space-around"
-        alignItems="center"  >
-          {
-            courses?.map((course, index) =>
-              <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
-            )
-          }
-        </Grid>
-       
-        </div>
+{
+  courses?.length > 0 ?               <div>
+  <Grid container direction="row"
+    justifyContent="space-around"
+    alignItems="center"  >
+      {
+        courses?.map((course, index) =>
+          <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
+        )
+      }
+    </Grid>
+   
+    </div> :  <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No avaible course</div>
+}
+           
 
       <CourseModal
       openModal={openModal}

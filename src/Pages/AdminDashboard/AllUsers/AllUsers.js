@@ -47,14 +47,14 @@ const AllUsers = () => {
     return (
         <>
             <Navigation />
-            <div style={{ textAlign: 'center', marginTop: '2%' }}>
+            <div style={{ textAlign: 'center', marginTop: '100px' }}>
                 <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Users: {allUser.length} </h1>
             </div>
 
 
-            <Container style={{ margin: '4%' }}>
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-                    <TableContainer sx={{ height: '80vh', width: '80vw' }}>
+            <Container style={{ marginTop: '10px'}}>
+                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"100%",  m:"auto"}}>
+                    <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
                             <TableHead>
