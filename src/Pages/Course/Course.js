@@ -46,20 +46,22 @@ function Course() {
         Our Tutors Available Here for Today
       </Typography>
 
+{
+  courses?.length >0  ?   <div>
+  <Grid container direction="row"
+    justifyContent="space-around"
+    alignItems="center"  >
+      {
+        courses?.slice(0,6).map((course, index) =>
+          <CourseRow index={index} handleModalOpen={handleModalOpen} course={course}></CourseRow>
+        )
+      }
+    </Grid>
+   
+    </div> : <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No avaible course</div>
+}
 
-
-      <div>
-      <Grid container direction="row"
-        justifyContent="space-around"
-        alignItems="center"  >
-          {
-            courses?.slice(0,6).map((course, index) =>
-              <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
-            )
-          }
-        </Grid>
-       
-        </div>
+    
        
 
 

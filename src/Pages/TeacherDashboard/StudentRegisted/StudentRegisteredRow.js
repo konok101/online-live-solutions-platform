@@ -12,10 +12,11 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution} = regStudent;
+    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
+    
     // const handleDelete = () => {
     //     fetch(`http://localhost:5000/courseSubmit/${email}`,{
     //         method:'DELETE',
@@ -50,6 +51,9 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
           {email}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
+          {courseTeacher}
+        </StyledTableCell>
+        <StyledTableCell component="th" scope="row">
         {TrxID}
         
         </StyledTableCell>
@@ -60,7 +64,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
           {classes}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
-          {subject}
+          {subject} {couseName}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
           {institution}

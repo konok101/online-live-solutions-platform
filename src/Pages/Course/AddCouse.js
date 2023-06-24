@@ -22,6 +22,7 @@ const AddCourse = () => {
             couseName     : data?.couseName,
             hours   : data?.hours,
             price   : data?.price,
+            teachingArea   : data?.teachingArea,
             socialUrl   : data?.socialUrl
         };
         const url = `http://localhost:5000/addCourse`;
@@ -77,6 +78,11 @@ const AddCourse = () => {
                             <TextField
                             style={{ margin: 18, width: '50vw' }} required   label="Couse Name"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("couseName")}
+                        />                        <br/>
+
+<TextField
+                            style={{ margin: 18, width: '50vw' }} required   label="Teaching Area"  id="standard-basic"  name='name'
+                             textColor="white" variant="standard"  {...register("teachingArea")}
                         />                        <br/>
 
 <TextField
