@@ -34,13 +34,13 @@ const WhyChose = () => {
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
                                              <Box style={{paddingTop:'10%'}}  >
-                                                  Meals Provided
+                                                  Live Classes
                                              </Box>
-                                             <Tooltip title=" The propagation of universities was not necessarily a steady progression.
+                                             <Tooltip  title=" The propagation of universities was not necessarily a steady progression.
 
                                              "
                                                   ____
-                                                  placement="left" sx={{ mt: 5 }}>
+                                                  placement="left"  sx={{ mt: 5,  }}>
                                                   <Button>
                                                        <Box sx={{
                                                             ml: 2, borderRadius: '50%', ":hover": {
@@ -79,7 +79,7 @@ const WhyChose = () => {
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
                                              <Box style={{paddingTop:'10%'}} >
-                                             Transportation
+                                             Record Class
                                              </Box>
                                              <Tooltip title=" Provided tip Meals tip Meals Provided tip"
                                                   ____
