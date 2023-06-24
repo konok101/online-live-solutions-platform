@@ -1,6 +1,6 @@
 import { Button, Grid } from '@mui/material'
 import React from 'react'
-import Link  from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 
 function BannerPart2() {
   return (
@@ -17,26 +17,26 @@ function BannerPart2() {
         justifyContent="center"
         alignItems="center" spacing={{ xs: 2, md: 3 }} style={{ paddingTop: '2%' }}>
         <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color:'#fff',borderRight:  "2px solid #e7dcd9", }}>
-          <h2  >REQUEST A BROCHURE</h2>
-          <p>Entry level, degree, format, language, campus...</p>
+          <h2>OUR  TEACHERS</h2>
+          <p style={{marginLeft:'4%',marginRight:'4%'}}>A teacher is a person who helps students to acquire knowledge, competence or virtue.</p>
 
-          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
+          <Link style={{ textDecoration: 'none' }} to="/ourTeachers" target="_blank" >
 
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
             marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
             fontSize: '18px',
             borderRadius: '4px',
-             }}>VIEW MORE</button>
+             }}>VIEW TEACHERS</button>
 
              </Link>
 
         </Grid>
 
         <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center' , color:'#fff',borderRight:  "2px solid #e7dcd9"}}>
-          <h2>CHOOSE A PROGRAMME</h2>
-          <p>Entry level, degree, format, language, campus...</p>
-          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
+          <h2>APPLIY FOR A TEACHER</h2>
+          <p style={{paddingLeft:'8%',paddingRight:'8%'}}>Submit your formal document for job candidates to fill out in response to this open position. </p>
+          <Link style={{ textDecoration: 'none' }} to="/applyForTeacher" target="_blank"  >
           <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
             marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
@@ -47,10 +47,12 @@ function BannerPart2() {
         </Grid>
 
         <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color:'#fff' }}>
-          <h2>SCHOLARSHIPS</h2>
-          <p>Our commitment to excellence and diversity</p>
-          <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
-          <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
+          <h2>REVIEWS</h2>
+          <p style={{paddingLeft:'8%',paddingRight:'8%'}}>This reviews means the process of someone reading, checking and giving his or her opinion. </p>
+          <Link style={{ textDecoration: 'none' }} 
+          to="/ourReviews" target="_blank"  >
+          <button variant="outlined" className='viewMoreButtonHoverBanner' //type="submit"
+           style={{
             marginTop: '2%', padding: '8px 35px',  
             fontWeight: '600',
             fontSize: '18px',

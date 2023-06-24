@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {Fragment}  from 'react';
+import React, { Fragment } from 'react';
 import Home from './Pages/Home/Home';
 // import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import { Box } from '@mui/material';
@@ -37,27 +37,34 @@ import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentReg
 import AddCourse from './Pages/Course/AddCouse';
 import MyEnrollment from './Pages/UserDashboard/MyEnrollment/MyEnrollment';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import OurTeachers from './Pages/Home/OurTeachers/OurTeachers.js';
+import ApplyForTeacher from './Pages/Home/ApplyForTeacher/ApplyForTeacher';
+import Reviews from './Pages/Home/Reviews/Reviews';
+import LearnMore from './Pages/Home/LearnMore/LearnMore';
 
 
 function Appw() {
-  
+
   let routes = useRoutes([
-    
+
     { path: "/", element: <Home /> },
     { path: "/home", element: <Home /> },
     { path: "/about", element: <AboutUs /> },
     { path: "/contact", element: <ContactUs /> },
-    { path: "/review", element: <Review/> },
-    { path: "/studentReview", element: <StudentReview/> },
-    { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute>},
-    { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
+    { path: "/review", element: <Review /> },
+    { path: "/studentReview", element: <StudentReview /> },
+    { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute> },
+    { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute> },
     { path: "/login", element: <Login /> },
-    { path: "/teacherDashboard", element: <PrivateRoute>  <TeacherDashboard/>
-    </PrivateRoute>
-   },
+    {
+      path: "/teacherDashboard", element: <PrivateRoute>  <TeacherDashboard />
+      </PrivateRoute>
+    },
 
-    { path: "/adminDashboard", 
-    element: <AdminRoute><AdminDashboard/> </AdminRoute>  },
+    {
+      path: "/adminDashboard",
+      element: <AdminRoute><AdminDashboard /></AdminRoute>
+    },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
     { path: "/addCourse", element: <AddCourse /> },
@@ -68,84 +75,27 @@ function Appw() {
     { path: "/regStudent", element: <RegStudent /> },
     { path: "/regStudentTeacher", element: <StudentRegisted /> },
     { path: "/myEnrollment", element: <MyEnrollment /> },
+    { path: "/ourTeachers", element: <OurTeachers /> },
+    { path: "/applyForTeacher", element: <ApplyForTeacher /> },
+    { path: "/ourReviews", element: <Reviews /> },
+    { path: "/learnMore", element: <LearnMore /> },
+
   ]);
-  return routes; 
+  return routes;
 };
 
 function App() {
+  
   return (
 
-    
+
     <BrowserRouter>
-    <AuthProvider>
-      <Appw />
+      <AuthProvider>
+        <Appw />
       </AuthProvider>
-      </BrowserRouter>
-    
+    </BrowserRouter>
+
   );
 }
 
 export default App;
-
-
-// function App() {
-//     return (
-//         <div>
-//         <Router>
-       
-//           <Routes>
-//           <Route path='/'  element={<Home/>} />
-//             </Routes>
-//             </Router>
-            
-          
-//         </div>
-//     );
-// }
-// export default App;
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const Appw = () => {
-//   let routes = useRoutes([
-//     { path: "/", element: <Home /> },
-//     { path: "/home", element: <Home /> },
-//     { path: "/about", element: <AboutUs /> },
-//     { path: "/contact", element: <ContactUs /> },
-//     { path: "/review", element: <Review/> },
-//     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute>},
-//     { path: "/login", element: <Login /> },
-//     { path: "/teacherDashboard", element: <TeacherDashboard/> },
-//     { path: "/adminDashboard", 
-//     element: <AdminDashboard />  },
-//     { path: "/register", element: <Register /> },
-//     { path: "/math", element: <Math /> },
-//     { path: "/english", element: <English /> },
-//     { path: "/science", element: <Science /> },
-//     { path: "/addTeacher", element: <AddTeacher /> },
-//     { path: "/allUsers", element: <AllUsers /> },
-//   ]);
-//   return routes; 
-// };
-
-// function App() {
-//   return (
-
-//     <Router>
-//       <Appw />
-//     </Router>
-    
-//   );
-// }
-
-// export default App;
