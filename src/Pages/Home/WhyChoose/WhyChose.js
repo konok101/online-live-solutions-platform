@@ -11,6 +11,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Tooltip from '@mui/material/Tooltip';
+import { CheckCircle, EmergencyRecording, LaptopChromebook, MusicVideo, Stairs } from '@mui/icons-material';
 const Item = styled(Paper)(({ theme }) => ({
      backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
      ...theme.typography.body2,
@@ -33,12 +34,10 @@ const WhyChose = () => {
 
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
-                                             <Box style={{paddingTop:'10%'}}  >
+                                             <Box style={{paddingTop:'10%', paddingRight:'2%', marginLeft:"9%"  }}  >
                                                   Live Classes
                                              </Box>
-                                             <Tooltip  title=" The propagation of universities was not necessarily a steady progression.
-
-                                             "
+                                             <Tooltip  title=" We are provide live classes and fast solutions "
                                                   ____
                                                   placement="left"  sx={{ mt: 5,  }}>
                                                   <Button>
@@ -49,20 +48,24 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <LocalDiningIcon sx={{ fontSize: 70, 
+                                                            <EmergencyRecording sx={{ fontSize: 70, 
                                                                  padding:'22%', borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
                                         </Grid>
 
+
+
+
+
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
-                                             <Box style={{paddingTop:'10%',paddingRight:'12%' }} >
-                                             Lessons
+                                             <Box style={{paddingTop:'10%', paddingRight:'1%' }}  >
+                                              Emergency Support
                                              </Box>
-                                             <Tooltip title=" Provided tip Meals tip Meals Provided tip"
+                                             <Tooltip  title=" If any one need emergency support. We can provide it "
                                                   ____
-                                                  placement="left" sx={{ mt: 5 }}>
+                                                  placement="left"  sx={{ mt: 5,  }}>
                                                   <Button>
                                                        <Box sx={{
                                                             ml: 2, borderRadius: '50%', ":hover": {
@@ -71,15 +74,47 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <PublicIcon sx={{ fontSize: 70,  padding:'22%',borderRadius: '50%' }} />
+                                                              <LaptopChromebook sx={{ fontSize: 70,  padding:'22%',borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
                                         </Grid>
 
                                         <Grid sx={{ display: 'flex', alignItems: "center" }}>
+                                             <Box style={{paddingTop:'10%', paddingRight:'2%',  marginLeft:"6%"  }}  >
+                                              Record classes
+                                             </Box>
+                                             <Tooltip  title=" We  can record class and provide this record class "
+                                                  ____
+                                                  placement="left"  sx={{ mt: 5,  }}>
+                                                  <Button>
+                                                       <Box sx={{
+                                                            ml: 2, borderRadius: '50%', ":hover": {
+                                                                 bgcolor: "#2db6a3",
+                                                                 color: "white"
+                                                            },
+                                                            border: "2px solid #2db6a3"
+                                                       }}     >
+                                                                                                         
+                                                       
+                                        <MusicVideo  sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+
+                                                       </Box>
+                                                  </Button>
+                                             </Tooltip>
+                                        </Grid>
+
+
+
+
+
+
+
+
+                               
+                                        <Grid sx={{ display: 'flex', alignItems: "center" }}>
                                              <Box style={{paddingTop:'10%'}} >
-                                             Record Class
+                                          
                                              </Box>
                                              <Tooltip title=" Provided tip Meals tip Meals Provided tip"
                                                   ____
@@ -92,7 +127,6 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <DirectionsBusIcon  sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
@@ -107,7 +141,7 @@ const WhyChose = () => {
                               <Stack spacing={5}>
                                    <Grid sx={{ display: 'flex', alignItems: "center" }} style={{ marginLeft: "120px" }}>
 
-                                        <Tooltip title=" Provided tip Meals tip Meals Provided tip"
+                                        <Tooltip title=" We are arrange career session every month"
                                              ____
                                              placement="right" sx={{ mt: 5 }}>
                                              <Button>
@@ -118,19 +152,19 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <DirectionsBusIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <Stairs sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
                                         <Box style={{paddingTop:'10%',paddingLeft:'8%'}}>
 
-                                        Full Day Session
+                                        Career Session
                                         </Box>
                                    </Grid>
 
                                    <Grid sx={{ display: 'flex', alignItems: "center" }} style={{ marginLeft: "120px" }}>
 
-                                        <Tooltip title=" Provided tip Meals tip Meals Provided tip"
+                                        <Tooltip title="We are provide special education for enroll users"
                                              ____
                                              placement="right" sx={{ mt: 5 }}>
                                              <Button>
@@ -141,7 +175,7 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <BookmarkIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <SchoolIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
@@ -156,7 +190,7 @@ const WhyChose = () => {
 
                                    <Grid sx={{ display: 'flex', alignItems: "center", ml: 5 }} style={{ marginLeft: "120px" }}>
 
-                                        <Tooltip title=" Provided tip Meals tip Meals Provided tip"
+                                        <Tooltip title="We are provided  qualified teachers , who are studied reputed university "
                                              ____
                                              placement="right" sx={{ mt: 5 }}>
                                              <Button>
@@ -167,7 +201,7 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <SchoolIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <CheckCircle sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>

@@ -114,7 +114,7 @@ function BannerPart2() {
             <h2>OUR  TEACHERS</h2>
             <p style={{ marginLeft: '4%', marginRight: '4%' }}>A teacher is a person who helps students to acquire knowledge, competence or virtue.</p>
 
-            <Link style={{ textDecoration: 'none' }} to="/ourTeachers" target="_blank" >
+            <Link style={{ textDecoration: 'none' }} to="/ourTeachers"  >
 
               <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
                 marginTop: '2%', padding: '8px 35px',
@@ -130,7 +130,7 @@ function BannerPart2() {
           <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color: '#fff', borderRight: "2px solid #e7dcd9" }}>
             <h2>APPLIY FOR A TEACHER</h2>
             <p style={{ paddingLeft: '8%', paddingRight: '8%' }}>Submit your formal document for job candidates to fill out in response to this open position. </p>
-            <Link style={{ textDecoration: 'none' }} to="/applyForTeacher" target="_blank"  >
+            <Link style={{ textDecoration: 'none' }} to="/applyForTeacher"    >
               <button variant="outlined" className='viewMoreButtonHoverBanner' type="submit" style={{
                 marginTop: '2%', padding: '8px 35px',
                 fontWeight: '600',
@@ -144,7 +144,7 @@ function BannerPart2() {
             <h2>REVIEWS</h2>
             <p style={{ paddingLeft: '8%', paddingRight: '8%' }}>This reviews means the process of someone reading, checking and giving his or her opinion. </p>
             <Link style={{ textDecoration: 'none' }}
-              to="/ourReviews" target="_blank"  >
+              to="/ourReviews"   >
               <button variant="outlined" className='viewMoreButtonHoverBanner' //type="submit"
                 style={{
                   marginTop: '2%', padding: '8px 35px',

@@ -9,7 +9,7 @@ function FaqQuestions() {
     const [faqs, setfaqs] = useState([
         {
             question: "	Do you have the Government approval?",
-            answer: 'Yes. Education live solutions is approved by the Government of Bangladesh on September 2012.',
+            answer: 'No. Education live solutions is not approved by the Government of Bangladesh',
             open: true
         },
         {
@@ -24,7 +24,7 @@ function FaqQuestions() {
         },
         {
             question: "	Contact Number?",
-            answer: '+88 01795598566, 01947473492',
+            answer: '+8801795598566, 01947473492',
             open: false
         },
         {

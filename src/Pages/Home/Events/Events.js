@@ -43,7 +43,7 @@ function Events() {
                                           <Box>
                                                 <Box style={{ display: 'flex' }}>
                                                       <AccessTimeIcon style={{ fontSize: '35px', color: 'white', }} />
-                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  10th july 2023, 10 p.m
+                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  10th Augest 2023, 10 p.m
                                                       </h3>
                                                 </Box>
 
@@ -67,7 +67,7 @@ function Events() {
                                           <Box>
                                                 <Box style={{ display: 'flex' }}>
                                                       <AccessTimeIcon style={{ fontSize: '35px', color: 'white', }} />
-                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  10th july 2023, 10 p.m
+                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  12th September 2023, 10 p.m
                                                       </h3>
                                                 </Box>    <Card sx={{
                                                       minWidth: 275, bgcolor: "#2db6a3", color: "white", ":hover": {
@@ -78,7 +78,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>web develpoment</span> course. Discuss and dicount first 10 enrolled this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Software develpoment</span> course. Discuss and dicount first 10 enrolled this course.
                                                             </Typography>
                                                       </CardContent>
 
@@ -89,7 +89,7 @@ function Events() {
                                           <Box>
                                                 <Box style={{ display: 'flex' }}>
                                                       <AccessTimeIcon style={{ fontSize: '35px', color: 'white', }} />
-                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  10th july 2023, 10 p.m
+                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  11th October 2023, 10 p.m
                                                       </h3>
                                                 </Box>       <Card sx={{
                                                       minWidth: 275, bgcolor: "#2db6a3", color: "white", ":hover": {
@@ -100,7 +100,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>web develpoment </span> course. Discuss and dicount first 10 enrolled  this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}> Digital Marketing </span> course. Discuss and dicount first 10 enrolled  this course.
                                                             </Typography>
                                                       </CardContent>
 
@@ -111,7 +111,7 @@ function Events() {
                                           <Box>
                                                 <Box style={{ display: 'flex' }}>
                                                       <AccessTimeIcon style={{ fontSize: '35px', color: 'white', }} />
-                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  10th july 2023, 10 p.m
+                                                      <h3 style={{ color: '#FFFFFF', marginLeft: '9px', }}>  13th November 2023, 10 p.m
                                                       </h3>
                                                 </Box>      <Card sx={{
                                                       minWidth: 275, bgcolor: "#2db6a3", color: "white", ":hover": {
@@ -122,7 +122,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>web develpoment</span> course. Discuss and dicount  first  10 enrolled  this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Higher Education  </span> course. Discuss and dicount  first  10 enrolled  this course.
                                                             </Typography>
                                                       </CardContent>
 
