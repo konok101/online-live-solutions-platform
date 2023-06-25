@@ -11,6 +11,7 @@ import BookmarkIcon from '@mui/icons-material/Bookmark';
 import SchoolIcon from '@mui/icons-material/School';
 import LocalDiningIcon from '@mui/icons-material/LocalDining';
 import Tooltip from '@mui/material/Tooltip';
+import { CheckCircle, EmergencyRecording, LaptopChromebook, MusicVideo, Stairs } from '@mui/icons-material';
 const Item = styled(Paper)(({ theme }) => ({
      backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
      ...theme.typography.body2,
@@ -47,7 +48,7 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                            <LocalDiningIcon sx={{ fontSize: 70, 
+                                                            <EmergencyRecording sx={{ fontSize: 70, 
                                                                  padding:'22%', borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
@@ -73,7 +74,7 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                              <PublicIcon sx={{ fontSize: 70,  padding:'22%',borderRadius: '50%' }} />
+                                                              <LaptopChromebook sx={{ fontSize: 70,  padding:'22%',borderRadius: '50%' }} />
                                                        </Box>
                                                   </Button>
                                              </Tooltip>
@@ -94,7 +95,9 @@ const WhyChose = () => {
                                                             },
                                                             border: "2px solid #2db6a3"
                                                        }}     >
-                                                                                                                        <DirectionsBusIcon  sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                                                                         
+                                                       
+                                        <MusicVideo  sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
 
                                                        </Box>
                                                   </Button>
@@ -138,7 +141,7 @@ const WhyChose = () => {
                               <Stack spacing={5}>
                                    <Grid sx={{ display: 'flex', alignItems: "center" }} style={{ marginLeft: "120px" }}>
 
-                                        <Tooltip title=" We are arrange carrer session every month"
+                                        <Tooltip title=" We are arrange career session every month"
                                              ____
                                              placement="right" sx={{ mt: 5 }}>
                                              <Button>
@@ -149,13 +152,13 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <DirectionsBusIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <Stairs sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
                                         <Box style={{paddingTop:'10%',paddingLeft:'8%'}}>
 
-                                        Carrer Session
+                                        Career Session
                                         </Box>
                                    </Grid>
 
@@ -172,7 +175,7 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <BookmarkIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <SchoolIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
@@ -198,7 +201,7 @@ const WhyChose = () => {
                                                        },
                                                        border: "2px solid #2db6a3"
                                                   }}     >
-                                                       <SchoolIcon sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
+                                                       <CheckCircle sx={{ fontSize: 70, padding:'22%', borderRadius: '50%' }} />
                                                   </Box>
                                              </Button>
                                         </Tooltip>
