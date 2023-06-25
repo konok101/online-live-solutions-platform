@@ -1,9 +1,10 @@
-import { Card, Grid, Link } from '@mui/material'
+import { Card, Grid} from '@mui/material'
 import { Container } from '@mui/system'
 import React from 'react'
 import ambulance from '../../images/service-1.png';
 import note from '../../images/service-2.png';
 import injection from '../../images/service-3.png';
+import { Link } from 'react-router-dom';
 
 function Services() {
   return (
@@ -28,7 +29,7 @@ function Services() {
         <img  width="120px" style={{paddingTop:'6%'}}  src={injection}></img>
         <h4 >Live Solutions</h4>
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-        <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
+        <Link style={{ textDecoration: 'none' }} to="/liveSolution" target="_blank"  >
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
          
           padding: '8px 35px',  
@@ -46,7 +47,8 @@ function Services() {
         <img  width="100px" style={{paddingTop:'7%'}} src={ambulance} ></img>
         <h4 >Problem Solving</h4>
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
-        <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
+        <Link style={{ textDecoration: 'none' }} 
+        to="/problemSolving" target="_blank">
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
           padding: '8px 35px',  
           fontWeight: '600',
@@ -64,7 +66,7 @@ function Services() {
         <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.
         </p>
 
-        <Link style={{ textDecoration: 'none' }} target="_blank"  href='https://www.linkedin.com/in/konok-majamder/'>
+        <Link style={{ textDecoration: 'none' }} to="/24hSupport" target="_blank">
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
            padding: '8px 35px',  
           fontWeight: '600',

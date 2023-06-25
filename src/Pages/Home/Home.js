@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import Banner from './Banner/Banner';
 import Navigation from '../Shared/Navigation';
 import Services from './Services';
 import FaqQuestions from './FAQ/FaqQuestions';
@@ -13,9 +12,9 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import BannerPart2 from './BannerPart2';
 import MessageBox from '../Shared/MessageBox';
 import CarouselBanner from './Banner/CarouselBanner';
-import { useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
+// import { useCallback } from "react";
+// import Particles from "react-tsparticles";
+// import { loadFull } from "tsparticles";
 
 
 
@@ -29,20 +28,20 @@ function Home() {
   }
   const { user, admin, teacher, logOut } = useContext(AuthContext);
 
-  const particlesInit = useCallback(async engine => {
-    console.log(engine);
-    await loadFull(engine);
-  }, []);
+  // const particlesInit = useCallback(async engine => {
+  //   console.log(engine);
+  //   await loadFull(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(async container => {
-    await console.log(container);
-  }, []);
+  // const particlesLoaded = useCallback(async container => {
+  //   await console.log(container);
+  // }, []);
 
 
   return (
     <div style={homeStyle}>
 
-      <Particles
+      {/*<Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
@@ -114,7 +113,7 @@ function Home() {
           },
           detectRetina: true,
         }}
-      />
+      />*/}
       <Navigation />
 
       <CarouselBanner />

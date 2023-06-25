@@ -42,6 +42,10 @@ import ApplyForTeacher from './Pages/Home/ApplyForTeacher/ApplyForTeacher';
 import Reviews from './Pages/Home/Reviews/Reviews';
 import LearnMore from './Pages/Home/LearnMore/LearnMore';
 import AddReview from './Pages/Home/Reviews/AddReview';
+import LiveSolution from './Pages/Home/LiveSolution/LiveSolution';
+import ProblemSolving from './Pages/Home/ProblemSolving/ProblemSolving';
+import FullDaySupport from './Pages/Home/FullDaySupport/FullDaySupport';
+import Gallery from './Pages/UserDashboard/Gallery';
 
 
 function Appw() {
@@ -81,7 +85,10 @@ function Appw() {
     { path: "/myReview", element: <Reviews /> },
     { path: "/learnMore", element: <LearnMore /> },
     { path: "/addReview", element: <AddReview /> },
-
+    { path: "/liveSolution", element: <LiveSolution /> },
+    { path: "/problemSolving", element: <ProblemSolving /> },
+    { path: "/24hSupport", element: <FullDaySupport /> },
+    { path: "/gallery", element: <Gallery /> },
   ]);
   return routes;
 };
