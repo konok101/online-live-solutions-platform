@@ -6,8 +6,9 @@ import { Box, TextField } from '@mui/material';
 import { useSnackbar } from "notistack";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Navigation from '../../Shared/Navigation';
+import Footer from '../../Shared/Footer';
 
-const AddCourse = () => {
+const ApplyForTeacher = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, errors } = useForm();
     const [imageURL,setImageURL] = useState(null);
@@ -18,12 +19,11 @@ const AddCourse = () => {
         console.log(data);
         const eventData = {
             teacherName      : data?.teacherName,
+            email      : data?.email,
             imageURL  : imageURL,
-            couseName     : data?.email,
-            hours   : data?.hours,
-            price   : data?.price,
             teachingArea   : data?.teachingArea,
-            socialUrl   : data?.socialUrl
+            socialUrl   : data?.socialUrl,
+            aboutTeacher   : data?.qulification
         };
         const url = `http://localhost:5000/applyForTeacher`;
         console.log(eventData);
@@ -62,12 +62,12 @@ const AddCourse = () => {
     }
     
   const homeStyle = {
-    background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
+    background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))' 
   }
     return (
         <div style={homeStyle} >
              <Navigation />
-            <div >
+            <div  style={{paddingBottom:"100px"}} >
                 
                 <div style={{maxWidth:"50%", margin:"auto", marginTop:"50px"}} >
                     <Box sx={{maxWidth:"80%", margin:"auto", }}>
@@ -81,7 +81,7 @@ const AddCourse = () => {
                              textColor="white" variant="standard" required  {...register("teacherName")}
                         />                        <br/>
                             <TextField
-                            style={{ margin: 18, width: '50vw' }} required   label="Email"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }} required   label="Email"  id="standard-basic"  name='email'
                              textColor="white" variant="standard"  {...register("email")}
                         />                        <br/>
 
@@ -90,21 +90,18 @@ const AddCourse = () => {
                              textColor="white" variant="standard"  {...register("teachingArea")}
                         />                        <br/>
 
+ 
 <TextField
-                            style={{ margin: 18, width: '50vw' }} required  label="Hours"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("hours")}
-                        />    
-                                            <br/>
-                        
-                        
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }} required  label="Price"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("price")}
+                            style={{ margin: 18, width: '50vw' }} required   label="Qulification"  id="standard-basic"  name='name'
+                             textColor="white" variant="standard"  {...register("qulification")}
                         />                        <br/>
-                   
+
+                                
+                        
+                     
  
                    <TextField
-                            style={{ margin: 18, width: '50vw' }}    label="Url"  id="standard-basic"  name='name'
+                            style={{ margin: 18, width: '50vw' }}    label="Social Url"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("socialUrl")}
                         />                        <br/>
                    
@@ -127,8 +124,11 @@ const AddCourse = () => {
                     </Box>
                 </div>
             </div>
+
+ 
+
         </div>
     );
 };
 
-export default AddCourse;
+export default ApplyForTeacher;
