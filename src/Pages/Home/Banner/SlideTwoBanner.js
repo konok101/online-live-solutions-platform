@@ -40,7 +40,7 @@ function SlideTwoBanner() {
                 <div style={fontStyle} >
                     <h2 style={{ fontSize: '30px' }}>STUDY OVERSEAS GLOBAL</h2>
                     <h1 style={{ fontSize: '60px' }}>EDUCATION FAIR</h1>
-                    <span style={{ color: '#b30d52', fontWeight: 500,fontStyle: 'italic',  fontSize: 28 }}>
+                    <span style={{ color: 'white', fontWeight: 500,fontStyle: 'italic',  fontSize: 28 }}>
                     <Typewriter
                     words={['Welcome here_!!', 'Be DIFFERENT_!! ',
                     'Do the Best ALWAYS_ !']}
