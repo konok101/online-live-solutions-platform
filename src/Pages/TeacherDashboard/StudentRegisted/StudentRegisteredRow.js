@@ -42,15 +42,11 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
         <StyledTableCell component="th" scope="row">
         {phnNumber}
         </StyledTableCell>
-        <StyledTableCell component="th" scope="row">
-          {classes}
-        </StyledTableCell>
+   
         <StyledTableCell component="th" scope="row">
           {subject} {couseName}
         </StyledTableCell>
-        <StyledTableCell component="th" scope="row">
-          {institution}
-        </StyledTableCell>
+    
         <StyledTableCell align='center' style={{display:"flex"}} component="th" scope="row">
           {approveData && <>Approved</>}
           {!approveData && <>pending</>}
@@ -60,7 +56,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
      
           {approveData &&
           
-          <>              <Link to="/myReview/:_id" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          <>              <Link to="/myReview" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
           </>}
          
         </StyledTableCell>

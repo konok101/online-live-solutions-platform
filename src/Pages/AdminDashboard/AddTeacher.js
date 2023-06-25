@@ -53,11 +53,7 @@ const AddTeacher = ({ course, setCourse }) => {
                         variant="standard" /> <br/>
 
 
-                        <TextField
-                        style={{ margin: 18, width: '50vw' }} required  label="Price"  id="standard-basic"  name='price' onBlur={handleOnBlurTwo}
-                         textColor="white" variant="standard"  
-                    />          
-
+ 
                     <Button type='submit' variant='contained' style={{
                         fontWeight: '400',
                         background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',

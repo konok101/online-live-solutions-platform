@@ -109,7 +109,7 @@ function CourseRow({course,   index}) {
                   justifyContent="center"
                   alignItems="center" spacing={{ xs: 3, md: 0 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                   <Grid component="div" item xs={4} sm={6} md={4}  >
-                    <Typography sx={{bgcolor:"red", display:"block"}} gutterBottom variant="h5" >
+                    <Typography gutterBottom variant="h5" >
                       {course?.teacherName?.slice(0,12)}
                     </Typography>  <br />
                     <Typography variant="body2" color="text.secondary">
