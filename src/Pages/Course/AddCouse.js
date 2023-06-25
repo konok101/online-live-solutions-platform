@@ -35,8 +35,13 @@ const AddCourse = () => {
             body: JSON.stringify(eventData)
         })
         .then(res => console.log('server side response',res))
-        enqueueSnackbar("Course added Success", { variant: 'success' })   
-
+        .then(datas=>{
+            enqueueSnackbar("Course added Success", { variant: 'success' })   
+            data?.target?.reset();
+        })
+        
+      
+         
     };
 
 

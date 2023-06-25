@@ -41,6 +41,7 @@ import OurTeachers from './Pages/Home/OurTeachers/OurTeachers.js';
 import ApplyForTeacher from './Pages/Home/ApplyForTeacher/ApplyForTeacher';
 import Reviews from './Pages/Home/Reviews/Reviews';
 import LearnMore from './Pages/Home/LearnMore/LearnMore';
+import AddReview from './Pages/Home/Reviews/AddReview';
 
 
 function Appw() {
@@ -77,8 +78,9 @@ function Appw() {
     { path: "/myEnrollment", element: <MyEnrollment /> },
     { path: "/ourTeachers", element: <OurTeachers /> },
     { path: "/applyForTeacher", element: <ApplyForTeacher /> },
-    { path: "/ourReviews", element: <Reviews /> },
+    { path: "/myReview", element: <Reviews /> },
     { path: "/learnMore", element: <LearnMore /> },
+    { path: "/addReview", element: <AddReview /> },
 
   ]);
   return routes;
