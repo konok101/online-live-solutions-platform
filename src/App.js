@@ -78,7 +78,7 @@ function Appw() {
     { path: "/myEnrollment", element: <MyEnrollment /> },
     { path: "/ourTeachers", element: <OurTeachers /> },
     { path: "/applyForTeacher", element: <ApplyForTeacher /> },
-    { path: "/ourReviews", element: <Reviews /> },
+    { path: "/myReview", element: <Reviews /> },
     { path: "/learnMore", element: <LearnMore /> },
     { path: "/addReview", element: <AddReview /> },
 

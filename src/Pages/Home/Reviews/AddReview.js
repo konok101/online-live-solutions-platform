@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextField from '@mui/material/TextField';
 import { Box, height } from "@mui/system";
 import { Button, Typography, Alert, Container } from "@mui/material";
@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { useSnackbar } from "notistack";
 import Navigation from '../../Shared/Navigation';
+import { useParams } from "react-router";
 
 
 
@@ -21,6 +22,32 @@ const bannerBackground = {
 }
 
 const AddReview = () => {
+
+
+
+
+
+    const { _id } = useParams();
+    const [fruitsInfo, setFruitsInfo] = useState({});
+ 
+   
+ 
+    useEffect(() => {
+       const url = `http://localhost:5000/myCourse/${_id}`;
+ 
+       fetch(url)
+          .then(res => res.json())
+          .then(data => setFruitsInfo(data))
+    }, []);
+
+
+
+
+
+
+
+
+
 
     // const { user } = useContext(AuthContext);
     const initialInfo = {  name:'', email:'' }
@@ -65,6 +92,8 @@ const AddReview = () => {
     enqueueSnackbar("Review submit Success", { variant: 'success' })   
 
     }
+
+     
 
     return (
         <>

@@ -13,7 +13,7 @@ import { Link } from 'react-router-dom';
 
 
 const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher, approveData} = regStudent;
+    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher, approveData, _id} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
@@ -60,7 +60,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
      
           {approveData &&
           
-          <>              <Link to="/addReview" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          <>              <Link to="/myReview/:_id" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
           </>}
          
         </StyledTableCell>
