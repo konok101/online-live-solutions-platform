@@ -52,26 +52,23 @@ const RegStudent = () => {
             </div>
 
 
-            <Container style={{ marginTop: '4%' , width: '95vw', margin:"auto"}}>
+            <Container style={{ marginTop: '4%' , width: '95%', margin:"auto"}}>
                 <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                     <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
                             <TableHead>
                                 <StyledTableRow>
-                                    <StyledTableCell></StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>TrxID</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Mobile</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Class</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Institution</StyledTableCell>
-                                    <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34' }}>Actions</StyledTableCell>
+                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
+                                     <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34' }}>Actions</StyledTableCell>
                                     
 
-                                    <StyledTableCell align="right"> </StyledTableCell>
-                                    
+                                     
                                     
                                 </StyledTableRow>
                             </TableHead>

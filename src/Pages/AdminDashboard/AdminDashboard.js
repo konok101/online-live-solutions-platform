@@ -134,7 +134,7 @@ function AdminDashboard() {
           <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
               <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>AddTeacher</Button>
+              <Button style={{ color: '#08558b' }}>Add Teacher</Button>
             </ListItem>
           </Link>
         

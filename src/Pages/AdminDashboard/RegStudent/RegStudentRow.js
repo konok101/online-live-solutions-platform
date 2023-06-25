@@ -76,16 +76,10 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
         <StyledTableCell component="th" scope="row">
         {phnNumber}
         </StyledTableCell>
-        <StyledTableCell component="th" scope="row">
-          {classes}
-        </StyledTableCell>
+      
         <StyledTableCell component="th" scope="row">
           {subject}
         </StyledTableCell>
-        <StyledTableCell component="th" scope="row">
-          {institution}
-        </StyledTableCell>
-        
         <StyledTableCell style={{display:"flex"}}><Button onClick={()=>handleDelete(_id)} variant="contained" size="small" style={{fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(198,42,66), rgb(198,105,42))',
         borderRadius: '15px'}}>Remove </Button>
