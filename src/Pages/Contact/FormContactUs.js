@@ -23,10 +23,10 @@ const bannerBackground = {
 const ContactUsForm = () => {
 
     // const { user } = useContext(AuthContext);
-    const initialInfo = { review:'',name:'', email:'' }
+  
     const { enqueueSnackbar } = useSnackbar();
 
-    const [userInfo, setUserInfo] = useState(initialInfo);
+    const [userInfo, setUserInfo] = useState();
 
     const handleOnBlur = e => {
 
@@ -46,7 +46,7 @@ const ContactUsForm = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/review', {
+        fetch('http://localhost:5000/contact', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -80,8 +80,9 @@ const ContactUsForm = () => {
                         <TextField
                             id="standard-basic"
                             style={{ margin: 18, width: '50vw' }}
-                            label="Say something about us"
-                            name='review'
+                            label="lets writes about your queries
+                            "
+                            name='querie'
                             onBlur={handleOnBlur} 
                             required
                             variant="standard"
