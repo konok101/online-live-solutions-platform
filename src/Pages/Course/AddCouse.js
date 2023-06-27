@@ -13,6 +13,22 @@ const AddCourse = () => {
     const [imageURL,setImageURL] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
 
+    const generateAddSerial = () => {
+        let randomNumber = Math.floor(
+            Math.random() * (9 - 0) + 0
+        );
+
+        let randomNumbertwo = Math.floor(
+            Math.random() * (9 - 0) + randomNumber
+        );
+
+        let twoAdd= randomNumber + randomNumbertwo -1
+
+
+        let serial = randomNumber + twoAdd+ "course"   + randomNumber + randomNumbertwo;
+        return serial;
+    }
+
 
     const onSubmit = data => {
         console.log(data);
@@ -23,7 +39,8 @@ const AddCourse = () => {
             hours   : data?.hours,
             price   : data?.price,
             teachingArea   : data?.teachingArea,
-            socialUrl   : data?.socialUrl
+            socialUrl   : data?.socialUrl,
+            serial:generateAddSerial()
         };
         const url = `http://localhost:5000/addCourse`;
         console.log(eventData);

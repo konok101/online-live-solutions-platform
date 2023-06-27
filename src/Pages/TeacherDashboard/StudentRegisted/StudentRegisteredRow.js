@@ -9,14 +9,19 @@ import TableRow from '@mui/material/TableRow';
 import { Button , Alert } from '@mui/material';
 
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
-
+import {    useNavigate } from 'react-router';
+import Link from '@mui/material/Link';
 
 const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher, approveData, _id} = regStudent;
+    const {name, email, phnNumber,TrxID,classes,subject,institution, couseName, courseTeacher, approveData, courseSerial} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
+    const navigate= useNavigate();
 
+    const handleMyReviewPage = courseSerial =>{
+      navigate(`/myReview/${courseSerial}`)
+ 
+    }
  
 
     return (
@@ -24,10 +29,10 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
         <>
         <StyledTableRow >
         <StyledTableCell component="th" scope="row">
-          {index + 1}
+          {index + 1}{courseSerial}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
-          {name}
+          {name} 
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
           {email}
@@ -56,7 +61,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
      
           {approveData &&
           
-          <>              <Link to="/myReview" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial)} style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
           </>}
          
         </StyledTableCell>

@@ -32,6 +32,7 @@ function CourseRow({course,   index}) {
   const [regSuccess, setRegSuccess] = useState(false);
   const [subject, setSubject]=useState()
   const [courseTeacher, seTCourseTeacher]=useState()
+  const [courseSerial, seTCourseSerial]=useState()
 
 
   console.log(' courseName courseName', subject)
@@ -39,6 +40,7 @@ function CourseRow({course,   index}) {
     handleModalOpen()
     setSubject(course?.couseName)
     seTCourseTeacher(course?.teacherName)
+    seTCourseSerial(course?.serial)
 
   }
 
@@ -65,9 +67,10 @@ function CourseRow({course,   index}) {
       const courseSubmit = {
           ...courseInfo,
           subject,
-          courseTeacher
+          courseTeacher,
+          courseSerial
        }
-      console.log('courseSubmit courseSubmit', courseSubmit)
+  
       // send to the server
       fetch('http://localhost:5000/courseSubmit', {
           method: 'POST',
