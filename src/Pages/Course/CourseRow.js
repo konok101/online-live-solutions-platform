@@ -6,10 +6,11 @@ import { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Backdrop from '@mui/material/Backdrop';
  import Modal from '@mui/material/Modal';
-
+ import Rating from '@mui/material/Rating';
  import Fade from '@mui/material/Fade';
   import TextField from '@mui/material/TextField';
  import { Button,   Alert} from "@mui/material";
+import { useEffect } from 'react';
 
 const style = {
     position: 'absolute',
@@ -24,23 +25,24 @@ const style = {
 
 };
 
-function CourseRow({course,   index}) {
+function CourseRow({course,   index, ratings }) {
 
    const [openModal, setOpenModal] =useState(false);
   const handleModalOpen = () => setOpenModal(true);
   const handleModalClose = () => setOpenModal(false);
   const [regSuccess, setRegSuccess] = useState(false);
   const [subject, setSubject]=useState()
+  const [img, setImg]=useState()
   const [courseTeacher, seTCourseTeacher]=useState()
   const [courseSerial, seTCourseSerial]=useState()
 
 
-  console.log(' courseName courseName', subject)
-  const addID=(course)=>{
+   const addID=(course)=>{
     handleModalOpen()
     setSubject(course?.couseName)
     seTCourseTeacher(course?.teacherName)
     seTCourseSerial(course?.serial)
+    setImg(course?.imageURL)
 
   }
 
@@ -67,6 +69,7 @@ function CourseRow({course,   index}) {
       const courseSubmit = {
           ...courseInfo,
           subject,
+          img,
           courseTeacher,
           courseSerial
        }
@@ -90,6 +93,34 @@ function CourseRow({course,   index}) {
           });
       e.preventDefault();
   }
+
+
+  console.log('ratings ratings', ratings)
+
+//rating
+
+
+
+let teacherList = ratings?.filter((user)=>{
+  console.log('yyy', user);
+  if(user?.courseSerial === course?.serial){
+    console.log('11222 user', user);
+      return user;
+  }
+}) 
+console.log("teacherList teacherList rr",teacherList)
+const total =(teacherList?.reduce((total, currentItem) => total = total + parseInt(currentItem?.rating || 0), 0));
+
+ 
+
+
+const [rating, setRating] = useState(total/teacherList?.length);
+const [numOfRating, setNumOfRating] = useState(teacherList?.length);
+
+
+
+
+
   
     return (
         <>
@@ -101,13 +132,14 @@ function CourseRow({course,   index}) {
             <CardActionArea>
               <CardMedia
                 component="img"
-                // height='90%'
-
+   
                 style={{height:'250px', width:'250px', margin:'auto', paddingTop:'2%'}}
                 image={course?.imageURL}
                 alt="green iguana"
               />
               <CardContent>
+
+               
                 <Grid container direction="row"
                   justifyContent="center"
                   alignItems="center" spacing={{ xs: 3, md: 0 }} columns={{ xs: 4, sm: 8, md: 12 }}>
@@ -152,6 +184,14 @@ function CourseRow({course,   index}) {
                   }}>ADD</button>
 
                 </Grid>
+                <Rating
+        name="simple-controlled"
+        value={rating}
+        readOnly
+        onChange={(event, newValue) => {
+          setRating(newValue);
+        }}
+      /> {numOfRating}
               </CardContent>
             </CardActionArea>
           </Card>

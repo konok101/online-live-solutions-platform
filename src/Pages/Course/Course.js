@@ -37,6 +37,18 @@ function Course() {
   }, []);
 
 
+
+  const [ratings, setRatings]=useState([]);
+
+useEffect(() => {
+  const url = `http://localhost:5000/courseRating`;
+  fetch(url)
+      .then((res) => res.json())
+      .then((data) => setRatings(data));
+
+}, []);
+
+
   return (
     <div>
       <Navigation />
@@ -53,7 +65,10 @@ function Course() {
     alignItems="center"  >
       {
         courses?.slice(0,6).map((course, index) =>
-          <CourseRow index={index} handleModalOpen={handleModalOpen} course={course}></CourseRow>
+          <CourseRow index={index} handleModalOpen={handleModalOpen} 
+          ratings={ratings}
+          
+          course={course}></CourseRow>
         )
       }
     </Grid>
