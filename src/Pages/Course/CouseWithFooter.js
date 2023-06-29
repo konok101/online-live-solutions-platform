@@ -36,6 +36,26 @@ function Course() {
 
   }, []);
 
+  useEffect(() => {
+    const url = `http://localhost:5000/addCourse`;
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => setCourses(data));
+
+  }, []);
+
+
+
+  const [ratings, setRatings]=useState([]);
+
+  useEffect(() => {
+    const url = `http://localhost:5000/courseRating`;
+    fetch(url)
+        .then((res) => res.json())
+        .then((data) => setRatings(data));
+  
+  }, []);
+
 
   return (
     <div>
@@ -54,7 +74,9 @@ function Course() {
     alignItems="center"  >
       {
         courses?.map((course, index) =>
-          <CourseRow handleModalOpen={handleModalOpen} course={course}></CourseRow>
+          <CourseRow handleModalOpen={handleModalOpen}
+          ratings={ratings}
+          course={course}></CourseRow>
         )
       }
     </Grid>

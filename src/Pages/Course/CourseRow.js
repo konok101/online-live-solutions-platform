@@ -191,7 +191,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
         onChange={(event, newValue) => {
           setRating(newValue);
         }}
-      /> {numOfRating}
+      /> ({numOfRating})
               </CardContent>
             </CardActionArea>
           </Card>
