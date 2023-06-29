@@ -28,7 +28,7 @@ function Services() {
         <Card style={{background: 'linear-gradient(to right,  rgb(34,37,71), rgb(34,37,71))',color: '#dfe3e2', padding:'5%', boxShadow:' 19px 10px 10px black', }}>
         <img  width="120px" style={{paddingTop:'6%'}}  src={injection}></img>
         <h4 >Live Solutions</h4>
-        <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
+        <p style={{paddingLeft:'2%', paddingRight:'2%'}}>Online live solutions enable education to be accessible from anywhere, Learners can participate in classes from the comfort of their own homes or any location with an internet connection. </p>
         <Link style={{ textDecoration: 'none' }} to="/liveSolution" target="_blank"  >
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
          
@@ -46,7 +46,7 @@ function Services() {
         <Card style={{background: 'linear-gradient(to right,  rgb(34,37,71), rgb(34,37,71))',color: '#dfe3e2', boxShadow:' 19px 10px 10px black'}}>
         <img  width="100px" style={{paddingTop:'7%'}} src={ambulance} ></img>
         <h4 >Problem Solving</h4>
-        <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.</p>
+        <p style={{paddingLeft:'2%', paddingRight:'2%'}}>problem-solving skills features like video conferencing, chat, and screen sharing, learners can work together on problem-solving activities, discuss ideas, and share their thought processes. </p>
         <Link style={{ textDecoration: 'none' }} 
         to="/problemSolving" target="_blank">
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
@@ -63,7 +63,7 @@ function Services() {
         <Card style={{background: 'linear-gradient(to right,  rgb(34,37,71), rgb(34,37,71))',color: '#dfe3e2', boxShadow:' 19px 10px 10px black'}}>
         <img  width="135px" height='160px' style={{paddingTop:'3%'}} src={note}></img>
         <h4 > 24h supports</h4>
-        <p>Mauris nunc felis, congue eu convallis in, bibendum vitae nisl. Duis vestibulum eget orci maximus pretium.
+        <p style={{paddingLeft:'2%', paddingRight:'2%'}}>24-hour support means learners can have their issues resolved quickly, ensuring that they can continue with their coursework or participate in live sessions without significant delays or interruptions.  
         </p>
 
         <Link style={{ textDecoration: 'none' }} to="/24hSupport" target="_blank">
