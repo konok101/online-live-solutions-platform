@@ -27,6 +27,18 @@ function Course() {
   const handleModalClose = () => setOpenModal(false);
   const [regSuccess, setRegSuccess] = useState(false);
 
+  
+  const [ratings, setRatings]=useState([]);
+
+useEffect(() => {
+  const url = `http://localhost:5000/courseRating`;
+  fetch(url)
+      .then((res) => res.json())
+      .then((data) => setRatings(data));
+
+}, []);
+
+
   const [courses, setCourses] = useState([]);
   useEffect(() => {
     const url = `http://localhost:5000/addCourse`;
@@ -35,6 +47,8 @@ function Course() {
       .then((data) => setCourses(data));
 
   }, []);
+
+
 
 
   return (
@@ -53,7 +67,10 @@ function Course() {
     alignItems="center"  >
       {
         courses?.slice(0,6).map((course, index) =>
-          <CourseRow index={index} handleModalOpen={handleModalOpen} course={course}></CourseRow>
+          <CourseRow index={index} handleModalOpen={handleModalOpen} 
+          ratings={ratings}
+          
+          course={course}></CourseRow>
         )
       }
     </Grid>

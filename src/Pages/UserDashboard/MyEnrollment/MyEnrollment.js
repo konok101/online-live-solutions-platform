@@ -14,6 +14,7 @@ import StudentRegisteredRow from '../../TeacherDashboard/StudentRegisted/Student
 import Footer from '../../Shared/Footer';
 
 import Navigation from '../../Shared/Navigation';
+import { Box, Grid } from '@mui/material';
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -54,35 +55,19 @@ function MyEnrollment() {
         <>
             <Navigation />
 
-             <Container style={{width:"100%", margin: 'auto', marginTop:"70px" }}>
-             <h1 style={{width:"250px", margin:"auto", marginBottom:"10px"}}>My Courses</h1>
+             <Container style={{width:"100%", margin: 'auto', marginTop:"70px",   }}>
+             <div style={{width:"100%", margin:"auto",padding:"40px", marginBottom:"10px",   }}>
+ 
+             </div>
 
                 <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                 {
-                    myCourses?.length > 0 ?     <TableContainer sx={{ height: '80vh', width:"100%"  }}>
-                    <Table stickyHeader aria-label="sticky table"
-                        position="static">
-                        <TableHead>
-                            <StyledTableRow>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Teacher</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>TrxID</StyledTableCell>
-                                <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Mobile</StyledTableCell>
-                                 <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
-                                 <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34'  }}>Status</StyledTableCell>
-                               
-
-                               
-                                <StyledTableCell></StyledTableCell>
-                                
-                                
-                            </StyledTableRow>
-                        </TableHead>
-
-                        
-                        <TableBody>
+                    myCourses?.length > 0 ?     <Grid container direction="row"
+                    justifyContent="space-around"
+                    alignItems="center"  >
+                   
+                      
+                        <Grid>
                             {
                                 myCourses?.map((regStudent, index) => <StudentRegisteredRow
                                     key={regStudent._id}
@@ -93,10 +78,13 @@ function MyEnrollment() {
 
                                 ></StudentRegisteredRow>)
                             }
-                        </TableBody>
+                        </Grid>
                         
-                    </Table>
-                </TableContainer> : <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
+                   
+                </Grid> :
+                
+                
+                <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
                 }
                 </Paper>
             </Container>
