@@ -9,7 +9,7 @@ import { useSnackbar } from "notistack";
 
 const AddCourse = () => {
     const { user, admin, teacher, logOut } = useContext(AuthContext);
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, watch, errors, reset } = useForm();
     const [imageURL,setImageURL] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
 
@@ -51,10 +51,11 @@ const AddCourse = () => {
             },
             body: JSON.stringify(eventData)
         })
-        .then(res => console.log('server side response',res))
+        .then(res =>  res.json())
         .then(datas=>{
+            console.log('datas', datas);
             enqueueSnackbar("Course added Success", { variant: 'success' })   
-            data?.target?.reset();
+            reset();
         })
         
       

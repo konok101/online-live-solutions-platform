@@ -10,7 +10,7 @@ import Footer from '../../Shared/Footer';
 
 const ApplyForTeacher = () => {
     const { user } = useContext(AuthContext);
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, watch, errors, reset } = useForm();
     const [imageURL,setImageURL] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
 
@@ -37,7 +37,7 @@ const ApplyForTeacher = () => {
         .then(res => console.log('server side response',res))
         .then(datas=>{
             enqueueSnackbar("Application submit Success", { variant: 'success' })   
-            data?.target?.reset();
+             reset();
         })
         
       
