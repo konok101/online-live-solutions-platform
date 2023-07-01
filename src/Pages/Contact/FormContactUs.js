@@ -55,14 +55,17 @@ const ContactUsForm = () => {
         })
         .then(res => res.json())
         .then(data => {
-        console.log(data);
+        console.log("11",data);
         if (data.insertedId) {
             // setSuccess(true);
+            enqueueSnackbar("Course added Success", { variant: 'success' })
+            e?.target?.reset();
+
         }
     });
 
     e.preventDefault();
-    enqueueSnackbar("Contact submit Success", { variant: 'success' })   
+   // enqueueSnackbar("Contact submit Success", { variant: 'success' })   
 
     }
 
