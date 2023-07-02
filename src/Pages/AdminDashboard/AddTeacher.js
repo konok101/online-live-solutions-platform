@@ -35,6 +35,9 @@ const AddTeacher = ({ course, setCourse }) => {
         e.preventDefault()
     }
 
+
+    
+
     return (
         <>
             <Navigation />
