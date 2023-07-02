@@ -60,7 +60,7 @@ const StudentRegisted = () => {
         <>
             <Navigation />
             <div style={{ textAlign: 'center', marginTop: '4%', width: '97vw' }}>
-                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {regStudent.length} </h1>
+                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {teacherLists?.length} </h1>
             </div>
 
 
@@ -78,18 +78,20 @@ const StudentRegisted = () => {
                             </TableHead>
 
                             
-                            <TableBody>
-                                {
-                                    teacherLists.map((regStudent, index) => <StudentRegisteredRow
-                                        key={regStudent._id}
-                                        regStudent={regStudent}
-                                        index={index}
-                                        StyledTableRow={StyledTableRow}
-                                        StyledTableCell={StyledTableCell}
+                          {
+                            teacherLists?.length >0 ?   <TableBody>
+                            {
+                                teacherLists.map((regStudent, index) => <StudentRegisteredRow
+                                    key={regStudent._id}
+                                    regStudent={regStudent}
+                                    index={index}
+                                    StyledTableRow={StyledTableRow}
+                                    StyledTableCell={StyledTableCell}
 
-                                    ></StudentRegisteredRow>)
-                                }
-                            </TableBody>
+                                ></StudentRegisteredRow>)
+                            }
+                        </TableBody> : <div style={{width:"500px", margin:"auto", fontSize:"50px"}}>" No Student"</div>
+                          }
                             
                         </Table>
                     </TableContainer>

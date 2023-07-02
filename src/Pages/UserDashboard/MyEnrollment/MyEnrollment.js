@@ -10,7 +10,7 @@ import Paper from '@mui/material/Paper';
  import { Container } from '@mui/system';
  import { useContext } from 'react';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import StudentRegisteredRow from '../../TeacherDashboard/StudentRegisted/StudentRegisteredRow';
+import MyEnrollmentRow from '../../UserDashboard/MyEnrollment/MyEnrollMentRow';
 import Footer from '../../Shared/Footer';
 
 import Navigation from '../../Shared/Navigation';
@@ -69,14 +69,14 @@ function MyEnrollment() {
                       
                         <Grid>
                             {
-                                myCourses?.map((regStudent, index) => <StudentRegisteredRow
+                                myCourses?.map((regStudent, index) => <MyEnrollmentRow
                                     key={regStudent._id}
                                     regStudent={regStudent}
                                     index={index}
                                     StyledTableRow={StyledTableRow}
                                     StyledTableCell={StyledTableCell}
 
-                                ></StudentRegisteredRow>)
+                                ></MyEnrollmentRow>)
                             }
                         </Grid>
                         
