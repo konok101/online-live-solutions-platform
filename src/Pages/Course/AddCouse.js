@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Navigation from '../Shared/Navigation';
-import { Box, TextField } from '@mui/material';
+import { Autocomplete, Box, TextField } from '@mui/material';
 import { useSnackbar } from "notistack";
 
 
@@ -12,6 +12,8 @@ const AddCourse = () => {
     const { register, handleSubmit, watch, errors, reset } = useForm();
     const [imageURL,setImageURL] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
+    const [teacherEmail, setTeacherEmail]=useState('')
+    const [teacherName, setTeacherName]=useState('')
 
     const generateAddSerial = () => {
         let randomNumber = Math.floor(
@@ -33,7 +35,8 @@ const AddCourse = () => {
     const onSubmit = data => {
         console.log(data);
         const eventData = {
-            teacherName      : data?.teacherName,
+            teacherName      : teacherName,
+            teacherEmail      : teacherEmail,
             imageURL  : imageURL,
             couseName     : data?.couseName,
             hours   : data?.hours,
@@ -58,9 +61,38 @@ const AddCourse = () => {
             reset();
         })
         
-      
          
     };
+
+    
+    const [allUser, setAllUser] = useState([]);
+    const role = user?.role === 'teacher';
+ 
+    useEffect(() => {
+        const url = `http://localhost:5000/users?role=${role}`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setAllUser(data)); 
+    },[]);
+
+    let teacherList = allUser?.filter((user)=>{
+        if(user?.role === "teacher"){
+            return user;
+        }
+    }) 
+ 
+
+
+    const handleDept = (value) => {
+        setTeacherEmail(value?.email)
+        setTeacherName(value?.displayName)
+        
+    }
+
+
+
+    console.log('121 teacherListt teacherListt', teacherEmail , teacherName);
+
 
 
     const handleImageUpload = event => {
@@ -94,10 +126,36 @@ const AddCourse = () => {
                     </Box>
                     <Box>
                         <form onSubmit={handleSubmit(onSubmit)}>
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}   label="Teacher Name"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard" required  {...register("teacherName")}
-                        />                        <br/>
+
+
+<Autocomplete
+
+onChange={(event, value) => handleDept(value)}
+                                                            size='small'
+                                                            disablePortal
+                                                            id="combo-box-demo"
+                                                            getOptionLabel={(teacherList) => `${teacherList?.displayName}`}
+                                                            options={teacherList}
+                                                            sx={{width: '50vw' ,mt:5 }}
+                                                            renderOption={(props, deptData) => (
+                                                                <Box  {...props} >
+                                                                    <ul style={{ listStyleType: 'none' }}>
+                                                                        <li ><strong>{deptData?.displayName}</strong></li>
+                                                                    </ul>
+
+                                                                </Box>
+                                                            )}
+                                                            renderInput={(params) =>
+
+                                                                <TextField
+                                                                    style={{ width: '50vw' , mt: 5, margin: 18 }}
+                                                                    color="success"
+                                                                    variant="filled"  {...params} placeholder="Select Teacher Name" />}
+                                                                    />
+
+                                                                    <br />
+
+                                                   
                             <TextField
                             style={{ margin: 18, width: '50vw' }} required   label="Couse Name"  id="standard-basic"  name='name'
                              textColor="white" variant="standard"  {...register("couseName")}

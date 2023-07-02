@@ -11,6 +11,7 @@ import Backdrop from '@mui/material/Backdrop';
   import TextField from '@mui/material/TextField';
  import { Button,   Alert} from "@mui/material";
 import { useEffect } from 'react';
+import { useSnackbar } from "notistack";
 
 const style = {
     position: 'absolute',
@@ -35,14 +36,18 @@ function CourseRow({course,   index, ratings }) {
   const [img, setImg]=useState()
   const [courseTeacher, seTCourseTeacher]=useState()
   const [courseSerial, seTCourseSerial]=useState()
+  const [teacherEmail, setTeacherEmail]=useState()
+  const { enqueueSnackbar } = useSnackbar();
 
 
    const addID=(course)=>{
+    console.log('course', course)
     handleModalOpen()
     setSubject(course?.couseName)
     seTCourseTeacher(course?.teacherName)
     seTCourseSerial(course?.serial)
     setImg(course?.imageURL)
+    setTeacherEmail(course?.teacherEmail)
 
   }
 
@@ -71,7 +76,8 @@ function CourseRow({course,   index, ratings }) {
           subject,
           img,
           courseTeacher,
-          courseSerial
+          courseSerial,
+          teacherEmail
        }
   
       // send to the server
@@ -89,9 +95,12 @@ function CourseRow({course,   index, ratings }) {
 
                   setSuccess(true);
                   handleModalClose();
+                  enqueueSnackbar("Course enroll Success", { variant: 'success' })  
               }
           });
       e.preventDefault();
+      
+
   }
 
 
@@ -108,7 +117,6 @@ let teacherList = ratings?.filter((user)=>{
       return user;
   }
 }) 
-console.log("teacherList teacherList rr",teacherList)
 const total =(teacherList?.reduce((total, currentItem) => total = total + parseInt(currentItem?.rating || 0), 0));
 
  
@@ -172,9 +180,9 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                     </Box>
                     
                   </Grid>
-                  <h5>{course?.hours || 1.5} Hours</h5>  
+                  <h5>{course?.hours || 1.5} Hours</h5>  {" "}
                   <br></br>
-                  <h5 style={{marginLeft:'4px'}}>${course?.price}</h5>
+                  <h5 style={{marginLeft:'4px'}}>৳{course?.price}</h5>
                   <button variant="outlined" className='viewMoreButtonHover' type="submit"   onClick={() => addID(course)}  style={{
                     marginTop: '2%', padding: '8px 35px', color: '#16255d',
                     fontWeight: '600',
@@ -263,16 +271,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                                  variant="outlined"
                                 required
                             />
-                               <TextField
-                                id="outlined-disabled"
-                                sx={{ width: '90%', m: 1 }}
-                                label="class"
-                                name='classes'
-                                onBlur={handleOnBlur}
-                                // defaultValue={user.email}
-                                variant="outlined"
-                                required
-                            />
+                               
                             <TextField
                                 id="outlined-basic"
                                 sx={{ width: '90%', m: 1 }}
@@ -293,18 +292,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                                 variant="outlined"
                             />
                          
-                            <TextField
-                                id="outlined-disabled"
-                                sx={{ width: '90%', m: 1 }}
-                                label="institution"
-                                type='institution'
-                                name='institution'
-
-                                onBlur={handleOnBlur}
-                                // defaultValue={user.email}
-                                variant="outlined"
-                                required
-                            />
+                        
                             <Grid container justifyContent="center">
                                 <Button type='submit' variant="contained"
                                     sx={{ m: 2 }}
@@ -314,9 +302,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                             </Grid>
 
                         </form>
-                        {success && <Alert severity="success"  >Registered successfully!!! </Alert>}
-                        <br></br>
-
+                      
                     </Box>
                 </Fade>
             </Modal>

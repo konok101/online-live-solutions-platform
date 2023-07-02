@@ -29,7 +29,10 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
     const [deleteSuccess, setDeleteSuccess] = useState(false);
     const navigate= useNavigate();
 
-    
+    const handleMyReviewPage = courseSerial =>{
+      navigate(`/myReview/${courseSerial}`)
+ 
+    }
  
 
     return (    
@@ -45,7 +48,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
 
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-       Help <span style={{color:"orange"}}>{name} </span> and solve your problem....
+       Learn With <span style={{color:"orange"}}>{courseTeacher} </span> and solve your problem....
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
              {subject}
@@ -64,7 +67,10 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
         </Button>
         <Button size="small">           {approveData && <><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Message</Button></>}
  </Button>
-       
+        <Button size="small">  {approveData &&
+          
+          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial)} style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          </>}</Button>
       </CardActions> 
        
         </Box>

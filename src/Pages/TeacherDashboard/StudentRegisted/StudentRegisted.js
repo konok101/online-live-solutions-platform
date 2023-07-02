@@ -11,6 +11,8 @@ import StudentRegisteredRow from './StudentRegisteredRow';
 import { Container } from '@mui/system';
 import Footer from '../../Shared/Footer';
 import Navigation from '../../Shared/Navigation';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#5bbce3',
@@ -34,6 +36,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 const StudentRegisted = () => {
+    const { user  } = useContext(AuthContext);
+    const email = user?.email;
     const [regStudent, setRegStudent] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/courseSubmit`;
@@ -42,6 +46,14 @@ const StudentRegisted = () => {
             .then((data) => setRegStudent(data));
 
     }, []);
+
+
+    let teacherLists = regStudent?.filter((user)=>{
+        if(user?.teacherEmail === email){
+            return user;
+        }
+    }) 
+   
 
 
     return (
@@ -60,18 +72,7 @@ const StudentRegisted = () => {
                             <TableHead>
                                 <StyledTableRow>
                                     <StyledTableCell></StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>TrxID</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Mobile</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Class</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Institution</StyledTableCell>
-                                    
-
-                                   
                                     <StyledTableCell></StyledTableCell>
-                                    
                                     
                                 </StyledTableRow>
                             </TableHead>
@@ -79,7 +80,7 @@ const StudentRegisted = () => {
                             
                             <TableBody>
                                 {
-                                    regStudent.map((regStudent, index) => <StudentRegisteredRow
+                                    teacherLists.map((regStudent, index) => <StudentRegisteredRow
                                         key={regStudent._id}
                                         regStudent={regStudent}
                                         index={index}
