@@ -293,7 +293,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
              This is <span style={{color:'orange'}}>{course?.teacherName}</span>.
           </Typography>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-             I am good in <span style={{color:'green', fontSize:'bold'}}>{course?.couseName}</span>. And I have more
+             I am   <span style={{color:'green', fontSize:'bold'}}>{course?.couseName}</span> spacialist. And I have more
               than two years experience in this field. My teaching subject {course?.couseName} and my area {course?.teachingArea}.
                I hope i am best tutor forr you. If you interst hire me  with ৳{course?.price} for {course?.hours} hours.
 
