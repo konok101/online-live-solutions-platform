@@ -55,19 +55,21 @@ function MyEnrollment() {
         <>
             <Navigation />
 
-             <Container style={{width:"100%", margin: 'auto', marginTop:"70px",   }}>
-             <div style={{width:"100%", margin:"auto",padding:"40px", marginBottom:"10px",   }}>
- 
-             </div>
+             <Container style={{width:"90%", margin: 'auto', marginTop:"70px"  }}>
+         
 
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
+                <Paper style={{marginLeft:"200px"}} sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
                 {
-                    myCourses?.length > 0 ?     <Grid container direction="row"
+                    myCourses?.length > 0 ?  
+                    
+                    
+                   <div style={{marginLeft:"100px"}}>
+                     <Grid container direction="row"
                     justifyContent="space-around"
-                    alignItems="center"  >
+                    alignItems="center"   >
                    
                       
-                        <Grid>
+                        <Grid >
                             {
                                 myCourses?.map((regStudent, index) => <MyEnrollmentRow
                                     key={regStudent._id}
@@ -81,7 +83,8 @@ function MyEnrollment() {
                         </Grid>
                         
                    
-                </Grid> :
+                </Grid>
+                   </div> :
                 
                 
                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>

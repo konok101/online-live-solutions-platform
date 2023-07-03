@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
@@ -31,6 +31,9 @@ function CourseRow({course,   index, ratings }) {
    const [openModal, setOpenModal] =useState(false);
   const handleModalOpen = () => setOpenModal(true);
   const handleModalClose = () => setOpenModal(false);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
   const [regSuccess, setRegSuccess] = useState(false);
   const [subject, setSubject]=useState()
   const [img, setImg]=useState()
@@ -56,7 +59,6 @@ function CourseRow({course,   index, ratings }) {
   const { user } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
   const initialInfo = { name: user.displayName, email: user.email   }
- 
   const [courseInfo, setCourseInfo] = useState(initialInfo);
 
   const handleOnBlur = e => {
@@ -104,7 +106,7 @@ function CourseRow({course,   index, ratings }) {
   }
 
 
-  console.log('ratings ratings', ratings)
+  console.log('ratings ratings', course)
 
 //rating
 
@@ -132,78 +134,50 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
   
     return (
         <>
-        
-
-
-    <Grid   item xs={12} sm={6} md={4}   style={{ padding: '8%' }}>
-          <Card style={{ borderBottom: "8px solid #f17917" }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-   
-                style={{height:'250px', width:'250px', margin:'auto', paddingTop:'2%'}}
-                image={course?.imageURL}
-                alt="green iguana"
-              />
-              <CardContent>
-
-               
-                <Grid container direction="row"
-                  justifyContent="center"
-                  alignItems="center" spacing={{ xs: 3, md: 0 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                  <Grid component="div" item xs={4} sm={6} md={4}  >
-                    <Typography gutterBottom variant="h5" >
-                      {course?.teacherName?.slice(0,12)}
-                    </Typography>  <br />
-                    <Typography variant="body2" color="text.secondary">
-                   <span style={{fontSize:"20px", }}> {course?.couseName}</span> {course?.teachingArea} 
-                    </Typography>
-                    
-                  </Grid>
-                  <Grid container justifyContent='flex-end' item xs={4} sm={6} md={8} style={{}} >
-                    <Box>
-                      <Link href={course?.socialUrl}  style={{width:"300px", height:"20px"}} color="inherit">
-                        <InstagramIcon
-                          style={{ color: ' #f17917 ', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
-                        />
-                      </Link>
-                      <Link href={course?.socialUrl} color="inherit">
-                        <FacebookIcon
-                          style={{ color: ' #f17917', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
-                        />
-                      </Link>
-                      <Link href={course?.socialUrl} color="inherit">
+    <Grid   item xs={12} sm={6} md={3.7} style={{marginTop:'40px'}}  >
+       
+          <Card style={{ borderBottom: "8px solid #f17917" }} sx={{ maxWidth: 545  }}>
+      <CardMedia
+        component="img"
+        alt="green iguana"
+        height="240"
+        image={course?.imageURL}
+      />
+      <CardContent>
+       <div style={{display:'flex', justifyContent:'space-between'}}>
+       <Typography gutterBottom variant="h5" component="div">
+        {course?.teacherName?.slice(0,22)}
+        <Link href={course?.socialUrl} color="inherit">
                         <LinkedInIcon
                           style={{ color: ' #f17917 ', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
                         />
-                      </Link>
-                    </Box>
-                    
-                  </Grid>
-                  <h5>{course?.hours || 1.5} Hours</h5>  {" "}
-                  <br></br>
-                  <h5 style={{marginLeft:'4px'}}>৳{course?.price}</h5>
-                  <button variant="outlined" className='viewMoreButtonHover' type="submit"   onClick={() => addID(course)}  style={{
-                    marginTop: '2%', padding: '8px 35px', color: '#16255d',
-                    fontWeight: '600',
-                    fontSize: '18px',
-                    borderRadius: '4px',
-                    marginBottom: '5px'
-                  }}>ADD</button>
+           </Link>
+        
+         <br />  <small>{course?.couseName} || {course?.hours} hours || ৳{course?.price}</small>
+        </Typography>
+        <Typography>
 
-                </Grid>
-                <Rating
+        <Rating
         name="simple-controlled"
         value={rating}
         readOnly
         onChange={(event, newValue) => {
           setRating(newValue);
         }}
-      /> ({numOfRating})
-              </CardContent>
-            </CardActionArea>
-          </Card>
+      /> ({numOfRating} reviews) 
+        </Typography>
+       </div>
+        <Typography variant="body2" color="text.secondary">
+          This is <span style={{color:'orange'}}>{course?.teacherName}</span>. If you face  <span style={{color:'green', fontSize:'bold'}}>{course?.couseName}</span> related problem. Please Hire me. I can help you And provide best Solutions.
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button   variant="contained" onClick={() => addID(course)}>Enroll</Button>
+        <Button size="small" onClick={handleOpen}>Learn More</Button>
+      </CardActions>
+    </Card>
         </Grid>
+
 
         <>
             <Modal
@@ -306,6 +280,28 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                     </Box>
                 </Fade>
             </Modal>
+
+            <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+         
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+             This is <span style={{color:'orange'}}>{course?.teacherName}</span>.
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+             I am   <span style={{color:'green', fontSize:'bold'}}>{course?.couseName}</span> spacialist. And I have more
+              than two years experience in this field. My teaching subject {course?.couseName} and my area {course?.teachingArea}.
+               I hope i am best tutor forr you. If you interst hire me  with ৳{course?.price} for {course?.hours} hours.
+
+          </Typography>
+<br />
+          <Button onClick={handleClose}>Back</Button>
+        </Box>
+      </Modal>
         </>
 
         </>
