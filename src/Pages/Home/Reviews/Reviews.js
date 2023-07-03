@@ -4,21 +4,20 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import { useParams } from 'react-router';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Box, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
- import Backdrop from '@mui/material/Backdrop';
- import Modal from '@mui/material/Modal';
-  import Rating from '@mui/material/Rating';
-  import Fade from '@mui/material/Fade';
-  import TextField from '@mui/material/TextField';
- import { Button,   Alert} from "@mui/material";
+import { useSnackbar } from "notistack";
+import { Button, Card, Rating, TextField, Typography } from '@mui/material';
+import { Box } from '@mui/system';
+import { useForm } from 'react-hook-form';
+
 
 function Reviews() {
+
+  const {   reset } = useForm();
   const {user, token} = useContext(AuthContext);
   const {courseSerial}=useParams();
 const [serialData, setSerialData]=useState([]);
+const { enqueueSnackbar } = useSnackbar();
+
 
 useEffect(() => {
   const url = `http://localhost:5000/addCourse`;
@@ -39,19 +38,22 @@ console.log('serial data is', teacherList)
 
 
 const [serial, setSerial]=useState({...teacherList?.serial})
-console.log('serial serial sas', serial);
 
+console.log('serial serial teacherList', teacherList);
 
-const [rating, setRating] = useState(2);
+const [imageURL, setImgUrl]=useState(teacherList?.imageURL)
+
+console.log('serial serial sas imageURL 1', imageURL);
+
+const [rating, setRating] = useState(0);
 
 console.log(rating)
 
-const initialInfo = { name: user.displayName, email: user.email    }
+const initialInfo = { name: user?.displayName, email: user?.email    }
  
   const [courseInfo, setCourseInfo] = useState(initialInfo);
   const [success, setSuccess] = useState(false);
-
-
+ 
   const handleOnBlur = e => {
 
       const field = e.target.name;
@@ -86,10 +88,13 @@ const initialInfo = { name: user.displayName, email: user.email    }
               if (data.insertedId) {
 
                   setSuccess(true);
+                  enqueueSnackbar("Thanks for added your review", { variant: 'success' })   
+                   setRating("")
                 
               }
           });
       e.preventDefault();
+
   }
   
 
@@ -99,49 +104,53 @@ const initialInfo = { name: user.displayName, email: user.email    }
     <Navigation/>
 
 
-    <form onSubmit={handleCourseSubmit}>
+ <Card sx={{width:'70%', margin:"auto", marginTop:"100px"}}>
+ <form onSubmit={handleCourseSubmit} style={{padding:'50px'}}>
 
 
-    <h1 style={{ marginTop: '5%', textAlign: 'center' }}>my Reviews {courseSerial} qwq a</h1>
-   
-    <Card sx={{ maxWidth: 345 }}>
+<h1 style={{ marginTop: '5%', textAlign: 'center' }}> Write a review  </h1>     
+ 
 
-      <CardMedia
-        sx={{ height: 140 }}
-        image={teacherList?.imageURL}
-        title="green iguana"
-      />
-
-      
-    <Typography component="legend">Controlled</Typography>
-      <Rating
+<Box sx={{display:'flex', alignItems:'center'}}>
+<Typography>  Rating :</Typography>
+<Box sx={{ml:3}}>
+<Rating
         name="simple-controlled"
         value={rating}
-        onChange={(event, newValue) => {
+         onChange={(event, newValue) => {
           setRating(newValue);
         }}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard {teacherList?.teacherName}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share w</Button>
-        
-        <Button type='submit' 
-                                    sx={{ m: 2 }}
-                                    style={{ width: '8vw', backgroundColor: 'red', borderRadius: '5px' }}
-                                >
-                                    Submit</Button>
-      </CardActions>
-    </Card>
-   
-    </form>
+      />  
+</Box>
+</Box>
+
+<Box sx={{display:'flex', alignItems:'center'}}>
+<Typography>  Name :</Typography>
+<Box sx={{ml:3}}>
+  <TextField   style={{ width: '50vw' , mt: 5, margin: 18 }}
+                                                                    color="success">
+                                                                 </TextField>
+</Box>
+</Box>
+<Box sx={{display:'flex', alignItems:'center'}}>
+<Typography>  Summery :</Typography>
+<Box>
+<textarea
+ style={{ width: '50vw' , mt: 5, margin: 18 }}
+      name="postContent"
+      
+       rows={4}
+      cols={40}
+    />
+</Box>
+</Box>
+ 
+ <Button type="submit" variant="contained">Submit review</Button>
+</form>
+
+ </Card>
+
+
     </>
   )
 }
