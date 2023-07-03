@@ -20,25 +20,27 @@ import {
   Link,
   useRouteMatch,
 } from "react-router-dom";
-
-// import useAuth from '../../hooks/useAuth';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
 import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
+import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
+import AddHomeIcon from '@mui/icons-material/AddHome';
+import HouseIcon from '@mui/icons-material/House';
 import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+
+
 
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { Container } from '@mui/system';
-
-
-
-import Home from '../Home/Home';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
 import HomeAdminDashboard from './HomeAdminDashboard';
 
@@ -102,62 +104,70 @@ function AdminDashboard() {
     setOpen(false);
   };
 
-  // let { path, url } = useRouteMatch();
 
   const drawer = (
     <div >
 
       <Box sx={{
         background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))',
-        height: '120vh', overflowX: 'hidden', overflowY: 'hidden'
-      }} style={{ textAlign: 'center' }}>
+        height: '120vh', paddingLeft: '0%', overflowX: 'hidden', overflowY: 'hidden'
+      }}
+      // style={{ textAlign: 'center' }}
+      >
         <Toolbar />
-        <Container style={{ marginLeft: '5%' }}>
+        <Container
+          style={{
+            width: '50vw',
+            marginLeft: 'auto'
+          }}
+        >
 
 
           <Link to='/' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <HouseIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Home</Button>
             </ListItem>
           </Link>
           <Link to='/regStudent' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <ManageAccountsIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Registered</Button>
             </ListItem>
           </Link>
 
 
-          
-
           <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Teacher</Button>
             </ListItem>
           </Link>
-        
+
+          <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Add Course</Button>
+            </ListItem>
+          </Link>
+
 
           <Link to='/allUsers' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
 
-          <ListItem >
-            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-            <Button style={{ color: '#08558b' }}>All Users</Button>
-          </ListItem>
-        </Link>
-          <Link to='/studentReview' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-          <ListItem >
-            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-            <Button style={{ color: '#08558b' }}>Contact lists  </Button>
-          </ListItem>
-        </Link>
-        <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-        <ListItem >
-            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-            <Button style={{ color: '#08558b' }}>Add Course</Button>
-          </ListItem>
+            <ListItem >
+              <SupervisedUserCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>All Users</Button>
+            </ListItem>
           </Link>
+          <Link to='/studentReview' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Contact lists  </Button>
+            </ListItem>
+          </Link>
+          
+
+          {/*
           <TreeView
             style={{ textAlign: 'left', marginLeft: '0%' }}
             aria-label="file system navigator"
@@ -203,13 +213,15 @@ function AdminDashboard() {
 
 
           </TreeView>
+            
 
           <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-          <ListItem >
-            <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-            <Button style={{ color: '#08558b' }}>Gallery</Button>
-          </ListItem>
-        </Link>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Gallery</Button>
+            </ListItem>
+          </Link>
+          */}
 
         </Container>
       </Box>
@@ -268,15 +280,8 @@ function AdminDashboard() {
         <Box>
           <Toolbar />
 
-          {/* <Switch> 
-            {user.emailVerified ?
-*/}
-
           <HomeAdminDashboard />
-          {/*
-              : <p style={{ color: 'red' }}>Your email is not verified</p>}*/}
 
-          {/*  </Switch> */}
         </Box>
 
         <Main open={open}>

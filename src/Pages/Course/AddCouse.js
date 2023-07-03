@@ -114,138 +114,142 @@ const AddCourse = () => {
         <div style={homeStyle} >
             <Navigation />
             <div >
-                <div style={{ 
-                    // maxWidth: "50%", margin: "auto", 
-                marginTop: "100px" , marginBottom:'10%'}} >
-                    <Box sx={{ maxWidth: "80%", margin: "auto",textAlign:'center',
-                    
-                }}>
-                        <h2>Course Added by Admin: {user?.displayName} !!! .</h2>          
+                <div style={{
+                    marginTop: "100px", marginBottom: '10%'
+                }} >
+
+                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%', margin: "auto", textAlign: 'center' }}>
+                        <h2>Course Added by Admin: {user?.displayName} !!!</h2>
                     </Box>
 
-                    <Container style={{backgroundColor:'#daedec', paddingTop:'4%', paddingBottom:'4%'}}>
+                    <Container style={{
+                        // backgroundColor: '#DEDCEE',
+                        backgroundColor:'#daedec',
+                        paddingTop: '4%', paddingBottom: '4%'
+                    }}>
 
-                    <Box style={{ maxWidth: "80%",marginLeft: "14%",
-                    
-                }}>
-                    <h5 style={{ 
-                        fontSize: '30px' }}> 
-                        Add Course    
-                        </h5>
-                    </Box>
-                    <Container style={{width:'80%', 
-                    
-                }}>
-                    
-                        <form onSubmit={handleSubmit(onSubmit)}>
+                        <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
 
-                        <Grid container direction="row"
-                        justifyContent="space-around"
-                        alignItems="center" >
+                            <h5 style={{
+                                fontSize: '30px'
+                            }}>
+                                Add Course
+                            </h5>
+                        </Box>
+                        <Container style={{
+                            width: '80%',
 
-                                <Grid item xs={12} sm={12} md={12} >
-                                <small>Select Teacher Name </small><br/>
-                                    <Autocomplete
-                                        onChange={(event, value) => handleDept(value)}
-                                        size='small'
-                                        disablePortal
-                                        id="combo-box-demo"
-                                        getOptionLabel={(teacherList) => `${teacherList?.displayName}`}
-                                        options={teacherList}
-                                        renderOption={(props, deptData) => (
-                                            <Box  {...props} >
-                                                <ul style={{ listStyleType: 'none' }}>
-                                                    <li ><strong>{deptData?.displayName}</strong></li>
-                                                </ul>
-                                            </Box>
-                                        )}
-                                        renderInput={(params) =>
+                        }}>
+
+                            <form onSubmit={handleSubmit(onSubmit)}>
+
+                                <Grid container direction="row"
+                                    justifyContent="space-around"
+                                    alignItems="center" >
+
+                                    <Grid item xs={12} sm={12} md={12} >
+                                        <small>Select Teacher Name </small><br />
+                                        <Autocomplete
+                                            onChange={(event, value) => handleDept(value)}
+                                            size='small'
+                                            disablePortal
+                                            id="combo-box-demo"
+                                            getOptionLabel={(teacherList) => `${teacherList?.displayName}`}
+                                            options={teacherList}
+                                            renderOption={(props, deptData) => (
+                                                <Box  {...props} >
+                                                    <ul style={{ listStyleType: 'none' }}>
+                                                        <li ><strong>{deptData?.displayName}</strong></li>
+                                                    </ul>
+                                                </Box>
+                                            )}
+                                            renderInput={(params) =>
 
 
-                                            
-                                            <TextField
-                                            style={{ width: '90%',
-                                            marginBottom:'2%'
-                                           
-                                             }}
-                                                // color="success"
-                                                variant="outlined"
-                                                // variant="filled"  
-                                                {...params} placeholder="Select Teacher Name" />}
-                                    />
 
+                                                <TextField
+                                                    style={{
+                                                        width: '90%',
+                                                        marginBottom: '2%'
+                                                    }}
+                                                    // color="success"
+                                                    variant="outlined"
+                                                    // variant="filled"  
+                                                    {...params} placeholder="Select Teacher Name" />}
+                                        />
+
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>Course Name </small><br />
+                                        <TextField
+                                            style={{
+                                                width: '80%', marginBottom: '4%'
+                                            }} required label="Course Name" name='name'
+                                            textColor="white" variant="outlined"  {...register("couseName")}
+                                        />
+                                    </Grid>
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>Teaching Area </small><br />
+                                        <TextField
+                                            style={{
+                                                width: '80%', marginBottom: '4%'
+                                            }} required label="Teaching Area" name='name'
+                                            textColor="white" variant="outlined"  {...register("teachingArea")}
+                                        />                        </Grid>
+
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>Class Duration </small><br />
+                                        <TextField
+                                            style={{ width: '80%', marginBottom: '4%', }} required label="Hours" name='name'
+                                            textColor="white" variant="outlined"  {...register("hours")}
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>Price </small><br />
+                                        <TextField
+                                            style={{ width: '80%', marginBottom: '4%' }} required label="Price" name='name'
+                                            textColor="white" variant="outlined"  {...register("price")}
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>LinkedIn </small><br />
+                                        <TextField
+                                            style={{ width: '80%', marginBottom: '2%' }} label="Url" name='name'
+                                            textColor="white" variant="outlined"  {...register("socialUrl")}
+                                        />                        </Grid>
+
+                                    <Grid item xs={12} sm={6} md={6}>
+                                        <small>Add Image </small><br />
+                                        <input name="exampleRequired" type="file"
+
+                                            style={{ width: '80%', marginBottom: '2%' }}
+                                            required onChange={handleImageUpload} />
+                                    </Grid>
+
+
+
+                                    <Grid item xs={12} sm={6} md={12}>
+                                        <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
+                                            marginTop: '2%',
+                                            padding: '5px 34px',
+                                            //  padding: '15px 44px',
+                                            color: 'white',
+                                            fontWeight: '300',
+                                            fontSize: '20px',
+                                            background: "#2db6a3",
+
+                                            borderRadius: '4px'
+                                        }}>Submit</button> </Grid>
                                 </Grid>
-
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Course Name </small><br/>
-                                    <TextField
-                                        style={{ 
-                                            width: '80%',marginBottom:'4%'
-                                            }} required label="Course Name"  name='name'
-                                        textColor="white" variant="outlined"  {...register("couseName")}
-                                    />
-                                </Grid>
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Teaching Area </small><br/>
-                                    <TextField
-                                        style={{  
-                                            width: '80%',marginBottom:'4%'
-                                         }} required label="Teaching Area" name='name'
-                                        textColor="white" variant="outlined"  {...register("teachingArea")}
-                                    />                        </Grid>
-
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Class Duration </small><br/>
-                                    <TextField
-                                        style={{ width: '80%',marginBottom:'4%'}} required label="Hours" name='name'
-                                        textColor="white" variant="outlined"  {...register("hours")}
-                                    />
-                                </Grid>
-
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Price </small><br/>
-                                    <TextField
-                                        style={{ width: '80%',marginBottom:'4%' }} required label="Price"  name='name'
-                                        textColor="white" variant="outlined"  {...register("price")}
-                                    />
-                                </Grid>
-
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Social Media </small><br/>
-                                    <TextField
-                                        style={{ width: '80%',marginBottom:'2%'  }} label="Url"  name='name'
-                                        textColor="white" variant="outlined"  {...register("socialUrl")}
-                                    />                        </Grid>
-
-                                <Grid item xs={12} sm={6} md={6}>
-                                <small>Add Image </small><br/>
-                                    <input name="exampleRequired" type="file"
-                                    
-                                    style={{ width: '80%',marginBottom:'2%'  }} 
-                                    required onChange={handleImageUpload} />
-                                </Grid>
-
-
-
-                                <Grid item xs={12} sm={6} md={12}> 
-                                    <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
-                                        marginTop: '2%',
-                                         padding: '5px 34px',
-                                        //  padding: '15px 44px',
-                                          color: 'white',
-                                        fontWeight: '300',
-                                        fontSize: '20px',
-                                        background: "#2db6a3",
-
-                                        borderRadius: '4px'
-                                    }}>Submit</button> </Grid>
-                            </Grid>
-                        </form>
-                    </Container>
+                            </form>
+                        </Container>
                     </Container>
                 </div>
             </div>
-            <Footer/>
+            <Footer />
         </div>
     );
 };

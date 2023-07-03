@@ -48,7 +48,7 @@ const RegStudent = () => {
         <>
             <Navigation />
             <div style={{ textAlign: 'center', marginTop: '4%' }}>
-                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today q: {regStudent.length} </h1>
+                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {regStudent.length} </h1>
             </div>
 
 
