@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { useSnackbar } from "notistack";
 import Navigation from '../../Shared/Navigation';
 import { useParams } from "react-router";
+import ReviewRow from "./ReviewRow";
 
 
 
@@ -95,6 +96,17 @@ const AddReview = () => {
 
      
 
+    const [regStudent, setRegStudent] = useState([]);
+    useEffect(() => {
+        const url = `http://localhost:5000/courseRating`;
+        fetch(url)
+            .then((res) => res.json())
+            .then((data) => setRegStudent(data));
+
+    }, []);
+
+    console.log('regStudent',regStudent);
+
     return (
         <>
  <Navigation/>
@@ -103,60 +115,18 @@ const AddReview = () => {
 
                     <Typography variant="h4" style={{ margin: 15, color: '#160254' }}><span style={{ backgroundColor: '#e1e1f1' }}> Submit Review</span></Typography>
 
-                    <form
-                    onSubmit={handleContactUs}
-                    >
-                        <TextField
-                            id="standard-basic"
-                            style={{ margin: 18, width: '50vw' }}
-                            label="Feedback About our website"
-                            name='webReview'
-                            onBlur={handleOnBlur} 
-                            required
-                            variant="standard"
-                        />
 
-                        <br></br>
+                    {
+                                    regStudent.map((regStudent, index) => <ReviewRow
+                                        key={regStudent._id}
+                                        review={regStudent}
+                                        index={ index}
+                                      
 
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}
-                            label="Feedback About our Teacher"
-                            id="standard-basic"
-                            name='teacherReview'
-                            onBlur={handleOnBlur} 
-                            textColor="white"
-                            variant="standard"
-                        />
+                                    ></ReviewRow>)
 
-                        <br></br>
-
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}
-                            label="Email"
-                            name='email'
-                            id="standard-basic"
-                            variant="standard"
-                            onBlur={handleOnBlur} 
-                          
-                        />
-                        <br></br>
-
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}
-                            label="name"
-                            name='name'
-                            id="standard-basic"
-                            variant="standard"
-                            onBlur={handleOnBlur} 
-                        /><br></br>
-                        <Button variant="contained" type="submit" style={{
-                            marginTop: '2%', padding: '15px 55px', color: 'white',
-                            fontWeight: '400',
-                            background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
-                            borderRadius: '15px'
-                        }}>Submit</Button> <br></br>
-
-                    </form>
+                    }
+                    
                 </Box>
             </Container>
 

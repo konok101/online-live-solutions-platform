@@ -12,7 +12,7 @@ import { useForm } from 'react-hook-form';
 
 function Reviews() {
 
-  const {   reset } = useForm();
+ 
   const {user, token} = useContext(AuthContext);
   const {courseSerial}=useParams();
 const [serialData, setSerialData]=useState([]);
@@ -41,7 +41,7 @@ const [serial, setSerial]=useState({...teacherList?.serial})
 
 console.log('serial serial teacherList', teacherList);
 
-const [imageURL, setImgUrl]=useState(teacherList?.imageURL)
+const [imageURL, setImageURL]=useState(teacherList?.couseName)
 
 console.log('serial serial sas imageURL 1', imageURL);
 
@@ -53,6 +53,15 @@ const initialInfo = { name: user?.displayName, email: user?.email    }
  
   const [courseInfo, setCourseInfo] = useState(initialInfo);
   const [success, setSuccess] = useState(false);
+  const [name, setName]=useState('');
+  const [sumary, setSummery]=useState('');
+
+  const handleName = (event) => {
+    setName(event.target.value)
+}
+const handleSummery = (event) => {
+  setSummery(event.target.value)
+}
  
   const handleOnBlur = e => {
 
@@ -63,14 +72,18 @@ const initialInfo = { name: user?.displayName, email: user?.email    }
       setCourseInfo(newInfo);
   }
 
+ 
+
   const handleCourseSubmit = e => {
 
       // collect data
       const courseSubmit = {
           ...courseInfo,
           rating,
-          courseSerial
-          
+          courseSerial,
+          teacherList ,
+          name, 
+          sumary
           
        }
   
@@ -89,7 +102,9 @@ const initialInfo = { name: user?.displayName, email: user?.email    }
 
                   setSuccess(true);
                   enqueueSnackbar("Thanks for added your review", { variant: 'success' })   
-                   setRating("")
+                   setRating("");
+                   setName("");
+                   setSummery("");
                 
               }
           });
@@ -127,7 +142,7 @@ const initialInfo = { name: user?.displayName, email: user?.email    }
 <Box sx={{display:'flex', alignItems:'center'}}>
 <Typography>  Name :</Typography>
 <Box sx={{ml:3}}>
-  <TextField   style={{ width: '50vw' , mt: 5, margin: 18 }}
+  <TextField onChange={handleName} required value={name}  style={{ width: '50vw' , mt: 5, margin: 18 }}
                                                                     color="success">
                                                                  </TextField>
 </Box>
@@ -138,7 +153,8 @@ const initialInfo = { name: user?.displayName, email: user?.email    }
 <textarea
  style={{ width: '50vw' , mt: 5, margin: 18 }}
       name="postContent"
-      
+      onChange={handleSummery}
+      value={sumary}
        rows={4}
       cols={40}
     />
