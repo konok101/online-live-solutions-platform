@@ -12,7 +12,7 @@ import Paper from '@mui/material/Paper';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import MyEnrollmentRow from '../../UserDashboard/MyEnrollment/MyEnrollMentRow';
 import Footer from '../../Shared/Footer';
-
+import CircularProgress from '@mui/material/CircularProgress';
 import Navigation from '../../Shared/Navigation';
 import { Box, Grid } from '@mui/material';
 
@@ -39,7 +39,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 function MyEnrollment() {
-    const { user  } = useContext(AuthContext);
+    const { user , loading } = useContext(AuthContext);
 
      const [myCourses, setMycourses] = useState([]);
     console.log('myCourses', myCourses);
@@ -51,16 +51,19 @@ function MyEnrollment() {
                     .then((data) => setMycourses(data));
         
             }, []);
+
+            if(myCourses || loading){
+                <CircularProgress />
+            }
     return (
         <>
             <Navigation />
 
-             <Container style={{width:"90%", margin: 'auto', marginTop:"70px"  }}>
+             <Container style={{width:"90%", margin: 'auto', marginTop:"70px" }}>
          
-
-                <Paper style={{marginLeft:"200px"}} sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
+                <Paper style={{  height:"700px"}} sx={{ overflowX: 'hidden',   }}>
                 {
-                    myCourses?.length > 0 ?  
+                    myCourses?.length > 0 &&
                     
                     
                    <div style={{marginLeft:"100px"}}>
@@ -70,6 +73,7 @@ function MyEnrollment() {
                    
                       
                         <Grid >
+                           
                             {
                                 myCourses?.map((regStudent, index) => <MyEnrollmentRow
                                     key={regStudent._id}
@@ -84,10 +88,12 @@ function MyEnrollment() {
                         
                    
                 </Grid>
-                   </div> :
-                
-                
-                <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
+                   </div> 
+
+                }
+
+                {
+                     myCourses?.length < 0 &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
                 }
                 </Paper>
             </Container>

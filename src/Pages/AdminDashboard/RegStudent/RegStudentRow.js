@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Button , Alert } from '@mui/material';
-
+import { useSnackbar } from "notistack";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -15,6 +15,8 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
     const {name, email, phnNumber,TrxID,classes,subject,institution, _id, approveData} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
+    const { enqueueSnackbar } = useSnackbar();
+
 
     const handleDelete = (id) => {
       console.log('id',id);
@@ -30,9 +32,12 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
             console.log(data);
             if(data.deletedCount){
                 setDeleteSuccess(true);
+                enqueueSnackbar("Course delete Success", { variant: 'success' }); 
+               
             }
+            
         })
-
+       
     }
 
 
@@ -49,6 +54,8 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
           console.log(data);
           if(data.modifiedCount){
               /* setAdminSuccess(true); */
+              enqueueSnackbar("Course approve Success", { variant: 'success' })   
+
           }
       })
   }
@@ -95,7 +102,7 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
         </StyledTableRow>
 
         {deleteSuccess && <Alert severity="success"  >{regStudent.displayName} is deleted!!...</Alert>}
-
+ 
         
        
         

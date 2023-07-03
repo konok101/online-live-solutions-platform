@@ -84,7 +84,7 @@ function Appw() {
     { path: "/applyForTeacher", element: <ApplyForTeacher /> },
     { path: "/myReview/:courseSerial", element: <Reviews /> },
     { path: "/learnMore", element: <LearnMore /> },
-    { path: "/addReview", element: <AddReview /> },
+    { path: "/ourReviews", element: <AddReview /> },
     { path: "/liveSolution", element: <LiveSolution /> },
     { path: "/problemSolving", element: <ProblemSolving /> },
     { path: "/24hSupport", element: <FullDaySupport /> },
