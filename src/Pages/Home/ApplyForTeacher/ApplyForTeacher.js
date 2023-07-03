@@ -1,8 +1,8 @@
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
- 
-import { Box, TextField } from '@mui/material';
+
+import { Box, Container, Grid, TextField } from '@mui/material';
 import { useSnackbar } from "notistack";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import Navigation from '../../Shared/Navigation';
@@ -11,123 +11,176 @@ import Footer from '../../Shared/Footer';
 const ApplyForTeacher = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, watch, errors, reset } = useForm();
-    const [imageURL,setImageURL] = useState(null);
+    const [imageURL, setImageURL] = useState(null);
     const { enqueueSnackbar } = useSnackbar();
 
 
     const onSubmit = data => {
         console.log(data);
         const eventData = {
-            teacherName      : data?.teacherName,
-            email      : data?.email,
-            imageURL  : imageURL,
-            teachingArea   : data?.teachingArea,
-            socialUrl   : data?.socialUrl,
-            aboutTeacher   : data?.qulification
+            teacherName: data?.teacherName,
+            email: data?.email,
+            imageURL: imageURL,
+            teachingArea: data?.teachingArea,
+            socialUrl: data?.socialUrl,
+            aboutTeacher: data?.qulification
         };
         const url = `http://localhost:5000/applyForTeacher`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
             headers: {
-                'content-type' : 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(eventData)
         })
-        .then(res => console.log('server side response',res))
-        .then(datas=>{
-            enqueueSnackbar("Application submit Success", { variant: 'success' })   
-             reset();
-        })
-        
-      
-         
+            .then(res => console.log('server side response', res))
+            .then(datas => {
+                enqueueSnackbar("Application submit Success", { variant: 'success' })
+                reset();
+            })
+
+
+
     };
 
 
     const handleImageUpload = event => {
-       const imageData = new FormData();
-       imageData.set('key','b349a25b12d1cf8ea35b3bbbf5e43501');
-       imageData.append('image',event.target.files[0]);
+        const imageData = new FormData();
+        imageData.set('key', 'b349a25b12d1cf8ea35b3bbbf5e43501');
+        imageData.append('image', event.target.files[0]);
 
-       axios.post('https://api.imgbb.com/1/upload',
-       imageData)
-      .then(function (response) {
-          console.log(response);
-          setImageURL(response.data.data.display_url);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+        axios.post('https://api.imgbb.com/1/upload',
+            imageData)
+            .then(function (response) {
+                console.log(response);
+                setImageURL(response.data.data.display_url);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
-    
-  const homeStyle = {
-    background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))' 
-  }
+
+    const homeStyle = {
+        background: '#f2f1f2'
+        // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
+    }
     return (
         <div style={homeStyle} >
-             <Navigation />
-            <div  style={{paddingBottom:"100px"}} >
-                
-                <div style={{maxWidth:"50%", margin:"auto", marginTop:"50px"}} >
-                    <Box sx={{maxWidth:"80%", margin:"auto", }}>
-               <h2>  Apply {user?.displayName} for teacher role!!! .</h2> 
-                         <h5 style={{maxWidth:"50%", margin:"auto", fontSize:'30px'}}> Biodata</h5>
+            <Navigation />
+            <div
+            // style={{ paddingBottom: "100px" }} 
+            >
+
+                <div style={{
+                    marginTop: "70px", marginBottom: '10%',
+                    // maxWidth: "50%", margin: "auto", marginTop: "50px" 
+                }} >
+
+                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>
+                        <h2>  Apply {user?.displayName} for teacher role!!! .</h2>
                     </Box>
-                    <Box>
-                        <form onSubmit={handleSubmit(onSubmit)}>
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}   label=" Name"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard" required  {...register("teacherName")}
-                        />                        <br/>
-                            <TextField
-                            style={{ margin: 18, width: '50vw' }} required   label="Email"  id="standard-basic"  name='email'
-                             textColor="white" variant="standard"  {...register("email")}
-                        />                        <br/>
 
-<TextField
-                            style={{ margin: 18, width: '50vw' }} required   label="Teaching Area"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("teachingArea")}
-                        />                        <br/>
+                    {/*<Box sx={{ maxWidth: "80%", margin: "auto", }}>
+                        <h2>  Apply {user?.displayName} for teacher role!!! .</h2>
+                        <h5 style={{ maxWidth: "50%", margin: "auto", fontSize: '30px' }}> Biodata</h5>
+            </Box>*/}
 
- 
-<TextField
-                            style={{ margin: 18, width: '50vw' }} required   label="Qulification"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("qulification")}
-                        />                        <br/>
+                    <Container style={{
+                        // backgroundColor: '#DEDCEE',
+                        backgroundColor:'#daedec',
+                        paddingTop: '4%', paddingBottom: '4%'
+                    }}>
+                        <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
+                            <h5 style={{ fontSize: '30px' }}>Biodata</h5>
+                        </Box>
+                        <Container style={{
+                            width: '80%',
 
-                                
-                        
-                     
- 
-                   <TextField
-                            style={{ margin: 18, width: '50vw' }}    label="Social Url"  id="standard-basic"  name='name'
-                             textColor="white" variant="standard"  {...register("socialUrl")}
-                        />                        <br/>
-                   
- 
-                        <input name="exampleRequired" type="file" required onChange={handleImageUpload}/>
-                        <br/>
-                       
+                        }}>
 
-                       
+                            <form onSubmit={handleSubmit(onSubmit)}>
+                                <Grid container direction="row"
+                                    justifyContent="space-around"
+                                    alignItems="center" >
 
-                        <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
-                        marginTop: '2%', padding: '15px 44px', color: 'white',
-                        fontWeight: '300',
-                        fontSize: '20px',
-                        background: "#2db6a3",
-                        
-                        borderRadius: '4px'
-                    }}>Submit</button>
-                        </form>
-                    </Box>
+                                    <Grid item xs={12} sm={12} md={6} >
+                                        <small style={{marginBottom:'2%'}}>Name </small><br />
+                                        <TextField
+                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined"
+                                            label=" Name" name='name'
+                                            textColor="white"  required  {...register("teacherName")}
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={12} md={6} >
+                                        <small>Select Teacher Name </small><br />
+                                        <TextField
+                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required 
+                                        label="Email" 
+                                         name='email'
+                                            textColor="white"   {...register("email")}
+                                        />
+                                    </Grid>
+
+                                    <Grid item xs={12} sm={12} md={6} >
+                                        <small>Select Teacher Name </small><br />
+                                        <TextField
+                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" required label="Teaching Area" name='name'
+                                            textColor="white"   {...register("teachingArea")}
+                                        />
+                                    </Grid>
+
+
+                                    <Grid item xs={12} sm={12} md={6} >
+                                        <small>Select Teacher Name </small><br />
+                                        <TextField
+                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required label="Qulification"  name='name'
+                                            textColor="white"  {...register("qulification")}
+                                        />   
+                                        </Grid>                    
+
+
+
+
+                                        <Grid item xs={12} sm={12} md={6} >
+                                        <small>Select Teacher Name </small><br />
+                                        <TextField
+                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" label="Social Url"  name='name'
+                                            textColor="white"   {...register("socialUrl")}
+                                        />                        
+                                        </Grid>
+
+                                        <Grid item xs={12} sm={12} md={6} >
+                                        <small>Select Teacher Name </small><br />
+                                        <input name="exampleRequired" type="file" 
+                                        style={{ width: '80%', marginBottom: '2%',marginTop:'1%' }}
+                                        required onChange={handleImageUpload} />
+                                        </Grid>
+
+
+
+                                        <Grid item xs={12} sm={12} md={12} >
+                                        
+                                        <button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
+                                            marginTop: '2%', padding: '5px 34px', color: 'white',
+                                            fontWeight: '300',
+                                            fontSize: '20px',
+                                            background: "#2db6a3",
+
+                                            borderRadius: '4px'
+                                        }}>Submit</button></Grid>
+                                    </Grid>
+                            </form>
+                        </Container>
+
+                    </Container>
                 </div>
             </div>
 
- 
 
-        </div>
+            <Footer />
+        </div >
     );
 };
 
