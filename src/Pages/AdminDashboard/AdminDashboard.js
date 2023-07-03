@@ -42,7 +42,7 @@ import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
 import HomeAdminDashboard from './HomeAdminDashboard';
 
-const drawerWidth = 230;
+const drawerWidth = 270;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
