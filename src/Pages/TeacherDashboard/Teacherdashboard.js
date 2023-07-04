@@ -7,31 +7,21 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+ import ListItem from '@mui/material/ListItem';
+ 
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-  Switch,
-  Route,
+ 
   Link,
-  useRouteMatch,
+  
 } from "react-router-dom";
 
 // import useAuth from '../../hooks/useAuth';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
-
-import TreeView from '@mui/lab/TreeView';
-import TreeItem from '@mui/lab/TreeItem';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { Container } from '@mui/system';
 
 
@@ -42,7 +32,7 @@ import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
 
 
-const drawerWidth = 230;
+const drawerWidth = 270;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
   ({ theme, open }) => ({
@@ -93,8 +83,7 @@ function TeacherDashboard() {
   const [open, setOpen] = React.useState(false);
   const { user } = React.useContext(AuthContext);
 
-  // const { user } = useAuth();
-  const handleDrawerOpen = () => {
+   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
@@ -102,8 +91,7 @@ function TeacherDashboard() {
     setOpen(false);
   };
 
-  // let { path, url } = useRouteMatch();
-
+ 
   const drawer = (
     <div >
 
@@ -124,7 +112,15 @@ function TeacherDashboard() {
           <Link to='/regStudentTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
               <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Registered</Button>
+              <Button style={{ color: '#08558b' }}>my classes</Button>
+            </ListItem>
+          </Link>
+
+
+          <Link to='/addCourseByTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Add Course</Button>
             </ListItem>
           </Link>
 
@@ -136,53 +132,7 @@ function TeacherDashboard() {
           </Link>
 
 
-          <TreeView
-            style={{ textAlign: 'left', marginLeft: '0%' }}
-            aria-label="file system navigator"
-            defaultExpanded={['1']}
-
-
-            defaultCollapseIcon={
-              <div style={{ padding: '.3rem 0', }}>
-                <ArrowDropUpIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-              </div>}
-            defaultExpandIcon={<div style={{ padding: '.3rem 0', }}>
-              <ArrowDropDownIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-            </div>}
-
-            sx={{ flexGrow: 1, overflowY: 'hidden', overflowX: 'hidden' }}
-          >
-
-            <TreeItem nodeId="1" label="Department"
-              style={{ color: '#08558b' }}>
-
-              <Link to='/math' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Math</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/english' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>English</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/science' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Science</Button>
-                </ListItem>
-              </Link>
-
-            </TreeItem>
-
-
-          </TreeView>
-
-
+   
 
         </Container>
       </Box>
