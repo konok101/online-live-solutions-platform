@@ -38,6 +38,7 @@ function CourseRow({course,   index, ratings }) {
   const [courseTeacher, seTCourseTeacher]=useState()
   const [courseSerial, seTCourseSerial]=useState()
   const [teacherEmail, setTeacherEmail]=useState()
+  const [price, setPrice]=useState()
   const { enqueueSnackbar } = useSnackbar();
 
 
@@ -49,6 +50,7 @@ function CourseRow({course,   index, ratings }) {
     seTCourseSerial(course?.serial)
     setImg(course?.imageURL)
     setTeacherEmail(course?.teacherEmail)
+    setPrice(course?.price)
 
   }
 
@@ -77,7 +79,8 @@ function CourseRow({course,   index, ratings }) {
           img,
           courseTeacher,
           courseSerial,
-          teacherEmail
+          teacherEmail,
+          price
        }
   
       // send to the server

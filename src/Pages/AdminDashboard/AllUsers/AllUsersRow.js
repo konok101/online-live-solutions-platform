@@ -11,6 +11,7 @@ import { Button , Alert } from '@mui/material';
 import userEvent from '@testing-library/user-event';
 import AllUsers from './AllUsers';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const AllUserRow = ({allUser, index,StyledTableRow,StyledTableCell}) => {
@@ -78,7 +79,7 @@ const AllUserRow = ({allUser, index,StyledTableRow,StyledTableCell}) => {
         
         <StyledTableCell ><Button onClick={handleDelete} variant="contained" size="small" style={{fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(198,42,66), rgb(198,105,42))',
-        borderRadius: '15px'}}>Remove User</Button></StyledTableCell>
+        borderRadius: '15px'}}><DeleteIcon/></Button></StyledTableCell>
         </StyledTableRow>
 
         {deleteSuccess && <Alert severity="success"  >{allUser.displayName} is deleted!!...</Alert>}

@@ -11,31 +11,14 @@ import { Button, Alert } from '@mui/material';
 import userEvent from '@testing-library/user-event';
 
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
-import StudentReview from './StudentReview';
+import StudentReview from './ContactList';
 
 
 const StudentReviewRow = ({ allReview, index, StyledTableRow, StyledTableCell }) => {
-    const { email,name, review } = allReview;
+    const { email,name, querie } = allReview;
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
-    // const handleDelete = () => {
-    //     fetch(`http://localhost:5000/users/${email}`,{
-    //         method:'DELETE',
-    //         headers: {
-    //             'authorization': `Bearer ${token}`,
-    //             'content-type': 'application/json'
-    //         }
-    //     })
-    //     .then(res=>res.json())
-    //     .then(data=> {
-    //         console.log(data);
-    //         if(data.deletedCount){
-    //             setDeleteSuccess(true);
-    //         }
-    //     })
-
-    // }
-
+ 
     return (
 
         <>
@@ -50,16 +33,10 @@ const StudentReviewRow = ({ allReview, index, StyledTableRow, StyledTableCell })
                     {email}
                 </StyledTableCell>
                 <StyledTableCell component="th" scope="row">
-                    {review}
+                    {querie}
                 </StyledTableCell>
 
-
-
-               
-
-
-
-                
+         
             </StyledTableRow>
 
             

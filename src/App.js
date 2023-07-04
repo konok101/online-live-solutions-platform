@@ -31,7 +31,7 @@ import AddTeacher from './Pages/AdminDashboard/AddTeacher';
 import AllUsers from './Pages/AdminDashboard/AllUsers/AllUsers';
 import AdminRoute from './Pages/Login/privateRoute/AdminRoute';
 import CourseFooter from './Pages/Course/CouseWithFooter';
-import StudentReview from './Pages/AdminDashboard/StudentReview/StudentReview';
+import StudentReview from './Pages/AdminDashboard/StudentReview/ContactList';
 import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
 import AddCourse from './Pages/Course/AddCouse';
@@ -57,7 +57,7 @@ function Appw() {
     { path: "/about", element: <AboutUs /> },
     { path: "/contact", element: <ContactUs /> },
     { path: "/review", element: <Review /> },
-    { path: "/studentReview", element: <StudentReview /> },
+    { path: "/contactQuaries", element: <StudentReview /> },
     { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute> },
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute> },
     { path: "/login", element: <Login /> },
