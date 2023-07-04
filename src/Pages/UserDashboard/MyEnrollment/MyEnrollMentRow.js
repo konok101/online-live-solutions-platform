@@ -1,24 +1,12 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState,  useContext } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
-import { useTheme } from '@mui/material/styles';
-
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import { Button , Alert, Box } from '@mui/material';
+ import { Button ,  Box } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
- import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
-import SkipNextIcon from '@mui/icons-material/SkipNext';
-
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import {    useNavigate } from 'react-router';
 import Link from '@mui/material/Link';
@@ -65,11 +53,11 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
          
         
         </Button>
-        <Button size="small">           {approveData && <><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Message</Button></>}
+        <Button size="small">           {approveData && <><Button variant="contained">Message</Button></>}
  </Button>
         <Button size="small">  {approveData &&
           
-          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial)} style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Add review</Button></Link>
+          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial)} style={{ textDecoration: 'none' }}><Button variant="contained">Add review</Button></Link>
           </>}</Button>
       </CardActions> 
        

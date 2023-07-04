@@ -45,7 +45,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
 
         <CardContent sx={{ flex: '1 0 auto' }}>
           <Typography component="div" variant="h5">
-       Help <span style={{color:"orange"}}>{name} </span> and solve your problem....
+       Help <span style={{color:"orange"}}>{name} </span> and solve this problem....
           </Typography>
           <Typography variant="subtitle1" color="text.secondary" component="div">
              {subject}
@@ -62,7 +62,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
          
         
         </Button>
-        <Button size="small">           {approveData && <><Button className='buttonHover' color="inherit" sx={{ color: 'black', bgcolor:"gray", width:"110px", ml:'5px' }}>Message</Button></>}
+        <Button size="small">           {approveData && <><Button  variant="contained"   >Message</Button></>}
  </Button>
        
       </CardActions> 

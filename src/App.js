@@ -35,6 +35,7 @@ import StudentReview from './Pages/AdminDashboard/StudentReview/ContactList';
 import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
 import AddCourse from './Pages/Course/AddCouse';
+import AddCourseByTeacher from './Pages/TeacherDashboard/AddCoursebyTeacher';
 import MyEnrollment from './Pages/UserDashboard/MyEnrollment/MyEnrollment';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import OurTeachers from './Pages/Home/OurTeachers/OurTeachers.js';
@@ -73,6 +74,7 @@ function Appw() {
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
     { path: "/addCourse", element: <AddCourse /> },
+    { path: "/addCourseByTeacher", element: <AddCourseByTeacher /> },
     { path: "/english", element: <English /> },
     { path: "/science", element: <Science /> },
     { path: "/addTeacher", element: <AddTeacher /> },

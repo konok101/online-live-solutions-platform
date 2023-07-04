@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Paper from '@mui/material/Paper';
 import { Grid } from '@mui/material';
 import { Box, Container } from '@mui/system';
+import { useContext } from 'react';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 function EmployeNumber() {
+
+    const { user, admin, teacher } = useContext(AuthContext);
 
     const [allUser, setAllUser] = useState([]);
     useEffect(() => {
@@ -67,12 +71,12 @@ function EmployeNumber() {
                         </Paper>
                     </Grid>
 
-                    <Grid item xs={3} sm={3} md={3}>
+                   {admin &&  <Grid item xs={3} sm={3} md={3}>
                         <Paper elevation={3} style={{background: 'linear-gradient(to right, rgba(10,85,27, 0.5), rgba(16,174,157, 0.5))',padding:'15%',color:'#08558b'}}> 
                         <h1>{total}+</h1>
                         <h1>earn</h1>
                         </Paper>
-                    </Grid>
+                    </Grid>}
 
                     <Grid item xs={3} sm={3} md={3}>
                         <Paper elevation={3} style={{background: 'linear-gradient(to right, rgba(6,12,133, 0.5), rgba(19,124,219, 0.5))',padding:'15%',color:'#08558b'}}> 
