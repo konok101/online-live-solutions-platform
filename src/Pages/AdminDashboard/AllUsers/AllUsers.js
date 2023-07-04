@@ -48,7 +48,7 @@ const AllUsers = () => {
         <>
             <Navigation />
             <div style={{ textAlign: 'center', marginTop: '100px' }}>
-                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Users: {allUser.length} </h1>
+         {/*        <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Users: {allUser.length} </h1> */}
             </div>
 
 
@@ -62,7 +62,7 @@ const AllUsers = () => {
                                     <StyledTableCell></StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Name</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Email</StyledTableCell>
-                                    <StyledTableCell align="right"></StyledTableCell>
+                                    <StyledTableCell align="center" style={{ fontWeight: '700', color: '#102a34' }}> Action</StyledTableCell>
                                     <StyledTableCell ></StyledTableCell>
                                 </StyledTableRow>
                             </TableHead>

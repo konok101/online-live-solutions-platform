@@ -49,7 +49,7 @@ const RegStudent = () => {
             <Navigation />
             <div style={{ textAlign: 'center', marginTop: '4%' }}>
  
-                <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {regStudent.length} </h1>
+{/*                 <h1 style={{ fontWeight: '700', color: '#13698b', backgroundColor:'#94C9CC', width: '50%', margin:"auto", padding:'10px' }}>Total Registered Student for Today: {regStudent.length} </h1> */}
  
             </div>
 

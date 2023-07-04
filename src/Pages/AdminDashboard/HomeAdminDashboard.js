@@ -1,17 +1,8 @@
 import { Grid } from "@mui/material";
 import React from "react";
 import Calender from "../UserDashboard/Homedashboard/Calender";
-// import CarouselStudentSuccess from "../../HomePage/StudentSuccess/CarouselStudentSuccess";
-// import WhatWeOffer from "../../HomePage/whatWeOffer/WhatWeOffer";
-// import Calender from "./Calender";
-// import ChartReact from "./ChartReact";
 import EmployeNumber from "../UserDashboard/Homedashboard/EmployeNumber";
 import GrowthChart from "../UserDashboard/Homedashboard/GrowthChart";
-
-
-// import EventGallary from "./EventGallary";
-// import UpdatedChart from "./UpdatedChart";
-
 const HomeAdminDashboard = () => {
 
 

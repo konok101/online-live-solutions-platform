@@ -7,7 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import StudentReviewRow from './StudentReviewRow';
+import StudentReviewRow from './ContactListRow';
 import { Container } from '@mui/system';
 import Footer from '../../Shared/Footer';
 import Navigation from '../../Shared/Navigation';
@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StudentReview = () => {
   const [allReview, setAllReview] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/review`;
+    const url = `http://localhost:5000/contact`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllReview(data));
@@ -47,12 +47,12 @@ const StudentReview = () => {
   return (
     <>
       <Navigation />
-      <div style={{ textAlign: 'center', marginTop: '2%' }}>
-        <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Quearies: {allReview.length} </h1>
-      </div>
+      <div style={{ textAlign: 'center', marginTop: '70px' }}>
+{/*         <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Quearies: {allReview.length} </h1>
+ */}      </div>
 
 
-      <Container style={{ margin: '4%' }}>
+      <Container >
         <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
           <TableContainer sx={{ height: '80vh', width: '80vw' }}>
             <Table stickyHeader aria-label="sticky table"
