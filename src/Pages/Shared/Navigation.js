@@ -32,6 +32,19 @@ function DrawerAppBar(props) {
   // const [anchorElNav, setAnchorElNav] = React.useState(null);
   // const [anchorElUser, setAnchorElUser] = React.useState(null);
   const { user,admin, teacher, logOut } = useContext(AuthContext);
+
+  // const handleOpenNavMenu = (event) => {
+  //   setAnchorElNav(event.currentTarget);
+  // };
+  // const handleOpenUserMenu = (event) => {
+  //   setAnchorElUser(event.currentTarget);
+  // };
+  // const handleCloseNavMenu = () => {
+  //   setAnchorElNav(null);
+  // };
+  // const handleCloseUserMenu = () => {
+  //   setAnchorElUser(null);
+
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: '#44b700',
@@ -60,7 +73,6 @@ function DrawerAppBar(props) {
       },
     },
   }));
-
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -94,6 +106,7 @@ function DrawerAppBar(props) {
                 <Link to="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
 
               }
+
               {
                 user?.email ?
 
@@ -125,7 +138,7 @@ function DrawerAppBar(props) {
   }
 
 
-
+ 
   
   const SmallAvatar = styled(Avatar)(({ theme }) => ({
     width: 22,

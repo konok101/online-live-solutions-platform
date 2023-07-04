@@ -12,7 +12,7 @@ function Services() {
     <div  style={{ textAlign: "center", marginBottom:'2%',marginTop:'3%'}}>
     <h3 style={{color:'rgb(34,37,71)'}}><span  style={{backgroundColor:'#e5ca95'}}>Our S</span><span>ervices</span></h3>
 
-    <h1 style={{color:'rgb(34,37,71)',fontWeight:'700',}}>Our Special Services For You</h1>
+    <h1 style={{color:'rgb(34,37,71)',fontWeight:'700',}}>Our Special Services  </h1>
 
     <p>Fusce pharetra odio in urna laoreet laoreet. Aliquam erat volutpat. Phasellus nec ligula arcu.<br></br> Aliquam eu urna pulvinar, iaculis ipsum in, porta massa.</p>
     </div>
