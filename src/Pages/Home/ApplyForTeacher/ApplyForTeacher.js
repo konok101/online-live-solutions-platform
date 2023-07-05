@@ -114,7 +114,7 @@ const ApplyForTeacher = () => {
                                     </Grid>
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small> Email </small><br />
                                         <TextField
                                         style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required 
                                         label="Email" 
@@ -124,7 +124,7 @@ const ApplyForTeacher = () => {
                                     </Grid>
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small> Teaching area </small><br />
                                         <TextField
                                         style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" required label="Teaching Area" name='name'
                                             textColor="white"   {...register("teachingArea")}
@@ -133,7 +133,7 @@ const ApplyForTeacher = () => {
 
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small> Qulification </small><br />
                                         <TextField
                                         style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required label="Qulification"  name='name'
                                             textColor="white"  {...register("qulification")}
@@ -144,7 +144,7 @@ const ApplyForTeacher = () => {
 
 
                                         <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small> Social Url </small><br />
                                         <TextField
                                         style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" label="Social Url"  name='name'
                                             textColor="white"   {...register("socialUrl")}
@@ -152,7 +152,7 @@ const ApplyForTeacher = () => {
                                         </Grid>
 
                                         <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small>Upload Image </small><br />
                                         <input name="exampleRequired" type="file" 
                                         style={{ width: '80%', marginBottom: '2%',marginTop:'1%' }}
                                         required onChange={handleImageUpload} />
