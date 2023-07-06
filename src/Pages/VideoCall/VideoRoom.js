@@ -26,12 +26,12 @@ const Room = () => {
 
     }
     return (
-        <div>
-
-<Navigation/>
-        
-            <div ref={myMeeting} /> 
-        </div>
+        <>
+<Navigation />
+            <div style={{marginTop:'85px',}}>
+            <div style={{ width:"85%", margin:'auto'}} ref={myMeeting} /> 
+            </div>
+        </>
     );
 };
 

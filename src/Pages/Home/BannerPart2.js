@@ -136,7 +136,7 @@ function BannerPart2() {
                 fontWeight: '600',
                 fontSize: '18px',
                 borderRadius: '4px'
-              }}>VIEW MORE</button>
+              }}>Apply Now</button>
             </Link>
           </Grid>
 
@@ -151,7 +151,7 @@ function BannerPart2() {
                   fontWeight: '600',
                   fontSize: '18px',
                   borderRadius: '4px'
-                }}>VIEW MORE</button>
+                }}>VIEW Reviews</button>
             </Link>
           </Grid>
 

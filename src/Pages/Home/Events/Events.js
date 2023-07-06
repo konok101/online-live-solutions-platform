@@ -55,7 +55,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>web develpoment</span> course. Discuss and dicount first 10 enrolled this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>web develpoment</span> course. Discuss and discount first 10 enrolled this course.
                                                             </Typography>
                                                       </CardContent>
 
@@ -78,7 +78,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Software develpoment</span> course. Discuss and dicount first 10 enrolled this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Software develpoment</span> course. Discuss and discount first 10 enrolled this course.
                                                             </Typography>
                                                       </CardContent>
 
@@ -100,7 +100,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}> Digital Marketing </span> course. Discuss and dicount first 10 enrolled  this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}> Digital Marketing </span> course. Discuss and discount first 10 enrolled  this course.
                                                             </Typography>
                                                       </CardContent>
 
@@ -122,7 +122,7 @@ function Events() {
                                                       <CardContent>
 
                                                             <Typography variant="h6">
-                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Higher Education  </span> course. Discuss and dicount  first  10 enrolled  this course.
+                                                                  Carrer Guidline for <span style={{ color: "#FFD700", fontSize: "20px" }}>Higher Education  </span> course. Discuss and discount  first  10 enrolled  this course.
                                                             </Typography>
                                                       </CardContent>
 

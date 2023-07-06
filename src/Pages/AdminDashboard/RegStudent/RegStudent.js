@@ -63,6 +63,7 @@ const RegStudent = () => {
                                 <StyledTableRow>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Teacher</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>TrxID</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Mobile</StyledTableCell>

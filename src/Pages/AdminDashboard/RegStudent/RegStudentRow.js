@@ -12,11 +12,11 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
 const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID,classes,subject,institution, _id, approveData} = regStudent;
+    const {name, email, phnNumber,TrxID,courseTeacher,subject,  _id, approveData} = regStudent;
     const {user, token} = useContext(AuthContext);
     const [deleteSuccess, setDeleteSuccess] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
-
+console.log('regStudent', regStudent);
 
     const handleDelete = (id) => {
       console.log('id',id);
@@ -72,6 +72,9 @@ const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
           {name}
+        </StyledTableCell>
+        <StyledTableCell component="th" scope="row">
+          {courseTeacher}
         </StyledTableCell>
         <StyledTableCell component="th" scope="row">
           {email}
