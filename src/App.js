@@ -47,6 +47,8 @@ import LiveSolution from './Pages/Home/LiveSolution/LiveSolution';
 import ProblemSolving from './Pages/Home/ProblemSolving/ProblemSolving';
 import FullDaySupport from './Pages/Home/FullDaySupport/FullDaySupport';
 import Gallery from './Pages/UserDashboard/Gallery';
+import VideoCallHome from './Pages/VideoCall/VideoCallHome';
+import VideoRoom from './Pages/VideoCall/VideoRoom';
 
 
 function Appw() {
@@ -91,6 +93,8 @@ function Appw() {
     { path: "/problemSolving", element: <ProblemSolving /> },
     { path: "/24hSupport", element: <FullDaySupport /> },
     { path: "/gallery", element: <Gallery /> },
+    { path: "/VideoCallHome", element: <VideoCallHome /> },
+    { path: "/room/:roomId", element: <VideoRoom /> },
   ]);
   return routes;
 };

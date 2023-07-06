@@ -29,7 +29,12 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
     const [deleteSuccess, setDeleteSuccess] = useState(false);
     const navigate= useNavigate();
 
-    
+    const handleJoinRoom = (value) => {
+      navigate(`/room/${value}`);
+    };
+
+
+    console.log('regStudent', regStudent);
  
 
     return (    
@@ -62,7 +67,7 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
          
         
         </Button>
-        <Button size="small">           {approveData && <><Button  variant="contained"   >Message</Button></>}
+        <Button size="small">           {approveData && <><Button  variant="contained" onClick={()=>handleJoinRoom(courseSerial)}  >Join Now</Button></>}
  </Button>
        
       </CardActions> 
