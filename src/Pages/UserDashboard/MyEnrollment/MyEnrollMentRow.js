@@ -1,6 +1,4 @@
-import React, { useState,  useContext } from 'react';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
+import React, {  useContext } from 'react';
  import { Button ,  Box } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -11,16 +9,22 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import {    useNavigate } from 'react-router';
 import Link from '@mui/material/Link';
 
-const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
-    const {name, email, phnNumber,TrxID, img,subject,institution, couseName, courseTeacher, approveData, courseSerial} = regStudent;
-    const {user, token} = useContext(AuthContext);
-    const [deleteSuccess, setDeleteSuccess] = useState(false);
+const StudentRegisteredRow = ({regStudent}) => {
+    const {name,  img,subject,    courseTeacher, approveData, courseSerial} = regStudent;
+    const {user} = useContext(AuthContext);
     const navigate= useNavigate();
+   
+  
+    const handleJoinRoom = (value) => {
+      console.log('value rom',value);
+      navigate(`/room/${value}`);
+    };
 
     const handleMyReviewPage = courseSerial =>{
       navigate(`/myReview/${courseSerial}`)
  
     }
+
  
 
     return (    
@@ -53,7 +57,17 @@ const StudentRegisteredRow = ({regStudent, index,StyledTableRow,StyledTableCell}
          
         
         </Button>
-        <Button size="small">           {approveData && <><Button variant="contained">Message</Button></>}
+        <Button size="small">           {approveData && <>  <Link onClick={()=>handleJoinRoom(courseSerial)} style={{ textDecoration: 'none' }}><Button variant="contained"> Join Now </Button></Link>
+        
+        <div>
+ 
+
+    
+    </div>
+        
+        </>
+        
+        }
  </Button>
         <Button size="small">  {approveData &&
           
