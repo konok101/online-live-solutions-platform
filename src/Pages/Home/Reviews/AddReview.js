@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import TextField from '@mui/material/TextField';
 import { Box, height } from "@mui/system";
-import { Button, Typography, Alert, Container } from "@mui/material";
+import { Button, Typography, Alert, Container, Grid } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { useSnackbar } from "notistack";
@@ -23,78 +23,7 @@ const bannerBackground = {
 }
 
 const AddReview = () => {
-
-
-
-
-
-    const { _id } = useParams();
-    const [fruitsInfo, setFruitsInfo] = useState({});
- 
    
- 
-    useEffect(() => {
-       const url = `http://localhost:5000/myCourse/${_id}`;
- 
-       fetch(url)
-          .then(res => res.json())
-          .then(data => setFruitsInfo(data))
-    }, []);
-
-
-
-
-
-
-
-
-
-
-    // const { user } = useContext(AuthContext);
-    const initialInfo = {  name:'', email:'' }
-    const { enqueueSnackbar } = useSnackbar();
-
-    const [userInfo, setUserInfo] = useState(initialInfo);
-
-    const handleOnBlur = e => {
-
-        const field = e.target.name;
-        const value = e.target.value;
-        const newInfo = { ...userInfo };
-        newInfo[field] = value;
-        // console.log(newInfo);
-        setUserInfo(newInfo);
-    }
-
-
-    const handleContactUs = e => {
-        // collect data
-        const ContactUs = {
-            ...userInfo,
-        }
-
-        // send to the server
-        fetch('http://localhost:5000/review', {
-        method: 'POST',
-        headers: {
-            'content-type': 'application/json'
-         },
-            body: JSON.stringify(ContactUs)
-        })
-        .then(res => res.json())
-        .then(data => {
-        console.log(data);
-        if (data.insertedId) {
-            // setSuccess(true);
-        }
-    });
-
-    e.preventDefault();
-    enqueueSnackbar("Review submit Success", { variant: 'success' })   
-
-    }
-
-     
 
     const [regStudent, setRegStudent] = useState([]);
     useEffect(() => {
@@ -105,19 +34,39 @@ const AddReview = () => {
 
     }, []);
 
+
+    const uniqueIds = [];
+
+const unique = regStudent.filter(element => {
+  const isDuplicate = uniqueIds.includes(element.courseSerial);
+
+  if (!isDuplicate) {
+    uniqueIds.push(element.teacherList?.serial);
+
+    return true;
+  }
+
+  return false;
+});
+
+
+ 
+console.log(unique);
     console.log('regStudent',regStudent);
 
     return (
         <>
  <Navigation/>
-            <Container style={bannerBackground} sx={{ height: '100vh' }} >
-                <Box container justifyContent='center' style={{ textAlign: 'center', paddingTop: '5%', borderBottom: "2px solid #472ca7", paddingBottom: '5%' }}>
+            
+               
+  <h1 style={{marginTop:'70px', width:'700px', margin:'auto'}}>Top  Reviews acivement in our teacher </h1>
+              
 
-                    <Typography variant="h4" style={{ margin: 15, color: '#160254' }}><span style={{ backgroundColor: '#e1e1f1' }}> Submit Review</span></Typography>
-
-
-                    {
-                                    regStudent.map((regStudent, index) => <ReviewRow
+                    <Grid container direction="row"
+    justifyContent="space-around"
+    alignItems="center"  >
+       {
+                                    unique.slice(0,5).map((regStudent, index) => <ReviewRow
                                         key={regStudent._id}
                                         review={regStudent}
                                         index={ index}
@@ -126,9 +75,13 @@ const AddReview = () => {
                                     ></ReviewRow>)
 
                     }
-                    
-                </Box>
-            </Container>
+    </Grid>
+
+              
+
+
+
+          
 
 
         </>
