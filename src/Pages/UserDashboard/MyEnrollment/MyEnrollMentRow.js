@@ -8,22 +8,50 @@ import Typography from '@mui/material/Typography';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import {    useNavigate } from 'react-router';
 import Link from '@mui/material/Link';
+import { useSnackbar } from 'notistack';
 
 const StudentRegisteredRow = ({regStudent}) => {
-    const {name,  img,subject,    courseTeacher, approveData, courseSerial} = regStudent;
-    const {user} = useContext(AuthContext);
+    const {name,  img,subject, _id,   courseTeacher, approveData, courseSerial, isRating} = regStudent;
+    const {user, token} = useContext(AuthContext);
+    const { enqueueSnackbar } = useSnackbar();
     const navigate= useNavigate();
    
-  
+  console.log('isRating isRating', isRating);
     const handleJoinRoom = (value) => {
       console.log('value rom',value);
       navigate(`/room/${value}`);
     };
 
-    const handleMyReviewPage = courseSerial =>{
+    const handleMyReviewPage = (courseSerial, _id) =>{
+      handleReviewButton(_id)
       navigate(`/myReview/${courseSerial}`)
  
     }
+    const handleReviewButton = (_id) => {
+      fetch(`http://localhost:5000/myCoursed/${_id}`, {
+          method: 'PUT',
+          headers: {
+              'authorization': `Bearer ${token}`,
+              'content-type': 'application/json'
+          }
+      })
+      .then(res => res.json())
+      .then(data => {
+          console.log("ss data",data);
+          if(data.modifiedCount){
+              
+/*               enqueueSnackbar("Course approve 11", { variant: 'success' })   
+ */ 
+
+          }
+      })
+  }
+
+
+
+
+
+  
 
  
 
@@ -69,9 +97,9 @@ const StudentRegisteredRow = ({regStudent}) => {
         
         }
  </Button>
-        <Button size="small">  {approveData &&
+        <Button size="small">  {isRating === true && approveData &&
           
-          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial)} style={{ textDecoration: 'none' }}><Button variant="contained">Add review</Button></Link>
+          <>              <Link  onClick={()=>handleMyReviewPage(courseSerial, _id)} style={{ textDecoration: 'none' }}><Button variant="contained">Add review</Button></Link>
           </>}</Button>
       </CardActions> 
        
