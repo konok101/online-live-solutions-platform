@@ -115,24 +115,24 @@ const AddCourse = () => {
             <Navigation />
             <div >
                 <div style={{
-                    marginTop: "100px", marginBottom: '10%'
+                    marginTop: "70px", marginBottom: '10%'
                 }} >
-
-                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%', margin: "auto", textAlign: 'center' }}>
-                        <h2>Course Added by Admin: {user?.displayName} !!!</h2>
+                
+                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>
+                        <h2 style={{fontWeight:'bold', }}>Course Added by Admin: {user?.displayName} !!!</h2>
                     </Box>
 
                     <Container style={{
                         // backgroundColor: '#DEDCEE',
-                        backgroundColor:'#daedec',
+                        background:'linear-gradient(to right,rgb(110,156,236), rgb(230,225,227)',
+                        
+                        borderRadius:'50px',
                         paddingTop: '4%', paddingBottom: '4%'
                     }}>
 
-                        <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
+                        <Box style={{ maxWidth: "80%", marginLeft: "13%", }}>
 
-                            <h5 style={{
-                                fontSize: '30px'
-                            }}>
+                            <h5 style={{fontWeight:'bold', fontSize: '30px' }}>
                                 Add Course
                             </h5>
                         </Box>
@@ -148,7 +148,7 @@ const AddCourse = () => {
                                     alignItems="center" >
 
                                     <Grid item xs={12} sm={12} md={12} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Select Teacher Name </small><br />
                                         <Autocomplete
                                             onChange={(event, value) => handleDept(value)}
                                             size='small'
@@ -181,48 +181,58 @@ const AddCourse = () => {
                                     </Grid>
 
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>Course Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Course Name </small><br />
                                         <TextField
                                             style={{
                                                 width: '80%', marginBottom: '4%'
-                                            }} required label="Course Name" name='name'
+                                            }} required 
+                                            // label="Course Name" 
+                                            name='name'
                                             textColor="white" variant="outlined"  {...register("couseName")}
                                         />
                                     </Grid>
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>Teaching Area </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Teaching Area </small><br />
                                         <TextField
                                             style={{
                                                 width: '80%', marginBottom: '4%'
-                                            }} required label="Teaching Area" name='name'
+                                            }} required 
+                                            // label="Teaching Area" 
+                                            name='name'
                                             textColor="white" variant="outlined"  {...register("teachingArea")}
                                         />                        </Grid>
 
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>Class Duration </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Class Duration </small><br />
                                         <TextField
-                                            style={{ width: '80%', marginBottom: '4%', }} required label="Hours" name='name'
+                                            style={{ width: '80%', marginBottom: '4%', }} required 
+                                            // label="Hours" 
+                                            name='name'
                                             textColor="white" variant="outlined"  {...register("hours")}
                                         />
                                     </Grid>
 
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>Price </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Price </small><br />
                                         <TextField
-                                            style={{ width: '80%', marginBottom: '4%' }} required label="Price" name='name'
+                                            style={{ width: '80%', marginBottom: '4%' }} required 
+                                            // label="Price" 
+                                            name='name'
                                             textColor="white" variant="outlined"  {...register("price")}
                                         />
                                     </Grid>
 
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>LinkedIn </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>LinkedIn </small><br />
                                         <TextField
-                                            style={{ width: '80%', marginBottom: '2%' }} label="Url" name='name'
+                                            style={{ width: '80%', marginBottom: '2%' }} 
+                                            // label="Url" 
+                                            name='name'
                                             textColor="white" variant="outlined"  {...register("socialUrl")}
                                         />                        </Grid>
 
                                     <Grid item xs={12} sm={6} md={6}>
-                                        <small>Add Image </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Image </small><br />
                                         <input name="exampleRequired" type="file"
 
                                             style={{ width: '80%', marginBottom: '2%' }}
@@ -239,9 +249,9 @@ const AddCourse = () => {
                                             color: 'white',
                                             fontWeight: '300',
                                             fontSize: '20px',
-                                            background: "#2db6a3",
+                                            backgroundColor: "rgb(17,63,144)",
 
-                                            borderRadius: '4px'
+                                            borderRadius: '14px'
                                         }}>Submit</button> </Grid>
                                 </Grid>
                             </form>

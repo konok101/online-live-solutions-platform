@@ -94,7 +94,7 @@ const ApplyForTeacher = () => {
                         borderRadius:'50px',
                         paddingTop: '4%', paddingBottom: '4%'
                     }}>
-                        <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
+                        <Box style={{ maxWidth: "80%", marginLeft: "13%", }}>
                             <h5 style={{fontWeight:'bold', fontSize: '30px' }}>Biodata</h5>
                         </Box>
                         <Container style={{

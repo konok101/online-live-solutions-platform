@@ -136,15 +136,19 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
   
     return (
         <>
-    <Grid   item xs={12} sm={6} md={3.7} style={{marginTop:'40px'}}  >
+    <Grid   item xs={12} sm={12} md={3.5} style={{marginTop:'40px', marginLeft:'2%', marginRight:'2%'}}  >
        
-          <Card style={{ borderBottom: "8px solid #f17917" }} sx={{ maxWidth: 545  }}>
-    <Box sx={{height:'300px'}}>
+          <Card style={{ borderBottom: "8px solid #f17917" , height:'62vh'}} >
+    <Box 
+    style={{height:'300px'}}
+    // sx={{height:'300px'}}
+    >
     <CardMedia
         component="img"
         alt="green iguana"
-        height="100%"
+        height="90%"
         image={course?.imageURL}
+        style={{height:'32vh',backgroundSize: 'cover', position: 'relative',}}
       />
     </Box>
       <CardContent>
