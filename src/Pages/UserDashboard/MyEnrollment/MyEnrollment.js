@@ -93,7 +93,7 @@ function MyEnrollment() {
                 }
 
                 {
-                     myCourses?.length < 0 &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
+                     !myCourses?.length >0  &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
                 }
                 </Paper>
             </Container>

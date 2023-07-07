@@ -34,7 +34,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 const RegStudent = () => {
-    const [regStudent, setRegStudent] = useState([]);
+    const [regStudents, setRegStudent] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/courseSubmit`;
         fetch(url)
@@ -79,12 +79,14 @@ const RegStudent = () => {
                             
                             <TableBody>
                                 {
-                                    regStudent.map((regStudent, index) => <RegStudentRow
+                                    regStudents.map((regStudent, index) => <RegStudentRow
                                         key={regStudent._id}
                                         regStudent={regStudent}
+                                        regStudents={regStudents}
                                         index={index}
                                         StyledTableRow={StyledTableRow}
                                         StyledTableCell={StyledTableCell}
+                                        setRegStudent={setRegStudent}
 
                                     ></RegStudentRow>)
                                 }

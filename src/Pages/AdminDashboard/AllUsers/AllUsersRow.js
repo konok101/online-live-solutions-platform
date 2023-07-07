@@ -14,7 +14,7 @@ import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
-const AllUserRow = ({allUser, index,StyledTableRow,StyledTableCell}) => {
+const AllUserRow = ({allUser,setAllUsers, allUsers, index,StyledTableRow,StyledTableCell}) => {
     const {email,role,displayName} = allUser;
     const {user, token} = useContext(AuthContext);
     const [adminSuccess, setAdminSuccess] = useState(false);
@@ -33,6 +33,8 @@ const AllUserRow = ({allUser, index,StyledTableRow,StyledTableCell}) => {
             console.log(data);
             if(data.deletedCount){
                 setDeleteSuccess(true);
+                setAllUsers(allUsers?.filter((item)=> item?.email !== email))
+
             }
         })
 
