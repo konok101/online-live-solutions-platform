@@ -14,10 +14,12 @@ const bannerBackground = {
 
     borderRadius: '15px',
     borderWidth: 3,
-    textAlign: 'center',
-    width: '100vw',
-    height: '100vh',
-    marginTop: '5%',
+    // textAlign: 'center',
+    // width: '100vw',
+    // height: '50vh',
+    marginTop: '100px',
+    marginBottom:'5%'
+   
 }
 
 const ContactUsForm = () => {
@@ -72,54 +74,63 @@ const ContactUsForm = () => {
     return (
         <>
 
-            <Container style={bannerBackground} sx={{ height: '100vh' }} >
-                <Box container justifyContent='center' style={{ textAlign: 'center', paddingTop: '5%', borderBottom: "2px solid #472ca7", paddingBottom: '5%' }}>
+            <Container style={bannerBackground}  >
+                <Box container justifyContent='center' alignItems='center' style={{  
+                    background:'linear-gradient(to right,rgb(149,179,222), rgb(230,225,227)', 
+                    borderRadius:'50px',
+                    // background:'linear-gradient(to right,rgb(110,156,236), rgb(230,225,227)', 
+                    paddingTop: '5%', borderBottom: "5px solid #472ca7",
+                    borderTop: "5px solid #472ca7",
+                    paddingBottom: '5%' }}>
 
-                    <Typography variant="h4" style={{ margin: 15, color: '#160254' }}><span style={{ backgroundColor: '#e1e1f1' }}>Stay W</span>ith Us</Typography>
+                    <Typography variant="h4" style={{textAlign: 'center', margin: 15, color: '#062253', fontWeight:'bold' }}>GET IN TOUCH</Typography>
+                    <h4 style={{color: '#062253', textAlign:'center'}}>Feel free to drop us a line below!</h4>
 
                     <form
                     onSubmit={handleContactUs}
                     >
+                    
+                        <small style={{fontWeight:'bold',marginBottom:'2%', marginLeft:'5%'}}>Name</small><br />
                         <TextField
-                            id="standard-basic"
-                            style={{ margin: 18, width: '50vw' }}
-                            label="lets writes about your queries
-                            "
-                            name='querie'
-                            onBlur={handleOnBlur} 
-                            required
-                            variant="standard"
-                        />
-
-                        <br></br>
-
-                        <TextField
-                            style={{ margin: 18, width: '50vw' }}
-                            label="Name"
-                            id="standard-basic"
+                        style={{ marginLeft: '5%', width: '90%', marginBottom:'2%',marginTop:'1%',  }}
+                            // label="Name"
+                            variant="outlined" required 
                             name='name'
                             onBlur={handleOnBlur} 
                             textColor="white"
-                            variant="standard"
+                            
                         />
 
                         <br></br>
-
+                        <small style={{fontWeight:'bold',marginBottom:'2%', marginLeft:'5%'}}>Email</small><br />
                         <TextField
-                            style={{ margin: 18, width: '50vw' }}
-                            label="Email"
+                        style={{ marginLeft: '5%', width: '90%', marginBottom:'2%',marginTop:'1%',  }}
+                            // label="Email"
                             name='email'
-                            id="standard-basic"
-                            variant="standard"
+                            variant="outlined" required 
+                            
                             onBlur={handleOnBlur} 
                         />
                         <br></br>
 
+                        <small style={{fontWeight:'bold',marginBottom:'4%', marginLeft:'5%'}}>Queries</small>
+                        <TextField
+                        variant="outlined" required rows={4} id="outlined-multiline-static" multiline
+                            style={{ marginLeft: '5%', width: '90%', marginTop:'1%',  }}
+                            label="let write about your queries
+                            "
+                            name='querie'
+                            onBlur={handleOnBlur} 
+                            
+                        />
 
-                        <Button variant="contained" type="submit" style={{
-                            marginTop: '2%', padding: '15px 55px', color: 'white',
+                        <br></br>
+
+                        <Button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
+                            marginTop: '2%',marginLeft:'70%', padding: '15px 55px', color: 'white',
                             fontWeight: '400',
-                            background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
+                            backgroundColor: "rgb(17,63,144)",
+                            // background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
                             borderRadius: '15px'
                         }}>Submit</Button> <br></br>
 

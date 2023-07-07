@@ -62,7 +62,7 @@ const ApplyForTeacher = () => {
     }
 
     const homeStyle = {
-        background: '#f2f1f2'
+        // background: '#f2f1f2'
         // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
     }
     return (
@@ -77,8 +77,8 @@ const ApplyForTeacher = () => {
                     // maxWidth: "50%", margin: "auto", marginTop: "50px" 
                 }} >
 
-                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>
-                        <h2>  Apply {user?.displayName} for teacher role!!! .</h2>
+                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }} >
+                        <h2 style={{fontWeight:'bold', }}>  Apply {user?.displayName} for teacher role!!! .</h2>
                     </Box>
 
                     {/*<Box sx={{ maxWidth: "80%", margin: "auto", }}>
@@ -87,12 +87,15 @@ const ApplyForTeacher = () => {
             </Box>*/}
 
                     <Container style={{
-                        // backgroundColor: '#DEDCEE',
-                        backgroundColor:'#daedec',
+                        
+                        // backgroundColor:'#99b7ee', 
+                        background:'linear-gradient(to right,rgb(110,156,236), rgb(230,225,227)',
+                        
+                        borderRadius:'50px',
                         paddingTop: '4%', paddingBottom: '4%'
                     }}>
                         <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
-                            <h5 style={{ fontSize: '30px' }}>Biodata</h5>
+                            <h5 style={{fontWeight:'bold', fontSize: '30px' }}>Biodata</h5>
                         </Box>
                         <Container style={{
                             width: '80%',
@@ -105,37 +108,43 @@ const ApplyForTeacher = () => {
                                     alignItems="center" >
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small style={{marginBottom:'2%'}}>Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Name </small><br />
                                         <TextField
                                         style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined"
-                                            label=" Name" name='name'
+                                            // label=" Name"
+                                             name='name'
                                             textColor="white"  required  {...register("teacherName")}
                                         />
                                     </Grid>
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Email</small><br />
                                         <TextField
-                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required 
-                                        label="Email" 
+                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%',color:'white'}}
+                                         variant="outlined" required 
+                                        // label="Email" 
                                          name='email'
                                             textColor="white"   {...register("email")}
                                         />
                                     </Grid>
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Teaching Area</small><br />
                                         <TextField
-                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" required label="Teaching Area" name='name'
+                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" required 
+                                        // label="Teaching Area" 
+                                        name='name'
                                             textColor="white"   {...register("teachingArea")}
                                         />
                                     </Grid>
 
 
                                     <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Qulification</small><br />
                                         <TextField
-                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required label="Qulification"  name='name'
+                                        style={{width: '90%',marginBottom: '2%' ,marginTop:'1%'}} variant="outlined" required 
+                                        // label="Qulification"  
+                                        name='name'
                                             textColor="white"  {...register("qulification")}
                                         />   
                                         </Grid>                    
@@ -144,15 +153,17 @@ const ApplyForTeacher = () => {
 
 
                                         <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Social Url</small><br />
                                         <TextField
-                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" label="Social Url"  name='name'
+                                        style={{width: '90%',marginBottom: '2%',marginTop:'1%' }} variant="outlined" 
+                                        // label="Social Url"  
+                                        name='name'
                                             textColor="white"   {...register("socialUrl")}
                                         />                        
                                         </Grid>
 
                                         <Grid item xs={12} sm={12} md={6} >
-                                        <small>Select Teacher Name </small><br />
+                                        <small style={{fontWeight:'bold',marginBottom:'2%'}}>Picture </small><br />
                                         <input name="exampleRequired" type="file" 
                                         style={{ width: '80%', marginBottom: '2%',marginTop:'1%' }}
                                         required onChange={handleImageUpload} />
@@ -166,9 +177,10 @@ const ApplyForTeacher = () => {
                                             marginTop: '2%', padding: '5px 34px', color: 'white',
                                             fontWeight: '300',
                                             fontSize: '20px',
-                                            background: "#2db6a3",
+                                            backgroundColor: "rgb(17,63,144)",
+                                            // background: "#2db6a3",
 
-                                            borderRadius: '4px'
+                                            borderRadius: '14px'
                                         }}>Submit</button></Grid>
                                     </Grid>
                             </form>
