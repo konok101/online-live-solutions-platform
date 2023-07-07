@@ -11,10 +11,10 @@ import { useSnackbar } from "notistack";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
-const RegStudentRow = ({regStudent, index,StyledTableRow,StyledTableCell}) => {
+const RegStudentRow = ({regStudent,regStudents, setRegStudent, index,StyledTableRow,StyledTableCell}) => {
     const {name, email, phnNumber,TrxID,courseTeacher,subject,  _id, approveData} = regStudent;
     const {user, token} = useContext(AuthContext);
-    const [deleteSuccess, setDeleteSuccess] = useState(false);
+    const [approveSucces,  setaApproveSucces] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
 console.log('regStudent', regStudent);
 
@@ -31,9 +31,10 @@ console.log('regStudent', regStudent);
         .then(data=> {
             console.log(data);
             if(data.deletedCount){
-                setDeleteSuccess(true);
-                enqueueSnackbar("Course delete Success", { variant: 'success' }); 
                
+                enqueueSnackbar("Course delete Success", { variant: 'success' }); 
+                setRegStudent(regStudents?.filter((item)=> item?._id !== id))
+
             }
             
         })
@@ -53,9 +54,10 @@ console.log('regStudent', regStudent);
       .then(data => {
           console.log(data);
           if(data.modifiedCount){
-              /* setAdminSuccess(true); */
-              enqueueSnackbar("Course approve Success", { variant: 'success' })   
-
+            setaApproveSucces(true);
+            enqueueSnackbar("Course approve Success", { variant: 'success' })   
+              //setRegStudent(regStudents?.filter((item)=> item?._id !== id))
+         
           }
       })
   }
@@ -104,7 +106,7 @@ console.log('regStudent', regStudent);
 
         </StyledTableRow>
 
-        {deleteSuccess && <Alert severity="success"  >{regStudent.displayName} is deleted!!...</Alert>}
+        {approveSucces && <Alert severity="success"  >{regStudent?.name} is Approve !!...</Alert>}
  
         
        

@@ -34,12 +34,12 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 const AllUsers = () => {
-    const [allUser, setAllUser] = useState([]);
+    const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
         const url = `http://localhost:5000/users`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setAllUser(data));
+            .then((data) => setAllUsers(data));
 
     }, []);
 
@@ -70,9 +70,11 @@ const AllUsers = () => {
                             
                             <TableBody>
                                 {
-                                    allUser.map((allUser, index) => <AllUserRow
+                                    allUsers.map((allUser, index) => <AllUserRow
                                         key={allUser._id}
                                         allUser={allUser}
+                                        allUsers={allUsers}
+                                        setAllUsers={setAllUsers}
                                         index={index}
                                         StyledTableRow={StyledTableRow}
                                         StyledTableCell={StyledTableCell}
