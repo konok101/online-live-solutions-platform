@@ -13,14 +13,16 @@ import AttachEmailIcon from '@mui/icons-material/AttachEmail';
 const Footer = () => {
 
     const footerStyle = {
-        background: 'linear-gradient(to right, rgba(28,84,163, 0.5), rgba(229,203,214, 0.5))',
         color: 'black',
+        background: 'linear-gradient(to right, rgb(6,11,71), rgb(31,33,53))',
+        // background: 'linear-gradient(to right, rgb(1,3,28), rgb(31,33,53))',
+        // background: 'linear-gradient(to right, rgba(28,84,163, 0.5), rgba(229,203,214, 0.5))',
         height:'100%',
         width: '100%',
         bottom:0,
         paddingTop:'5%',
         paddingLeft:'5%',
-       
+       color:'white',
         textAlign: 'left',
         
     };

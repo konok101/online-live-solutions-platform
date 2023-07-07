@@ -1,8 +1,10 @@
 import { Box, Container, Divider, Grid, Paper, Typography } from '@mui/material';
 import React from 'react'
-import founderImg from "../../images/elonmask.jpg";
+import founderImg from "../../images/konok.jpg";
+// import founderImg from "../../images/elonmask.jpg";
 import coFounderImg from "../../images/w.jpg";
-import principleImg from "../../images/principle.jpg";
+import principleImg from "../../images/emn.jpg";
+// import principleImg from "../../images/principle.jpg";
 
 function FounderSays() {
 
