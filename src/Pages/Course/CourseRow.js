@@ -32,7 +32,6 @@ function CourseRow({course,   index, ratings }) {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [regSuccess, setRegSuccess] = useState(false);
   const [subject, setSubject]=useState()
   const [img, setImg]=useState()
   const [courseTeacher, seTCourseTeacher]=useState()
@@ -60,6 +59,7 @@ function CourseRow({course,   index, ratings }) {
   const [success, setSuccess] = useState(false);
   const initialInfo = { name: user.displayName, email: user.email   }
   const [courseInfo, setCourseInfo] = useState(initialInfo);
+  const [isRating, setIsRating] = useState(true);
 
   const handleOnBlur = e => {
 
@@ -80,7 +80,8 @@ function CourseRow({course,   index, ratings }) {
           courseTeacher,
           courseSerial,
           teacherEmail,
-          price
+          price,
+          isRating
        }
   
       // send to the server
