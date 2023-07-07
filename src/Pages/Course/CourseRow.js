@@ -159,16 +159,10 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
         
          <br />  <small>{course?.couseName} || {course?.hours} hours || ৳{course?.price}</small>
         </Typography>
-        <Typography>
-
-        <Rating
-        name="simple-controlled"
-        value={rating}
-        readOnly
-        onChange={(event, newValue) => {
-          setRating(newValue);
-        }}
-      /> ({numOfRating} reviews) 
+        <Typography> 
+      <Rating name="half-rating-read" defaultValue={rating} precision={0.5} readOnly />
+      
+      ({numOfRating} reviews) 
         </Typography>
        </div>
         <Typography variant="body2" color="text.secondary">
