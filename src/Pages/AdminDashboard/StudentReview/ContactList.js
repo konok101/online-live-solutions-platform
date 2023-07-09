@@ -53,16 +53,17 @@ const StudentReview = () => {
 
 
       <Container >
-        <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-          <TableContainer sx={{ height: '80vh', width: '80vw' }}>
-            <Table stickyHeader aria-label="sticky table"
+        <Paper >
+          <TableContainer sx={{ width: '80vw', margin:'0' }}>
+            <Table  
               position="static">
               <TableHead>
                 <StyledTableRow>
-                  <StyledTableCell></StyledTableCell>
+                  <StyledTableCell  style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Name</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Quearies</StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> action</StyledTableCell>
                  
                 </StyledTableRow>
               </TableHead>

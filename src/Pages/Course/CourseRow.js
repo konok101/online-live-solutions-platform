@@ -10,6 +10,7 @@ import Backdrop from '@mui/material/Backdrop';
  import { Button,   Alert} from "@mui/material";
 import { useEffect } from 'react';
 import { useSnackbar } from "notistack";
+import { useLocation, useNavigate } from 'react-router';
 
 const style = {
     position: 'absolute',
@@ -25,9 +26,21 @@ const style = {
 };
 
 function CourseRow({course,   index, ratings }) {
-
+  const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from?.pathname || '/';
    const [openModal, setOpenModal] =useState(false);
-  const handleModalOpen = () => setOpenModal(true);
+  const handleModalOpen = () =>{
+    if(user?.email){
+   
+      setOpenModal(true)
+    }
+    else{
+      
+      navigate('/login')
+    }
+   
+  };
   const handleModalClose = () => setOpenModal(false);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -57,7 +70,7 @@ function CourseRow({course,   index, ratings }) {
 
   const { user } = useContext(AuthContext);
   const [success, setSuccess] = useState(false);
-  const initialInfo = { name: user.displayName, email: user.email   }
+  const initialInfo = { name: user?.displayName, email: user?.email   }
   const [courseInfo, setCourseInfo] = useState(initialInfo);
   const [isRating, setIsRating] = useState(true);
 
@@ -210,7 +223,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                                 name='name'
                                 onBlur={handleOnBlur}
                                 variant="outlined"
-                                defaultValue={user.displayName}
+                                defaultValue={user?.displayName}
                                 required
                             />
 
@@ -222,7 +235,7 @@ const [numOfRating, setNumOfRating] = useState(teacherList?.length);
                                 name='email'
                                 onBlur={handleOnBlur}
                                 variant="outlined"
-                                defaultValue={user.email}
+                                defaultValue={user?.email}
                                 // disabled
                                 required
                             />

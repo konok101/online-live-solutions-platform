@@ -36,10 +36,9 @@ function Home() {
       <BannerPart2 />
       <WhyChose />
       <TotalUserCount />
-      {
-        user?.email &&
+   
         <Course />
-      }
+      
 
       <Services />
       <Events />
