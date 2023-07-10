@@ -40,8 +40,8 @@ const AddTeacher = ({ course, setCourse }) => {
 
     return (
         <>
-            <Navigation />
-            <Container style={{ height: '45vh', marginLeft: '8%' }}>
+         
+            <Container style={{ height: '45vh', marginLeft: '18%' }}>
                 <h2 style={{ marginTop: '8%', textAlign: 'center' }}>Add Teacher </h2>
                 <form
                     onSubmit={handleTeacherSubmit}
@@ -68,7 +68,7 @@ const AddTeacher = ({ course, setCourse }) => {
 
 
             </Container>
-            <Footer />
+      
         </>
     );
 };

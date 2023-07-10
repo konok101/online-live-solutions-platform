@@ -46,13 +46,13 @@ const AllUsers = () => {
 
     return (
         <>
-            <Navigation />
+            
             <div style={{ textAlign: 'center', marginTop: '100px' }}>
          {/*        <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Users: {allUser.length} </h1> */}
             </div>
 
 
-            <Container style={{ marginTop: '10px'}}>
+            <Container style={{ marginTop: '10px', marginLeft:'300px'}}>
                 <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"100%",  m:"auto"}}>
                     <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
