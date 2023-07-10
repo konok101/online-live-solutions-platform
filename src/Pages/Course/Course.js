@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import Navigation from '../Shared/Navigation';
-import Footer from '../Shared/Footer';
+// import Navigation from '../Shared/Navigation';
+// import Footer from '../Shared/Footer';
 import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
 // import Calender from '../Homedashboard/Calender';
-import teacher1 from '../../images/teacher2.jpg';
-import teacher2 from '../../images/teacher8.jpg';
-import teacher3 from '../../images/teacher12.jpg';
-import teacher4 from '../../images/teacher3.jpg';
-import teacher5 from '../../images/teacher4.jpg';
-import teacher6 from '../../images/teacher5.jpg';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookIcon from '@mui/icons-material/Facebook';
+// import teacher1 from '../../images/teacher2.jpg';
+// import teacher2 from '../../images/teacher8.jpg';
+// import teacher3 from '../../images/teacher12.jpg';
+// import teacher4 from '../../images/teacher3.jpg';
+// import teacher5 from '../../images/teacher4.jpg';
+// import teacher6 from '../../images/teacher5.jpg';
+// import InstagramIcon from '@mui/icons-material/Instagram';
+// import LinkedInIcon from '@mui/icons-material/LinkedIn';
+// import FacebookIcon from '@mui/icons-material/Facebook';
 // import MathModal from './ModalOpen/MathModal';
 import CourseModal from './CourseModal';
 import CourseRow from './CourseRow';
@@ -53,7 +53,7 @@ useEffect(() => {
 
   return (
     <div>
-      <Navigation />
+      
 
 
       <Typography style={{ textAlign: 'center', marginTop: '5%', color: '#756c08' }} sx={{ m: 2 }} variant="h4" component="h2">

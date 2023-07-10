@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from '@mui/material/TextField';
 import { Box, height } from "@mui/system";
-import { Button, Typography, Alert, Container } from "@mui/material";
+import { Button, Typography, Alert, Container, Grid } from "@mui/material";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
@@ -126,14 +126,19 @@ const ContactUsForm = () => {
 
                         <br></br>
 
+                        
+                       
                         <Button className='viewMoreButtonHoverBanner' variant="contained" type="submit" style={{
-                            marginTop: '2%',marginLeft:'70%', padding: '15px 55px', color: 'white',
+                            marginTop: '2%',
+                            marginLeft:'45%', 
+                           
+                            padding: '15px 55px', color: 'white',
                             fontWeight: '400',
                             backgroundColor: "rgb(17,63,144)",
                             // background: 'linear-gradient(to right,  rgb(94,76,214), rgb(37,206,199))',
                             borderRadius: '15px'
                         }}>Submit</Button> <br></br>
-
+                       
                     </form>
                 </Box>
             </Container>
