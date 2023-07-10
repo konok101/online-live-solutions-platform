@@ -60,7 +60,7 @@ const ContactUsForm = () => {
         console.log("11",data);
         if (data.insertedId) {
             // setSuccess(true);
-            enqueueSnackbar("Course added Success", { variant: 'success' })
+            enqueueSnackbar("Message added Success", { variant: 'success' })
             e?.target?.reset();
 
         }

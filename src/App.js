@@ -25,6 +25,7 @@ import  AdminDashboardAllUser from './Pages/AdminDashboard/AdminDashboardAll';
 import  HomeDashboardQuaries from './Pages/AdminDashboard/AdminDashboardQuaries';
 import  TeacherDashboardRegStudent  from './Pages/TeacherDashboard/TeacherDashboardRegStudent';
 import  TeacherDashboardAddCourse  from './Pages/TeacherDashboard/TeacherDashboardAddCourse';
+import  AdminDashboaApplyTeacher  from './Pages/AdminDashboard/AdminDashboradApplyTeacher';
 
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
@@ -74,8 +75,8 @@ function Appw() {
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute> },
     { path: "/login", element: <Login /> },
     {
-      path: "/teacherDashboard", element: <PrivateRoute>  <TeacherDashboard />
-      </PrivateRoute>
+      path: "/teacherDashboard", element: <TeacherRoute>  <TeacherDashboard />
+      </TeacherRoute>
     },
 
     {
@@ -85,9 +86,10 @@ function Appw() {
     { path: "/register", element: <Register /> },
     { path: "/addCourse", element: <AdminRoute>  <AdminDashboardCourse /> </AdminRoute>},
     { path: "/addCourseByTeacher", element: <TeacherRoute><TeacherDashboardAddCourse /></TeacherRoute> },
-    { path: "/addTeacher", element: <AdminDashboardTeacher /> },
+    { path: "/addTeacher", element: <AdminRoute><AdminDashboardTeacher /></AdminRoute> },
     { path: "/allUsers", element: <AdminRoute><AdminDashboardAllUser /></AdminRoute> },
     { path: "/regStudent", element: <AdminRoute><AdminDashboardReg /></AdminRoute> },
+    { path: "/applyTeacherList", element: <AdminRoute><AdminDashboaApplyTeacher /></AdminRoute> },
     { path: "/regStudentTeacher", element: <TeacherRoute><TeacherDashboardRegStudent /></TeacherRoute>  },
     { path: "/myEnrollment", element:<PrivateRoute> <MyEnrollment /> </PrivateRoute>},
     { path: "/ourTeachers", element: <OurTeachers /> },
