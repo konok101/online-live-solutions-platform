@@ -60,8 +60,8 @@ const StudentReview = () => {
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Name</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Quearies</StyledTableCell>
-                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> action</StyledTableCell>
-                 
+                  <StyledTableCell  > </StyledTableCell>
+                  
                 </StyledTableRow>
               </TableHead>
 

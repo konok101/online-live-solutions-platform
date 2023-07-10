@@ -35,10 +35,9 @@ const StudentReviewRow = ({ allReview, index, StyledTableRow, StyledTableCell })
                 <StyledTableCell component="th" scope="row">
                     {querie}
                 </StyledTableCell>
-
                 <StyledTableCell component="th" scope="row">
-                     Delete
-                </StyledTableCell>
+                 </StyledTableCell>
+             
             </StyledTableRow>
 
             

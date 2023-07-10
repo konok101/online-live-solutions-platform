@@ -176,61 +176,7 @@ function AdminDashboard() {
           </Link>
           
 
-          {/*
-          <TreeView
-            style={{ textAlign: 'left', marginLeft: '0%' }}
-            aria-label="file system navigator"
-            defaultExpanded={['1']}
-
-
-            defaultCollapseIcon={
-              <div style={{ padding: '.3rem 0', }}>
-                <ArrowDropUpIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-              </div>}
-            defaultExpandIcon={<div style={{ padding: '.3rem 0', }}>
-              <ArrowDropDownIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-            </div>}
-
-            sx={{ flexGrow: 1, overflowY: 'hidden', overflowX: 'hidden' }}
-          >
-
-            <TreeItem nodeId="1" label="Department"
-              style={{ color: '#08558b' }}>
-
-              <Link to='/math' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Math</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/english' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>English</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/science' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Science</Button>
-                </ListItem>
-              </Link>
-
-            </TreeItem>
-
-
-          </TreeView>
-            
-
-          <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Gallery</Button>
-            </ListItem>
-          </Link>
-          */}
+          
 
         </Container>
       </Box>

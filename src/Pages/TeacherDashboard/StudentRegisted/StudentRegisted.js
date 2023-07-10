@@ -99,8 +99,7 @@ const StudentRegisted = () => {
             </Container>
 
  
-            <Footer />
-        </>
+         </>
     );
 };
 

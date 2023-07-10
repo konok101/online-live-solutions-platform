@@ -253,7 +253,7 @@ function AdminDashboard() {
               <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
             </IconButton>
             <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
-              Admin
+            Registered
             </Typography>
           </Toolbar>
         </AppBar>
