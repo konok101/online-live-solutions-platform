@@ -93,24 +93,26 @@ function DrawerAppBar(props) {
           // onClick={handleCloseNavMenu}
           >
             <Box style={{ textAlign: "center", paddingLeft: '25%' }}>
-               <Link href="/" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'green', }}>Home </Button></Link><br />  
-              <Link href="/about"><Button color="inherit" sx={{ color: 'green' }}> About <acronym title=""></acronym></Button></Link><br />
-              <Link href="/contact"><Button color="inherit" sx={{ color: 'green' }}>Contact </Button></Link><br />
-              <Link href="/dashboard"><Button color="inherit" sx={{ color: 'green' }}>Dashboard</Button></Link><br />
+            <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"}  to="/" style={{ textDecoration: 'none' }}>Home</NavLink>
+              <NavLink to="/about" className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} style={{ textDecoration: 'none' }}>About</NavLink>
+              <NavLink  className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/contact" style={{ textDecoration: 'none' }}> Contact</NavLink>
+              <NavLink  className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/dashboard" style={{ textDecoration: 'none' }}> Dashboard</NavLink>
+
+              <NavLink  className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/course" style={{ textDecoration: 'none' }}> Course </NavLink>
               {admin &&
-              <Link to="/adminDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Admin</Button></Link>
+              <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/adminDashboard" style={{ textDecoration: 'none' }}> Admin </NavLink>
               }
 
               {
                 teacher && 
-                <Link to="/teacherDashboard" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Teacher</Button></Link>
+                <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/teacherDashboard" style={{ textDecoration: 'none' }}> Teacher </NavLink>
 
               }
 
-              {
+{
                 user?.email ?
 
-              <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}> 
+              <Button onClick={logOut} className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
                    <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
@@ -120,8 +122,9 @@ function DrawerAppBar(props) {
       </StyledBadge>
                     
                </Button>  :  
-                    <Link to="/login" style={{ textDecoration: 'none' }}><Button className='buttonHover' color="inherit" sx={{ color: 'black' }}>Login</Button></Link>
+                    <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/login" style={{ textDecoration: 'none' }}>Login </NavLink>
               }
+
             </Box>
           </MenuItem>
         </ListItem>

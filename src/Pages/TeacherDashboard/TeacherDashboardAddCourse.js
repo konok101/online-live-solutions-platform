@@ -7,45 +7,32 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
+ import ListItem from '@mui/material/ListItem';
+ 
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import {
-  Switch,
-  Route,
+ 
   Link,
-  useRouteMatch,
+  
 } from "react-router-dom";
+
+// import useAuth from '../../hooks/useAuth';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import OtherHousesIcon from '@mui/icons-material/OtherHouses';
-import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
-import HowToRegIcon from '@mui/icons-material/HowToReg';
-import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
-import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
-import SupervisedUserCircleIcon from '@mui/icons-material/SupervisedUserCircle';
-import AddHomeIcon from '@mui/icons-material/AddHome';
-import HouseIcon from '@mui/icons-material/House';
-import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-
-
-
-import TreeView from '@mui/lab/TreeView';
-import TreeItem from '@mui/lab/TreeItem';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp';
 import { Container } from '@mui/system';
+
+
+import HomeTeacherDashboard from './HomeTeacherDashboard';
+import Home from '../Home/Home';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import AddCourseByTeacher from './AddCoursebyTeacher';
+
+import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
-import HomeAdminDashboard from './HomeAdminDashboard';
-import RegStudent from './RegStudent/RegStudent';
-import AddCourse from '../Course/AddCouse';
-import AllUsers from './AllUsers/AllUsers';
+
 
 const drawerWidth = 270;
 
@@ -93,13 +80,12 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   justifyContent: 'flex-end',
 }));
 
-function AdminDashboard() {
+function TeacherDashboard() {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
   const { user } = React.useContext(AuthContext);
 
-  // const { user } = useAuth();
-  const handleDrawerOpen = () => {
+   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
@@ -107,75 +93,40 @@ function AdminDashboard() {
     setOpen(false);
   };
 
-
+ 
   const drawer = (
     <div >
 
       <Box sx={{
         background: 'linear-gradient(to right, rgba(102, 126, 234, 0.5), rgba(118, 75, 162, 0.5))',
-        height: '120vh', paddingLeft: '0%', overflowX: 'hidden', overflowY: 'hidden'
-      }}
-      // style={{ textAlign: 'center' }}
-      >
+        height: '120vh', overflowX: 'hidden', overflowY: 'hidden'
+      }} style={{ textAlign: 'center' }}>
         <Toolbar />
-        <Container
-          style={{
-            width: '50vw',
-            marginLeft: 'auto'
-          }}
-        >
-
+        <Container style={{ marginLeft: '5%' }}>
 
           <Link to='/' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <HouseIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Home</Button>
             </ListItem>
           </Link>
-          <Link to='/regStudent' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+
+          <Link to='/regStudentTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <ManageAccountsIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Registered</Button>
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>my classes</Button>
             </ListItem>
           </Link>
 
 
-          <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+          <Link to='/addCourseByTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Add Teacher</Button>
-            </ListItem>
-          </Link>
-
-          <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Course</Button>
             </ListItem>
           </Link>
 
-
-          <Link to='/allUsers' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-
-            <ListItem >
-              <SupervisedUserCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>All Users</Button>
-            </ListItem>
-          </Link>
-          <Link to='/contactQuaries' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Contact lists  </Button>
-            </ListItem>
-          </Link>
-          <Link to='/applyTeacherList' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}> Apply List </Button>
-            </ListItem>
-          </Link>
-
-         
+     
 
         </Container>
       </Box>
@@ -200,7 +151,7 @@ function AdminDashboard() {
               <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
             </IconButton>
             <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
-              Admin
+              Teacher Dashboard
             </Typography>
           </Toolbar>
         </AppBar>
@@ -234,8 +185,15 @@ function AdminDashboard() {
         <Box>
           <Toolbar />
 
-         <AllUsers/>
+          {/* <Switch> 
+            {user.emailVerified ?
+*/}
 
+         <AddCourseByTeacher/>
+          {/*
+              : <p style={{ color: 'red' }}>Your email is not verified</p>}*/}
+
+          {/*  </Switch> */}
         </Box>
 
         <Main open={open}>
@@ -248,4 +206,4 @@ function AdminDashboard() {
     </>
   );
 }
-export default AdminDashboard;
+export default TeacherDashboard;

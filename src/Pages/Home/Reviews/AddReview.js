@@ -59,24 +59,26 @@ console.log(unique);
  <Navigation/>
             
                
-  <h1 style={{marginTop:'70px', width:'700px', margin:'auto'}}>Top  Reviews acivement in our teacher </h1>
+<div style={{marginTop:'100px'}}>
+<h1 style={{marginTop:'170px', width:'700px', margin:'auto'}}>Top  Reviews acivement in our teacher </h1>
               
 
-                    <Grid container direction="row"
-    justifyContent="space-around"
-    alignItems="center"  >
-       {
-                                    unique.slice(0,5).map((regStudent, index) => <ReviewRow
-                                        key={regStudent._id}
-                                        review={regStudent}
-                                        index={ index}
-                                      
+              <Grid container direction="row"
+justifyContent="space-around"
+alignItems="center"  >
+ {
+                              unique.slice(0,5).map((regStudent, index) => <ReviewRow
+                                  key={regStudent._id}
+                                  review={regStudent}
+                                  index={ index}
+                                
 
-                                    ></ReviewRow>)
+                              ></ReviewRow>)
 
-                    }
-    </Grid>
+              }
+</Grid>
 
+</div>
               
 
 

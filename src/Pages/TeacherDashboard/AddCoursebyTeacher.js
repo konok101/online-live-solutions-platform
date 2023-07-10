@@ -106,12 +106,14 @@ const AddCourse = () => {
     }
 
     const homeStyle = {
-        background: '#f2f1f2'
+        background: '#f2f1f2',
+        marginLeft:'300px',
+        width:'85%'
         // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
     }
     return (
         <div style={homeStyle} >
-            <Navigation />
+         
             <div >
                 <div style={{
                     marginTop: "100px", marginBottom: '10%'
@@ -250,7 +252,7 @@ const AddCourse = () => {
                     </Container>
                 </div>
             </div>
-            <Footer />
+          
         </div>
     );
 };
