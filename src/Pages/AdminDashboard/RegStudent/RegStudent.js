@@ -11,6 +11,7 @@ import RegStudentRow from './RegStudentRow';
 import { Container } from '@mui/system';
 import Footer from '../../Shared/Footer';
 import Navigation from '../../Shared/Navigation';
+import AdminDashboard from '../AdminDashboard';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#5bbce3',
@@ -42,21 +43,17 @@ const RegStudent = () => {
             .then((data) => setRegStudent(data));
 
     }, []);
-
+    const dashboardHomeStyle = {
+        marginLeft: '-90px',
+        marginRight:'100px',
+        width: '100vw'
+    }
 
     return (
-        <>
-            <Navigation />
-            <div style={{ textAlign: 'center', marginTop: '4%' }}>
- 
-{/*                 <h1 style={{ fontWeight: '700', color: '#13698b', backgroundColor:'#94C9CC', width: '50%', margin:"auto", padding:'10px' }}>Total Registered Student for Today: {regStudent.length} </h1> */}
- 
-            </div>
-
-
-            <Container style={{ marginTop: '4%' , width: '95%', margin:"auto"}}>
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-                    <TableContainer sx={{ height: '80vh', }}>
+        <div style={{dashboardHomeStyle}}>
+        <div style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'150px', marginTop:'80px'}}>
+        <Paper >
+                    <TableContainer   >
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
                             <TableHead>
@@ -95,11 +92,8 @@ const RegStudent = () => {
                         </Table>
                     </TableContainer>
                 </Paper>
-            </Container>
-
-
-            <Footer />
-        </>
+        </div>
+        </div>
     );
 };
 

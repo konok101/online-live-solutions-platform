@@ -214,7 +214,7 @@ function DrawerAppBar(props) {
              {
                 user?.email ?
 
-              <Button onClick={logOut} className='buttonHover' color="inherit" sx={{ color: 'black' }}> 
+              <Button onClick={logOut} className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
                    <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}

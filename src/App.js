@@ -18,6 +18,7 @@ import {
 import Dashboard from './Pages/UserDashboard/UserDashboard';
 import TeacherDashboard from './Pages/TeacherDashboard/Teacherdashboard';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
+import AdminDashboardReg from './Pages/AdminDashboard/AdminDashboardReg';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import ContactUs from './Pages/Contact/ContactUs';
@@ -81,7 +82,7 @@ function Appw() {
     { path: "/science", element: <Science /> },
     { path: "/addTeacher", element: <AddTeacher /> },
     { path: "/allUsers", element: <AllUsers /> },
-    { path: "/regStudent", element: <RegStudent /> },
+    { path: "/regStudent", element: <AdminDashboardReg /> },
     { path: "/regStudentTeacher", element: <StudentRegisted /> },
     { path: "/myEnrollment", element: <MyEnrollment /> },
     { path: "/ourTeachers", element: <OurTeachers /> },
@@ -93,8 +94,8 @@ function Appw() {
     { path: "/problemSolving", element: <ProblemSolving /> },
     { path: "/24hSupport", element: <FullDaySupport /> },
     { path: "/gallery", element: <Gallery /> },
-    { path: "/VideoCallHome", element: <VideoCallHome /> },
-    { path: "/room/:roomId", element: <VideoRoom /> },
+    { path: "/VideoCallHome", element:<PrivateRoute>  <VideoCallHome /> </PrivateRoute>},
+    { path: "/room/:roomId", element: <PrivateRoute>  <VideoRoom /></PrivateRoute> },
   ]);
   return routes;
 };
