@@ -23,6 +23,7 @@ import AdminDashboardTeacher from './Pages/AdminDashboard/AdminDashboardTeacher'
 import  AdminDashboardCourse from './Pages/AdminDashboard/AdminDashboardCourse';
 import  AdminDashboardAllUser from './Pages/AdminDashboard/AdminDashboardAll';
 import  HomeDashboardQuaries from './Pages/AdminDashboard/AdminDashboardQuaries';
+import  TeacherDashboardRegStudent  from './Pages/TeacherDashboard/TeacherDashboardRegStudent';
 
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
@@ -55,6 +56,7 @@ import FullDaySupport from './Pages/Home/FullDaySupport/FullDaySupport';
 import Gallery from './Pages/UserDashboard/Gallery';
 import VideoCallHome from './Pages/VideoCall/VideoCallHome';
 import VideoRoom from './Pages/VideoCall/VideoRoom';
+import TeacherRoute from './Pages/Login/privateRoute/TeacherRoute';
 
 
 function Appw() {
@@ -64,9 +66,9 @@ function Appw() {
     { path: "/", element: <Home /> },
     { path: "/home", element: <Home /> },
     { path: "/about", element: <AboutUs /> },
-    { path: "/contact", element: <ContactUs /> },
+    { path: "/contact", element:<PrivateRoute> <ContactUs /> </PrivateRoute>},
     { path: "/review", element: <Review /> },
-    { path: "/contactQuaries", element: <HomeDashboardQuaries /> },
+    { path: "/contactQuaries", element:<AdminRoute> <HomeDashboardQuaries /></AdminRoute> },
     { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute> },
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute> },
     { path: "/login", element: <Login /> },
@@ -80,19 +82,16 @@ function Appw() {
       element: <AdminRoute><AdminDashboard /></AdminRoute>
     },
     { path: "/register", element: <Register /> },
-    { path: "/math", element: <Math /> },
-    { path: "/addCourse", element: <AdminDashboardCourse /> },
-    { path: "/addCourseByTeacher", element: <AddCourseByTeacher /> },
-    { path: "/english", element: <English /> },
-    { path: "/science", element: <Science /> },
+    { path: "/addCourse", element: <AdminRoute>  <AdminDashboardCourse /> </AdminRoute>},
+    { path: "/addCourseByTeacher", element: <TeacherRoute><AddCourseByTeacher /></TeacherRoute> },
     { path: "/addTeacher", element: <AdminDashboardTeacher /> },
-    { path: "/allUsers", element: <AdminDashboardAllUser /> },
-    { path: "/regStudent", element: <AdminDashboardReg /> },
-    { path: "/regStudentTeacher", element: <StudentRegisted /> },
-    { path: "/myEnrollment", element: <MyEnrollment /> },
+    { path: "/allUsers", element: <AdminRoute><AdminDashboardAllUser /></AdminRoute> },
+    { path: "/regStudent", element: <AdminRoute><AdminDashboardReg /></AdminRoute> },
+    { path: "/regStudentTeacher", element: <TeacherRoute><TeacherDashboardRegStudent /></TeacherRoute>  },
+    { path: "/myEnrollment", element:<PrivateRoute> <MyEnrollment /> </PrivateRoute>},
     { path: "/ourTeachers", element: <OurTeachers /> },
-    { path: "/applyForTeacher", element: <ApplyForTeacher /> },
-    { path: "/myReview/:courseSerial", element: <Reviews /> },
+    { path: "/applyForTeacher", element: <PrivateRoute><ApplyForTeacher /> </PrivateRoute>},
+    { path: "/myReview/:courseSerial", element: <PrivateRoute><Reviews /></PrivateRoute> },
     { path: "/learnMore", element: <LearnMore /> },
     { path: "/ourReviews", element: <AddReview /> },
     { path: "/liveSolution", element: <LiveSolution /> },

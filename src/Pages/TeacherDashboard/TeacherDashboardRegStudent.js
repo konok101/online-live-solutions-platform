@@ -30,6 +30,8 @@ import Home from '../Home/Home';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
+import RegStudent from '../AdminDashboard/RegStudent/RegStudent';
+import StudentRegisted from './StudentRegisted/StudentRegisted';
 
 
 const drawerWidth = 270;
@@ -187,7 +189,7 @@ function TeacherDashboard() {
             {user.emailVerified ?
 */}
 
-          <HomeTeacherDashboard />
+        <StudentRegisted/>
           {/*
               : <p style={{ color: 'red' }}>Your email is not verified</p>}*/}
 
