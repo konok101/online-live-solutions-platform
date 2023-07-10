@@ -24,6 +24,7 @@ import  AdminDashboardCourse from './Pages/AdminDashboard/AdminDashboardCourse';
 import  AdminDashboardAllUser from './Pages/AdminDashboard/AdminDashboardAll';
 import  HomeDashboardQuaries from './Pages/AdminDashboard/AdminDashboardQuaries';
 import  TeacherDashboardRegStudent  from './Pages/TeacherDashboard/TeacherDashboardRegStudent';
+import  TeacherDashboardAddCourse  from './Pages/TeacherDashboard/TeacherDashboardAddCourse';
 
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
@@ -83,7 +84,7 @@ function Appw() {
     },
     { path: "/register", element: <Register /> },
     { path: "/addCourse", element: <AdminRoute>  <AdminDashboardCourse /> </AdminRoute>},
-    { path: "/addCourseByTeacher", element: <TeacherRoute><AddCourseByTeacher /></TeacherRoute> },
+    { path: "/addCourseByTeacher", element: <TeacherRoute><TeacherDashboardAddCourse /></TeacherRoute> },
     { path: "/addTeacher", element: <AdminDashboardTeacher /> },
     { path: "/allUsers", element: <AdminRoute><AdminDashboardAllUser /></AdminRoute> },
     { path: "/regStudent", element: <AdminRoute><AdminDashboardReg /></AdminRoute> },

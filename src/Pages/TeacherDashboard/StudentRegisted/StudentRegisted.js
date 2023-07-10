@@ -58,7 +58,7 @@ const StudentRegisted = () => {
 
     return (
         <>
-            <Navigation />
+         
             <div style={{ textAlign: 'center', marginTop: '4%', width: '100vw' }}>
 {/*                 <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {teacherLists?.length} </h1>
  */}            </div>
