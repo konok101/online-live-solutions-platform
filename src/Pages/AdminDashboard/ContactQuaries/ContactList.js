@@ -45,12 +45,9 @@ const StudentReview = () => {
 
 
   return (
-    <>
-      <Navigation />
-      <div style={{ textAlign: 'center', marginTop: '70px' }}>
-{/*         <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Quearies: {allReview.length} </h1>
- */}      </div>
-
+    <div  style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'150px', marginTop:'80px'}}>
+     
+   
 
       <Container >
         <Paper >
@@ -87,9 +84,8 @@ const StudentReview = () => {
         </Paper>
       </Container>
 
-
-      <Footer />
-    </>
+ 
+    </div>
   );
 };
 

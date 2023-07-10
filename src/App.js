@@ -19,6 +19,11 @@ import Dashboard from './Pages/UserDashboard/UserDashboard';
 import TeacherDashboard from './Pages/TeacherDashboard/Teacherdashboard';
 import AdminDashboard from './Pages/AdminDashboard/AdminDashboard';
 import AdminDashboardReg from './Pages/AdminDashboard/AdminDashboardReg';
+import AdminDashboardTeacher from './Pages/AdminDashboard/AdminDashboardTeacher';
+import  AdminDashboardCourse from './Pages/AdminDashboard/AdminDashboardCourse';
+import  AdminDashboardAllUser from './Pages/AdminDashboard/AdminDashboardAll';
+import  HomeDashboardQuaries from './Pages/AdminDashboard/AdminDashboardQuaries';
+
 import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import ContactUs from './Pages/Contact/ContactUs';
@@ -32,7 +37,7 @@ import AddTeacher from './Pages/AdminDashboard/AddTeacher';
 import AllUsers from './Pages/AdminDashboard/AllUsers/AllUsers';
 import AdminRoute from './Pages/Login/privateRoute/AdminRoute';
 import CourseFooter from './Pages/Course/CouseWithFooter';
-import StudentReview from './Pages/AdminDashboard/StudentReview/ContactList';
+import StudentReview from './Pages/AdminDashboard/ContactQuaries/ContactList';
 import RegStudent from './Pages/AdminDashboard/RegStudent/RegStudent';
 import StudentRegisted from './Pages/TeacherDashboard/StudentRegisted/StudentRegisted';
 import AddCourse from './Pages/Course/AddCouse';
@@ -61,7 +66,7 @@ function Appw() {
     { path: "/about", element: <AboutUs /> },
     { path: "/contact", element: <ContactUs /> },
     { path: "/review", element: <Review /> },
-    { path: "/contactQuaries", element: <StudentReview /> },
+    { path: "/contactQuaries", element: <HomeDashboardQuaries /> },
     { path: "/course", element: <PrivateRoute><CourseFooter />  </PrivateRoute> },
     { path: "/dashboard", element: <PrivateRoute><Dashboard />  </PrivateRoute> },
     { path: "/login", element: <Login /> },
@@ -76,12 +81,12 @@ function Appw() {
     },
     { path: "/register", element: <Register /> },
     { path: "/math", element: <Math /> },
-    { path: "/addCourse", element: <AddCourse /> },
+    { path: "/addCourse", element: <AdminDashboardCourse /> },
     { path: "/addCourseByTeacher", element: <AddCourseByTeacher /> },
     { path: "/english", element: <English /> },
     { path: "/science", element: <Science /> },
-    { path: "/addTeacher", element: <AddTeacher /> },
-    { path: "/allUsers", element: <AllUsers /> },
+    { path: "/addTeacher", element: <AdminDashboardTeacher /> },
+    { path: "/allUsers", element: <AdminDashboardAllUser /> },
     { path: "/regStudent", element: <AdminDashboardReg /> },
     { path: "/regStudentTeacher", element: <StudentRegisted /> },
     { path: "/myEnrollment", element: <MyEnrollment /> },
