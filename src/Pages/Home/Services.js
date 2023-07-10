@@ -49,7 +49,7 @@ function Services() {
         <Card style={{background: 'linear-gradient(to right,  rgb(34,37,71), rgb(34,37,71))',color: '#dfe3e2', boxShadow:' 19px 10px 10px black' ,height:'400px'}}>
         <img  width="100px" style={{paddingTop:'7%'}} src={ambulance} ></img>
         <h4 >Problem Solving</h4>
-        <p style={{paddingLeft:'2%', paddingRight:'2%'}}>Problem-solving skills features like video conferencing, chat, and screen sharing, learners can work together on problem-solving,share their thought processes. It helps you determine the source of a problem and find an effective solution. </p>
+        <p style={{paddingLeft:'2%', paddingRight:'2%'}}>video conferencing, chat, and screen sharing, learners can work together on problem-solving,share their thought processes. It helps you determine the source of a problem and find an effective solution. </p>
         <Link style={{ textDecoration: 'none' }} 
         to="/problemSolving" target="_blank">
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{

@@ -27,17 +27,20 @@
  margin-left: 10px;
  margin-right: 10px;
   /* color: #eff32b; */
-  color: #b30d52;
+  color: #933a0ac7;
+  /* color: #b30d52; */
 }
 
 .buttonHoverIsActive{
   font-weight: bolder;
   font-size: medium;
- border-bottom: 4px solid  #f01313;
+  border-bottom: 4px solid  #933a0ac7;
+  /* border-bottom: 4px solid  #684606; */
+  /* border-bottom: 4px solid  #f01313; */
  margin-left: 10px;
  margin-right: 10px;
   /* color: #eff32b; */
-  color: #f01313;
+  color: #933a0ac7;
 }
 
 

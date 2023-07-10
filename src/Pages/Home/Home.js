@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import Navigation from '../Shared/Navigation';
 import Services from './Services';
 import FaqQuestions from './FAQ/FaqQuestions';
-import ContactUs from '../Contact/ContactUs';
+import FormContactUs from '../Contact/FormContactUs';
 import Footer from '../Shared/Footer';
 import WhyChose from './WhyChoose/WhyChose';
 import TotalUserCount from './TotalUserCount/TotalUserCount';
@@ -43,8 +43,9 @@ function Home() {
       <Services />
       <Events />
       <FaqQuestions />
-      <ContactUs />
+      <FormContactUs />
       <MessageBox />
+      <Footer/>
     </div>
   )
 }
