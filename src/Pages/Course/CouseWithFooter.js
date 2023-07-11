@@ -71,7 +71,7 @@ function Course() {
   courses?.length > 0 ?               <div>
   <Grid container direction="row"
     justifyContent="space-around"
-    alignItems="center"  >
+    alignItems="center" style={{marginBottom:'4%'}} >
       {
         courses?.map((course, index) =>
           <CourseRow handleModalOpen={handleModalOpen}

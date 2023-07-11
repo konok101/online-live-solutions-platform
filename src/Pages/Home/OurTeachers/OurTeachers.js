@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import TeacherRow from '../OurTeachers/TeacherRow'
 import { Grid } from '@mui/material';
+import Footer from '../../Shared/Footer';
 
 function OurTeachers() {
    
@@ -32,7 +33,7 @@ function OurTeachers() {
 
             <Grid container direction="row"
     justifyContent="space-around"
-    alignItems="center"  >
+    alignItems="center"  style={{marginBottom:'4%'}}>
       {
         courses?.slice(0,6).map((course, index) =>
           <TeacherRow
@@ -43,7 +44,7 @@ function OurTeachers() {
       }
     </Grid>
 
-
+<Footer/>
 
         </>
     )
