@@ -32,7 +32,7 @@ console.log('regStudent', regStudent);
             console.log(data);
             if(data.deletedCount){
                
-                enqueueSnackbar("Course delete Success", { variant: 'success' }); 
+                enqueueSnackbar("Course delete Success", { variant: 'warning' }); 
                 setRegStudent(regStudents?.filter((item)=> item?._id !== id))
 
             }
