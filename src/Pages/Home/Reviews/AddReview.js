@@ -60,7 +60,7 @@ console.log(unique);
             
                
 <div style={{marginTop:'100px'}}>
-<h1 style={{marginTop:'170px', width:'700px', margin:'auto'}}>Top  Reviews acivement in our teacher </h1>
+<h1 style={{marginTop:'170px', width:'700px', margin:'auto'}}>Top  Reviews achievement in our teacher </h1>
               
 
               <Grid container direction="row"

@@ -108,7 +108,7 @@ const AddCourse = () => {
 
     const homeStyle = {
         background: '#f2f1f2',
-        marginLeft:'300px'
+        marginLeft:'100px'
         // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
     }
     return (
@@ -119,7 +119,7 @@ const AddCourse = () => {
                     marginTop: "70px", marginBottom: '10%'
                 }} >
                 
-                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>
+                    <Box sx={{ maxWidth: "70%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>
                         <h2 style={{fontWeight:'bold', }}>Course Added by Admin: {user?.displayName} !!!</h2>
                     </Box>
 

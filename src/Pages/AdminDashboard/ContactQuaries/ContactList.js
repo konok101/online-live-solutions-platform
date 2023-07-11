@@ -45,7 +45,7 @@ const StudentReview = () => {
 
 
   return (
-    <div  style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'150px', marginTop:'80px'}}>
+    <div  style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'100px', marginTop:'80px'}}>
      
    
 

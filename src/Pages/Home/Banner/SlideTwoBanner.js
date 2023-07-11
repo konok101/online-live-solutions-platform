@@ -38,8 +38,8 @@ function SlideTwoBanner() {
         <>
             <div style={backgroundStyle}>
                 <div style={fontStyle} >
-                    <h2 style={{ fontSize: '30px' }}>STUDY OVERSEAS GLOBAL</h2>
-                    <h1 style={{ fontSize: '60px' }}>EDUCATION FAIR</h1>
+                    <h2 style={{ fontSize: '30px' }}>Educational Live </h2>
+                    <h1 style={{ fontSize: '38px' }}>Solutions Platform</h1>
                     <span style={{ color: 'white', fontWeight: 500,fontStyle: 'italic',  fontSize: 28 }}>
                     <Typewriter
                     words={['Welcome here_!!', 'Be DIFFERENT_!! ',

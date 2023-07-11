@@ -142,7 +142,7 @@ function BannerPart2() {
 
           <Grid item xs={12} sm={12} md={4} style={{ textAlign: 'center', color: '#fff' }}>
             <h2>Top Reviews</h2>
-            <p style={{ paddingLeft: '8%', paddingRight: '8%' }}>This reviews means the process of someone reading, checking and giving his or her opinion. </p>
+            <p style={{ paddingLeft: '8%', paddingRight: '8%' }}>This reviews means the process of someone  checking top tutor list in our website . </p>
             <Link style={{ textDecoration: 'none' }}
               to="/ourReviews"   >
               <button variant="outlined" className='viewMoreButtonHoverBanner' //type="submit"
