@@ -39,7 +39,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const RegStudent = () => {
     const [applyTeachers, setApplyTeachers] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/applyTeacherList`;
+        const url = `https://educational-live-solutions-sever.vercel.app/applyTeacherList`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setApplyTeachers(data));

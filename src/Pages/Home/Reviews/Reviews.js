@@ -20,7 +20,7 @@ const { enqueueSnackbar } = useSnackbar();
 
 
 useEffect(() => {
-  const url = `http://localhost:5000/addCourse`;
+  const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
   fetch(url)
       .then((res) => res.json())
       .then((data) => setSerialData(data));
@@ -88,7 +88,7 @@ const handleSummery = (event) => {
        }
   
       // send to the server
-      fetch('http://localhost:5000/courseRating', {
+      fetch('https://educational-live-solutions-sever.vercel.app/courseRating', {
           method: 'POST',
           headers: {
               'content-type': 'application/json'

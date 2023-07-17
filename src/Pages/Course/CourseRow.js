@@ -98,7 +98,7 @@ function CourseRow({ course, index, ratings }) {
     }
 
     // send to the server
-    fetch('http://localhost:5000/courseSubmit', {
+    fetch('https://educational-live-solutions-sever.vercel.app/courseSubmit', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -141,7 +141,6 @@ function CourseRow({ course, index, ratings }) {
 
   const [rating, setRating] = useState(total / teacherList?.length);
   const [numOfRating, setNumOfRating] = useState(teacherList?.length);
-
 
 
 
@@ -230,11 +229,9 @@ function CourseRow({ course, index, ratings }) {
         >
           <Fade in={openModal}>
             <Box sx={style}>
+          
               <Typography id="transition-modal-title" style={{ textAlign: 'center' }} sx={{ m: 2 }} variant="h6" component="h2">
-                Online Tutor
-              </Typography>
-              <Typography id="transition-modal-title" style={{ textAlign: 'center' }} sx={{ m: 2 }} variant="h6" component="h2">
-                Payment System <br /> Bkash: 01829832457
+              Online Tutor <br />   Payment System <br /> Bkash: 01829832457
               </Typography>
 
               <form onSubmit={handleCourseSubmit}>

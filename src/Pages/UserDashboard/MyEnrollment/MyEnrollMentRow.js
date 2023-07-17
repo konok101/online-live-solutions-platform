@@ -28,7 +28,7 @@ const StudentRegisteredRow = ({regStudent}) => {
  
     }
     const handleReviewButton = (_id) => {
-      fetch(`http://localhost:5000/myCoursed/${_id}`, {
+      fetch(`https://educational-live-solutions-sever.vercel.app/myCoursed/${_id}`, {
           method: 'PUT',
           headers: {
               'authorization': `Bearer ${token}`,

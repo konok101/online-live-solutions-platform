@@ -48,7 +48,7 @@ const ContactUsForm = () => {
         }
 
         // send to the server
-        fetch('http://localhost:5000/contact', {
+        fetch('https://educational-live-solutions-sever.vercel.app/contact', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

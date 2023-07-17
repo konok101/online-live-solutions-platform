@@ -11,7 +11,7 @@ const TotalUserCount = () => {
 
   const [allUser, setAllUser] = useState([]);
   useEffect(() => {
-      const url = `http://localhost:5000/users`;
+      const url = `https://educational-live-solutions-sever.vercel.app/users`;
       fetch(url)
           .then((res) => res.json())
           .then((data) => setAllUser(data));

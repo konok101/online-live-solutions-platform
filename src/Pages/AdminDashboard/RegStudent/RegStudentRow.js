@@ -20,7 +20,7 @@ console.log('regStudent', regStudent);
 
     const handleDelete = (id) => {
       console.log('id',id);
-        fetch(`http://localhost:5000/myCourse/${id}`,{
+        fetch(`https://educational-live-solutions-sever.vercel.app/myCourse/${id}`,{
             method:'DELETE',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -43,7 +43,7 @@ console.log('regStudent', regStudent);
 
 
     const handleApprove = (id) => {
-      fetch(`http://localhost:5000/myCourse/${id}`, {
+      fetch(`https://educational-live-solutions-sever.vercel.app/myCourse/${id}`, {
           method: 'PUT',
           headers: {
               'authorization': `Bearer ${token}`,

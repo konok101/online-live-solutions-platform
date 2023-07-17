@@ -31,7 +31,7 @@ function Course() {
   const [ratings, setRatings]=useState([]);
 
 useEffect(() => {
-  const url = `http://localhost:5000/courseRating`;
+  const url = `https://educational-live-solutions-sever.vercel.app/courseRating`;
   fetch(url)
       .then((res) => res.json())
       .then((data) => setRatings(data));
@@ -41,7 +41,7 @@ useEffect(() => {
 
   const [courses, setCourses] = useState([]);
   useEffect(() => {
-    const url = `http://localhost:5000/addCourse`;
+    const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setCourses(data));
@@ -50,6 +50,9 @@ useEffect(() => {
 
 
 
+
+
+  console.log("courses courses11", courses)
 
   return (
     <div>

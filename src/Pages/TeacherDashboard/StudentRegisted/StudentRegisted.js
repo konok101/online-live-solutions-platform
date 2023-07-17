@@ -40,7 +40,7 @@ const StudentRegisted = () => {
     const email = user?.email;
     const [regStudent, setRegStudent] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/courseSubmit`;
+        const url = `https://educational-live-solutions-sever.vercel.app/courseSubmit`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setRegStudent(data));

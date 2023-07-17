@@ -27,7 +27,7 @@ const AddReview = () => {
 
     const [regStudent, setRegStudent] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/courseRating`;
+        const url = `https://educational-live-solutions-sever.vercel.app/courseRating`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setRegStudent(data));
@@ -60,7 +60,7 @@ console.log(unique);
             
                
 <div style={{marginTop:'100px'}}>
-<h1 style={{marginTop:'170px', width:'700px', margin:'auto'}}>Top  Reviews achievement in our teacher </h1>
+<h1 style={{marginTop:'170px', width:'800px', margin:'auto'}}>Top  Reviews achievement in our teacher </h1>
               
 
               <Grid container direction="row"
