@@ -53,8 +53,8 @@ const RegStudent = () => {
 
     return (
         <div style={{dashboardHomeStyle}}>
-        <div style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'250px', marginTop:'80px'}}>
-        <Paper >
+        <div style={{margin:'auto',  minHeight:'400px', marginLeft:'70px', marginBottom:'50px', marginTop:'80px'}}>
+        <Paper style={{width:'75vw'}}>
                     <TableContainer   >
                         <Table stickyHeader aria-label="sticky table"
                             position="static">

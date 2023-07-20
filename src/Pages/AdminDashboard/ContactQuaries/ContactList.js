@@ -45,13 +45,13 @@ const StudentReview = () => {
 
 
   return (
-    <div  style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'100px', marginTop:'80px'}}>
+    <div  style={{margin:'auto',  minHeight:'400px', marginLeft:'50px', marginTop:'80px'}}>
      
    
 
       <Container >
         <Paper >
-          <TableContainer sx={{ width: '80vw', margin:'0' }}>
+          <TableContainer sx={{ width: '75vw', margin:'0' }}>
             <Table  
               position="static">
               <TableHead>
@@ -60,6 +60,7 @@ const StudentReview = () => {
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Name</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Quearies</StyledTableCell>
+                 
                   <StyledTableCell  > </StyledTableCell>
                   
                 </StyledTableRow>
