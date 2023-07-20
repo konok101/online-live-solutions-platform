@@ -46,24 +46,24 @@ const Footer = () => {
                </Box>
                
                <Box >
-                   <Link href="#demoIcon" color="inherit">
+                   <Link href="https://www.facebook.com/rockykonok" target="_blank" color="inherit">
                        <FacebookIcon
                            style={{
                                color: 'white', width: '20px', height: '22px', margin: '8px', borderRadius: 3
                            }}
                        />
                    </Link>
-                   <Link href="#demoIcon" color="inherit">
+                   <Link href="https://www.instagram.com/" target="_blank" color="inherit">
                        <InstagramIcon
                            style={{ color: ' white ', width: '20px', height: '22px', margin: '8px', borderRadius: 3 }}
                        />
                    </Link>
-                   <Link href="#demoIcon" color="inherit">
+                   <Link href="https://twitter.com/" target="_blank" color="inherit">
                        <TwitterIcon
                            style={{ color: 'white ', width: '20px', height: '22px', margin: '8px', borderRadius: 3 }}
                        />
                    </Link>
-                   <Link href="#demoIcon" color="inherit">
+                   <Link href="https://www.linkedin.com/in/konok-majamder/" target="_blank" color="inherit">
                        <VoiceChatIcon
                            style={{ color: 'white', width: '20px', height: '22px', margin: '8px', borderRadius: 3 }}
                        />

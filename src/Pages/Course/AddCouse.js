@@ -107,8 +107,9 @@ const AddCourse = () => {
     }
 
     const homeStyle = {
-        background: '#f2f1f2',
-        marginLeft:'100px'
+        // background: '#f2f1f2',
+        borderRadius:'50px'
+        // marginLeft:'100px'
         // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
     }
     return (
@@ -116,7 +117,7 @@ const AddCourse = () => {
            
             <div  >
                 <div style={{
-                    marginTop: "70px", marginBottom: '10%'
+                    marginTop: "70px", marginBottom: '10%', width:'85vw'
                 }} >
                 
                     <Box sx={{ maxWidth: "70%", paddingBottom: '2%',paddingTop:'2%', margin: "auto", textAlign: 'center' }}>

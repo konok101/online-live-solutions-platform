@@ -137,7 +137,9 @@ function DrawerAppBar(props) {
 
 
   const appBarStyle = {
-    background: 'linear-gradient(to right,rgb(101,96,210),rgb(96,247,227))'
+    background: 'linear-gradient(to right,rgb(101,96,210),rgb(96,247,227))',
+    height:'70px'
+
  /*   backgroundColor:"#2db6a3" */
   }
 
