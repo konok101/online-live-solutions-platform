@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const AllUsers = () => {
     const [allUsers, setAllUsers] = useState([]);
     useEffect(() => {
-        const url = `https://educational-live-solutions-sever.vercel.app/users`;
+        const url = `http://localhost:5000/users`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setAllUsers(data));
@@ -53,7 +53,7 @@ const AllUsers = () => {
 
 
             <Container style={{ marginTop: '10px', marginLeft:'100px'}}>
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"100%",  m:"auto"}}>
+                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"80vw",  m:"auto"}}>
                     <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">

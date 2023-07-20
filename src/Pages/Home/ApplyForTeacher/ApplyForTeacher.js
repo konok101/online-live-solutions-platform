@@ -25,7 +25,7 @@ const ApplyForTeacher = () => {
             socialUrl: data?.socialUrl,
             aboutTeacher: data?.qulification
         };
-        const url = `https://educational-live-solutions-sever.vercel.app/applyForTeacher`;
+        const url = `http://localhost:5000/applyForTeacher`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',

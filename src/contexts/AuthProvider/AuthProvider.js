@@ -123,7 +123,7 @@ const resetPassword = (email) => {
 
 const saveUser = (email, displayName, method) => {
     const user = { email ,displayName};
-    fetch('https://educational-live-solutions-sever.vercel.app/users', {
+    fetch('http://localhost:5000/users', {
         method: method,
         headers: {
             'content-type': 'application/json'
@@ -192,7 +192,7 @@ const adminn = (email) => {
 
  useEffect(() => {
 
-    fetch(`https://educational-live-solutions-sever.vercel.app/users/${user?.email}`)
+    fetch(`http://localhost:5000/users/${user?.email}`)
         .then(res => res.json())
         .then(data => setAdmin(data.admin))
 }, [user?.email])
@@ -200,7 +200,7 @@ const adminn = (email) => {
 
 
 useEffect(() => {
-    fetch(`https://educational-live-solutions-sever.vercel.app/users/teacher/${user?.email}`)
+    fetch(`http://localhost:5000/users/teacher/${user?.email}`)
         .then(res => res.json())
         .then(data => setTeacher(data.teacher))
 }, [user?.email])
@@ -208,7 +208,7 @@ useEffect(() => {
  console.log('admin auth', admin);
 // useEffect(() => {
 
-//     fetch(`https://educational-live-solutions-sever.vercel.app/users/${user.email}`)
+//     fetch(`http://localhost:5000/users/${user.email}`)
 //         .then(res => res.json())
 //         .then(data => setAdmin(data.admin))
 // }, [user.email])
