@@ -46,12 +46,12 @@ const RegStudent = () => {
     const dashboardHomeStyle = {
         marginLeft: '-90px',
         marginRight:'100px',
-        width: '100vw'
+       // width: '100vw'
     }
 
     return (
         <div style={{dashboardHomeStyle}}>
-        <div style={{margin:'auto', width:'100%', minHeight:'400px', marginLeft:'150px', marginTop:'80px'}}>
+        <div style={{margin:'auto', width:'80vw', minHeight:'400px', marginLeft:'100px', marginTop:'80px'}}>
         <Paper >
                     <TableContainer   >
                         <Table stickyHeader aria-label="sticky table"
