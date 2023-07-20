@@ -105,31 +105,34 @@ const AddCourse = () => {
             });
     }
 
-    const homeStyle = {
-        background: '#f2f1f2',
-        marginLeft:'300px',
-        width:'85%'
+    // const homeStyle = {
+        // background: '#f2f1f2',
+        // marginLeft:'300px',
+        // width:'85%'
         // background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
-    }
+    // }
     return (
-        <div style={homeStyle} >
+        <div 
+        // style={homeStyle} 
+        >
          
             <div >
                 <div style={{
-                    marginTop: "100px", marginBottom: '10%'
+                    marginTop: "100px", marginBottom: '10%' ,width:'85vw'
                 }} >
 
-                    <Box sx={{ maxWidth: "80%", paddingBottom: '2%', margin: "auto", textAlign: 'center' }}>
+                    <Box sx={{ maxWidth: "70%", paddingBottom: '2%', margin: "auto", textAlign: 'center' }}>
                         <h2>Course Added by : {user?.displayName} !!!</h2>
                     </Box>
 
                     <Container style={{
                         // backgroundColor: '#DEDCEE',
                         backgroundColor:'#daedec',
+                        borderRadius:'50px',
                         paddingTop: '4%', paddingBottom: '4%'
                     }}>
 
-                        <Box style={{ maxWidth: "80%", marginLeft: "14%", }}>
+                        <Box style={{ maxWidth: "80%", marginLeft: "13%", }}>
 
                             <h5 style={{
                                 fontSize: '30px'
@@ -179,7 +182,12 @@ const AddCourse = () => {
                                                     {...params} placeholder="Select Teacher Name" />}
                                         /> */}
 
-                                        <TextField defaultValue={teacherName}></TextField>
+                                        <TextField 
+                                        style={{
+                                            width: '90%',
+                                            marginBottom: '2%'
+                                        }}
+                                        defaultValue={teacherName}></TextField>
 
                                     </Grid>
 

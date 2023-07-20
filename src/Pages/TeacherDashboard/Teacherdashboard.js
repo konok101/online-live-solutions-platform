@@ -7,8 +7,8 @@ import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import IconButton from '@mui/material/IconButton';
- import ListItem from '@mui/material/ListItem';
- 
+import ListItem from '@mui/material/ListItem';
+import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle'; 
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -30,6 +30,9 @@ import Home from '../Home/Home';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import Gallery from '../UserDashboard/Gallery';
 import { Button } from '@mui/material';
+import HouseIcon from '@mui/icons-material/House';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
 
 
 const drawerWidth = 270;
@@ -104,14 +107,14 @@ function TeacherDashboard() {
 
           <Link to='/' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <HouseIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Home</Button>
             </ListItem>
           </Link>
 
           <Link to='/regStudentTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <ManageAccountsIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>my classes</Button>
             </ListItem>
           </Link>
@@ -119,7 +122,7 @@ function TeacherDashboard() {
 
           <Link to='/addCourseByTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <PlaylistAddCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Course</Button>
             </ListItem>
           </Link>

@@ -92,7 +92,7 @@ console.log('regStudent', regStudent);
         <StyledTableCell component="th" scope="row">
           {subject}
         </StyledTableCell>
-        <StyledTableCell style={{display:"flex"}}><Button onClick={()=>handleDelete(_id)} variant="contained" size="small" style={{fontWeight: '400',
+        <StyledTableCell component="th" scope="row"  style={{display:"flex"}}><Button onClick={()=>handleDelete(_id)} variant="contained" size="small" style={{fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(198,42,66), rgb(198,105,42))',
         borderRadius: '15px'}}>Remove </Button>
         
@@ -103,6 +103,7 @@ console.log('regStudent', regStudent);
          }
         
         </StyledTableCell>
+        <StyledTableCell></StyledTableCell>
 
         </StyledTableRow>
 
