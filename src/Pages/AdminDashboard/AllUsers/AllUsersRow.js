@@ -21,7 +21,7 @@ const AllUserRow = ({allUser,setAllUsers, allUsers, index,StyledTableRow,StyledT
     const [deleteSuccess, setDeleteSuccess] = useState(false);
 
     const handleDelete = () => {
-        fetch(`https://educational-live-solutions-sever.vercel.app/users/${email}`,{
+        fetch(`http://localhost:5000/users/${email}`,{
             method:'DELETE',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -41,7 +41,7 @@ const AllUserRow = ({allUser,setAllUsers, allUsers, index,StyledTableRow,StyledT
     }
 
     const makeAdmin = () => {
-        fetch(`https://educational-live-solutions-sever.vercel.app/users/admin/${email}`, {
+        fetch(`http://localhost:5000/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

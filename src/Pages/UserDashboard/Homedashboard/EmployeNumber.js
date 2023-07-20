@@ -10,7 +10,7 @@ function EmployeNumber() {
 
     const [allUser, setAllUser] = useState([]);
     useEffect(() => {
-        const url = `https://educational-live-solutions-sever.vercel.app/users`;
+        const url = `http://localhost:5000/users`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setAllUser(data));
@@ -26,7 +26,7 @@ function EmployeNumber() {
 
       const [reviews, setReviews] = useState([]);
       useEffect(() => {
-          const url = `https://educational-live-solutions-sever.vercel.app/courseRating`;
+          const url = `http://localhost:5000/courseRating`;
           fetch(url)
               .then((res) => res.json())
               .then((data) => setReviews(data));
@@ -36,7 +36,7 @@ function EmployeNumber() {
 
       const [totalPrice, setTotalPrice] = useState([]);
       useEffect(() => {
-          const url = `https://educational-live-solutions-sever.vercel.app/courseSubmit`;
+          const url = `http://localhost:5000/courseSubmit`;
           fetch(url)
               .then((res) => res.json())
               .then((data) => setTotalPrice(data));

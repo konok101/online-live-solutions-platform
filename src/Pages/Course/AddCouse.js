@@ -42,7 +42,7 @@ const AddCourse = () => {
             socialUrl: data?.socialUrl,
             serial: generateAddSerial()
         };
-        const url = `https://educational-live-solutions-sever.vercel.app/addCourse`;
+        const url = `http://localhost:5000/addCourse`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -66,7 +66,7 @@ const AddCourse = () => {
     const role = user?.role === 'teacher';
 
     useEffect(() => {
-        const url = `https://educational-live-solutions-sever.vercel.app/users?role=${role}`;
+        const url = `http://localhost:5000/users?role=${role}`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setAllUser(data));
