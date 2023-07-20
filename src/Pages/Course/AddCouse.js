@@ -15,6 +15,7 @@ const AddCourse = () => {
     const { enqueueSnackbar } = useSnackbar();
     const [teacherEmail, setTeacherEmail] = useState('')
     const [teacherName, setTeacherName] = useState('')
+    
 
     const generateAddSerial = () => {
         let randomNumber = Math.floor(

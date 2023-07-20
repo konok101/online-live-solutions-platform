@@ -12,12 +12,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import {  MenuItem } from '@mui/material';
+/* import {  MenuItem } from '@mui/material';
+ */
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { Link, NavLink } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
  
 
 const drawerWidth = 240;
@@ -33,17 +36,7 @@ function DrawerAppBar(props) {
   // const [anchorElUser, setAnchorElUser] = React.useState(null);
   const { user,admin, teacher, logOut } = useContext(AuthContext);
 
-  // const handleOpenNavMenu = (event) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
+ 
 
   const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -76,6 +69,21 @@ function DrawerAppBar(props) {
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
+
+
+
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const openL = Boolean(anchorEl);
+  const handleClickL = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleCloseL = () => {
+    setAnchorEl(null);
+  };
+
+  
 
   const drawer = (
     <Box
@@ -219,14 +227,39 @@ function DrawerAppBar(props) {
              {
                 user?.email ?
 
-              <Button onClick={logOut} className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
-                   <StyledBadge
+              <Button className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
+                <Button
+        id="basic-button"
+        aria-controls={openL ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openL ? 'true' : undefined}
+        onClick={handleClickL}
+      >
+  <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         variant="dot"
       >
         <Avatar alt="Remy Sharp" src={user?.photoURL} />
-      </StyledBadge>
+        </StyledBadge>
+
+        
+              </Button>
+                 
+
+      
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={openL}
+        onClose={handleCloseL}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Profile</MenuItem>
+         <MenuItem onClick={logOut}>Logout</MenuItem>
+      </Menu>
                     
                </Button>  :  
                     <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/login" style={{ textDecoration: 'none' }}>Login </NavLink>
