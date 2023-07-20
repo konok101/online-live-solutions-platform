@@ -36,7 +36,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StudentReview = () => {
   const [allReview, setAllReview] = useState([]);
   useEffect(() => {
-    const url = `https://educational-live-solutions-sever.vercel.app/contact`;
+    const url = `http://localhost:5000/contact`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setAllReview(data));

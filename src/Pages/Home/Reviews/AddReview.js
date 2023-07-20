@@ -27,7 +27,7 @@ const AddReview = () => {
 
     const [regStudent, setRegStudent] = useState([]);
     useEffect(() => {
-        const url = `https://educational-live-solutions-sever.vercel.app/courseRating`;
+        const url = `http://localhost:5000/courseRating`;
         fetch(url)
             .then((res) => res.json())
             .then((data) => setRegStudent(data));
