@@ -53,7 +53,7 @@ const AllUsers = () => {
 
 
             <Container style={{ marginTop: '10px', marginLeft:'100px'}}>
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"100%",  m:"auto"}}>
+                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden', width:"80vw",  m:"auto"}}>
                     <TableContainer sx={{ height: '80vh', }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
