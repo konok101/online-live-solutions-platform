@@ -47,6 +47,12 @@ import RegStudent from './RegStudent/RegStudent';
 import AddTeacher from './AddTeacher';
 import ApplyTeacherData from '../Home/ApplyForTeacher/ApplyTeacherData';
 
+
+
+import BallotIcon from '@mui/icons-material/Ballot';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle';
+
 const drawerWidth = 270;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -140,16 +146,11 @@ function AdminDashboard() {
           </Link>
 
 
-          <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Add Teacher</Button>
-            </ListItem>
-          </Link>
+          
 
           <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <PlaylistAddCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Course</Button>
             </ListItem>
           </Link>
@@ -162,16 +163,24 @@ function AdminDashboard() {
               <Button style={{ color: '#08558b' }}>All Users</Button>
             </ListItem>
           </Link>
+
+          <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+          <ListItem >
+            <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+            <Button style={{ color: '#08558b' }}>Add Teacher</Button>
+          </ListItem>
+        </Link>
+
           <Link to='/contactQuaries' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Contact lists  </Button>
+              <BallotIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Quaries </Button>
             </ListItem>
           </Link>
           
           <Link to='/applyTeacherList' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <ReceiptLongIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Apply lists  </Button>
             </ListItem>
           </Link>
