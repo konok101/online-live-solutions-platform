@@ -14,7 +14,9 @@ import MyEnrollmentRow from '../../UserDashboard/MyEnrollment/MyEnrollMentRow';
 import Footer from '../../Shared/Footer';
 import CircularProgress from '@mui/material/CircularProgress';
 import Navigation from '../../Shared/Navigation';
-import { Box, Grid } from '@mui/material';
+import { Alert, Box, Button, Grid } from '@mui/material';import { useSnackbar } from "notistack";
+
+
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
@@ -39,7 +41,25 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 function MyEnrollment() {
-    const { user , loading } = useContext(AuthContext);
+    const { user , loading , verifyEmail, authError} = useContext(AuthContext);
+     const { enqueueSnackbar } = useSnackbar();
+
+  
+    const clickForVerification = async () => {
+
+        try{
+            await verifyEmail();
+            enqueueSnackbar("Verification email sent", { variant: 'success' })   
+
+        }
+
+        catch{
+            console.log('ccc');
+        }
+       
+    }
+
+   
 
      const [myCourses, setMycourses] = useState([]);
     console.log('myCourses', myCourses);
@@ -60,42 +80,52 @@ function MyEnrollment() {
             <Navigation />
 
              <Container style={{width:"90%", margin: 'auto', marginTop:"70px" }}>
-         
-                <Paper style={{  height:"700px"}} sx={{ overflowX: 'hidden',   }}>
-                {
-                    myCourses?.length > 0 &&
+         {
+            user?.emailVerified ?   <Paper style={{  height:"700px"}} sx={{ overflowX: 'hidden',   }}>
+            {
+                myCourses?.length > 0 &&
+                
+                
+               <div style={{marginLeft:"100px"}}>
+                 <Grid container direction="row"
+                justifyContent="space-around"
+                alignItems="center"   >
+               
+                  
+                    <Grid >
+                       
+                        {
+                            myCourses?.map((regStudent, index) => <MyEnrollmentRow
+                                key={regStudent._id}
+                                regStudent={regStudent}
+                                index={index}
+                                StyledTableRow={StyledTableRow}
+                                StyledTableCell={StyledTableCell}
+
+                            ></MyEnrollmentRow>)
+                        }
+                    </Grid>
                     
-                    
-                   <div style={{marginLeft:"100px"}}>
-                     <Grid container direction="row"
-                    justifyContent="space-around"
-                    alignItems="center"   >
-                   
-                      
-                        <Grid >
-                           
-                            {
-                                myCourses?.map((regStudent, index) => <MyEnrollmentRow
-                                    key={regStudent._id}
-                                    regStudent={regStudent}
-                                    index={index}
-                                    StyledTableRow={StyledTableRow}
-                                    StyledTableCell={StyledTableCell}
+               
+            </Grid>
+               </div> 
 
-                                ></MyEnrollmentRow>)
-                            }
-                        </Grid>
-                        
-                   
-                </Grid>
-                   </div> 
+            }
 
-                }
+            {
+                 !myCourses?.length >0  &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
+            }
+            </Paper> :<div style={{marginBottom:"100px"}}>
 
-                {
-                     !myCourses?.length >0  &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
-                }
-                </Paper>
+          {authError  && <Button variant="contained" onClick={clickForVerification}>Verification sent</Button>
+}
+            {authError && <Alert severity="error">{authError}</Alert>}
+
+            </div> 
+
+
+         }
+               
             </Container>
 
             <Footer/>
