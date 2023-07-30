@@ -118,7 +118,7 @@ const AddCourse = () => {
          
             <div >
                 <div style={{
-                    marginTop: "100px", marginBottom: '10%' ,width:'85vw'
+                    marginTop: "40px", marginBottom: '10%' ,width:'85vw'
                 }} >
 
                     <Box sx={{ maxWidth: "70%", paddingBottom: '2%', margin: "auto", textAlign: 'center' }}>

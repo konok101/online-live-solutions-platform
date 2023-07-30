@@ -83,6 +83,17 @@ function DrawerAppBar(props) {
     setAnchorEl(null);
   };
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+
   
 
   const drawer = (
@@ -120,14 +131,39 @@ function DrawerAppBar(props) {
 {
                 user?.email ?
 
-              <Button onClick={logOut} className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
-                   <StyledBadge
+              <Button className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} color="inherit" sx={{ color: 'black' }}> 
+                <Button
+        id="basic-button"
+        aria-controls={openL ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={openL ? 'true' : undefined}
+        onClick={handleClickL}
+      >
+  <StyledBadge
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
         variant="dot"
       >
         <Avatar alt="Remy Sharp" src={user?.photoURL} />
-      </StyledBadge>
+        </StyledBadge>
+
+        
+              </Button>
+                 
+
+      
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={openL}
+        onClose={handleCloseL}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+{/*         <MenuItem onClick={handleClose}><Link  style={{ textDecoration: 'none' }} to='/Profile'>Profile</Link></MenuItem>
+ */}         <MenuItem onClick={logOut}><Link  style={{ textDecoration: 'none' }}>Logout</Link></MenuItem>
+      </Menu>
                     
                </Button>  :  
                     <NavLink className={({isActive})=> isActive ? "buttonHoverIsActive" : "buttonHover"} to="/login" style={{ textDecoration: 'none' }}>Login </NavLink>
@@ -160,16 +196,7 @@ function DrawerAppBar(props) {
     border: `2px solid ${theme.palette.background.paper}`,
   }));
     
-  const [open, setOpen] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
+ 
   
   return (
     <Box sx={{ display: 'flex' }}>
@@ -257,8 +284,8 @@ function DrawerAppBar(props) {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-         <MenuItem onClick={logOut}>Logout</MenuItem>
+{/*         <MenuItem onClick={handleClose}><Link  style={{ textDecoration: 'none' }} to='/Profile'>Profile</Link></MenuItem>
+ */}         <MenuItem onClick={logOut}><Link  style={{ textDecoration: 'none' }}>Logout</Link></MenuItem>
       </Menu>
                     
                </Button>  :  
