@@ -10,6 +10,8 @@ import Footer from "../Shared/Footer";
 import Link from '@mui/material/Link';
 import { AuthContext } from "../../contexts/AuthProvider/AuthProvider";
 import {useLocation, useNavigate } from "react-router";
+import {  NavLink } from 'react-router-dom';
+
 
 // import useAuth from "../../hooks/useAuth";
 // import { Link, NavLink } from "react-router-dom";
@@ -148,9 +150,9 @@ const Register = () => {
 
 
 
-                            <Link href="/login" color="inherit" style={{ textDecoration: 'none', fontWeight: 425 }}>
+                            <NavLink to="/login" color="inherit" style={{ textDecoration: 'none', fontWeight: 425 }}>
                                 <Button variant="text" sx={{ ml: 11 }}>Already Registered? Please Login</Button>
-                            </Link><br></br>
+                            </NavLink><br></br>
                         </form>
                         {/*
                     }

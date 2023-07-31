@@ -1,4 +1,4 @@
-import { Container, Grid, Typography, TextField, Button, CircularProgress, Alert } from "@mui/material";
+import { Container, Grid, Typography, TextField, Button, CircularProgress, Alert, CardContent, CardActions, Card, CardMedia } from "@mui/material";
 import React, { useContext, useState } from "react";
 import Link from '@mui/material/Link';
 import loginImg from "../../images/loginImg.jpg";
@@ -51,18 +51,20 @@ const Login = () => {
         //     navigate(from, { replace: true })
         //   })
           enqueueSnackbar("Login Success", { variant: 'success' })   
+         
         e.preventDefault();
     }
 
-    // if(!loginData.email){
-    //     navigate(from, { replace: false })
-    // }
+ 
 
-    // const saveUser = 
-
-    const handleForgetPassword = () => {
-       navigate('/forgotPass')
+    const handleForgetPassword = (e) => {
+       
+        resetPassword(loginData.email) 
+            enqueueSnackbar("Check your email", { variant: 'success' })   
+            e.preventDefault();
+ 
     }
+
     const imgStyle = {
         borderRadius: 400,
         width: '40%',
@@ -72,65 +74,45 @@ const Login = () => {
 
  
     return (
-        <div style={{ background: 'rgb(112,242,226)', textAlign: 'center' }} >
+        <div style={{ background: 'rgb(112,242,226)', textAlign: 'center'}} >
 
 
             <Navigation></Navigation>
             <Container>
-                <Grid container justifyContent={'center'} spacing={2} >
-                    <Grid item xs={12} md={12} sx={{ mt: 10 }}>
-                        <img style={imgStyle} src={loginImg} alt="" />
-                    </Grid>
+                <Grid style={{height:"500px"}} sx={{marginTop:'100px'}} container justifyContent={'center'} spacing={2} >
+                 
                     <Grid item sx={{ mt: 5, mb: 10 }} xs={12} md={8}>
                         <Typography variant="h4" gutterBottom >
-                            Login
+                        Forgot Password
+
                         </Typography>
                         <form
-                            onSubmit={handleLoginSubmit}
+                            onSubmit={handleForgetPassword}
                         >
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
                                 id="standard-basic"
-                                label="Email"
+                                label="Enter your email"
                                 name="email"
                                 type="email"
                                 required
                                 onChange={handleOnChange}
                                 variant="standard" />
-                            {/* <TextField
-                            sx={{ width: '75%', m: 1 }}
-                            id="standard-basic"
-                            label="Student Id"
-                            name="email"
-
-                            onChange={handleOnChange}
-                            variant="standard" /> */}
-                            <TextField
-                                sx={{ width: '75%', m: 1 }}
-                                id="standard-basic"
-                                label="Password"
-                                type="password"
-                                name="password"
-                                required
-                                onChange={handleOnChange}
-                                variant="standard" />
-                            <br></br>
-
-                            <Button sx={{ width: '75%', m: 3 }}
-                                type="submit" style={{ backgroundColor: '#0d4ef2' }} variant="contained">Login
-                            </Button>
-                            <br></br>
-                         <NavLink to="/forgotPass">
-                           <Button variant="text" sx={{}}
-                             
-                            >Forgotten Password?</Button></NavLink> 
 
  
+                         
+                     
 
+                            
+                            <br></br>
 
-                            <NavLink style={{ textDecoration: 'none' }} to='/register'>
-                                <Button variant="text" sx={{ ml: '14%', color: 'black' }} >Create New account</Button>
-                            </NavLink>
+                            <Button sx={{ width: '75%', m: 3 }} type="submit"   
+                                 style={{ backgroundColor: '#0d4ef2' }} variant="contained">Next
+                            </Button>
+                    
+
+        
+                        
                             <br></br><br></br>
 
                             {/*
@@ -143,9 +125,6 @@ const Login = () => {
                             {/* <p>--------------------------------------</p> */} <br></br>
 
 
-                            <Button
-                                onClick={handleSignInWithGoogle}
-                                sx={{ ml: 8, p: 1 }} variant="contained" style={{ width: '45%', alignItems: 'center', backgroundColor: '#b30d52' }}>Login with Google</Button><br></br>
                         </form>
                     </Grid>
                 </Grid>

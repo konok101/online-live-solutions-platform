@@ -116,9 +116,10 @@ function MyEnrollment() {
                  !myCourses?.length >0  &&                 <div style={{width:"550px", margin:"auto", padding:"40px", fontSize:"50px"}}>No enroll course</div>
             }
             </Paper> :<div style={{marginBottom:"100px"}}>
+                <p>Hi {user?.displayName}, Your email is not verify. Firstly you verify your email then you see dashboard</p>
 
-          {authError  && <Button variant="contained" onClick={clickForVerification}>Verification sent</Button>
-}
+           <Button variant="contained" onClick={clickForVerification}>Verify sent</Button>
+ 
             {authError && <Alert severity="error">{authError}</Alert>}
 
             </div> 

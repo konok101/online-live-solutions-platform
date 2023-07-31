@@ -22,7 +22,12 @@ import CarouselBanner from './Banner/CarouselBanner';
 function Home() {
 
   const homeStyle = {
-    background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))'
+    overflowX: 'hidden',
+    overflowY: 'hidden',
+    background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))',
+    width:"99vw",
+  
+
   }
   const { user } = useContext(AuthContext);
 

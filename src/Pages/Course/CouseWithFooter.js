@@ -18,10 +18,6 @@ import { useEffect } from 'react';
 import CourseRow from './CourseRow';
 function Course() {
 
-  const dashboardHomeStyle = {
-    marginLeft: '-90px',
-    width: '100vw'
-  }
   const [openModal, setOpenModal] = React.useState(false);
   const handleModalOpen = () => setOpenModal(true);
   const handleModalClose = () => setOpenModal(false);
@@ -55,10 +51,15 @@ function Course() {
         .then((data) => setRatings(data));
   
   }, []);
-
+  
+  const homeStyle={
+    width:'99vw',
+   overflowX: 'hidden',
+   overflowY: 'hidden',
+ }
 
   return (
-    <div>
+    <div style={homeStyle}>
       <Navigation />
       
 

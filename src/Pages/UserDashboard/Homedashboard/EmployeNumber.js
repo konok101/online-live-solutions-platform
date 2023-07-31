@@ -43,7 +43,6 @@ function EmployeNumber() {
   
       }, []);
  
-      console.log('totalPrice', totalPrice);
 
       const total =(totalPrice?.reduce((total, currentItem) => total = total + parseInt(currentItem?.price || 0), 0));
 
