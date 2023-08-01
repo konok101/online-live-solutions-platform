@@ -66,7 +66,8 @@ const RegStudent = () => {
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>teaching Area</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Qualifications</StyledTableCell>
  
-                                     <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34' }}>Actions</StyledTableCell>
+                                     <StyledTableCell align='left' style={{ fontWeight: '700', color: '#102a34' }}>image</StyledTableCell>
+                                     <StyledTableCell align='left' style={{ fontWeight: '700', color: '#102a34' }}>Actions</StyledTableCell>
                                     
 
                                      
