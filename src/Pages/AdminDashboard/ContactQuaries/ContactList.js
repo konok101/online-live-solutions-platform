@@ -34,7 +34,8 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 
 const StudentReview = () => {
-  const [allReview, setAllReview] = useState([]);
+
+  const [allReviews, setAllReview] = useState([]);
   useEffect(() => {
     const url = `http://localhost:5000/contact`;
     fetch(url)
@@ -42,6 +43,8 @@ const StudentReview = () => {
       .then((data) => setAllReview(data));
 
   }, []);
+
+
 
 
   return (
@@ -60,18 +63,20 @@ const StudentReview = () => {
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Name</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
                   <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> Quearies</StyledTableCell>
+                  <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}> actions</StyledTableCell>
                  
-                  <StyledTableCell  > </StyledTableCell>
-                  
+       
                 </StyledTableRow>
               </TableHead>
 
 
               <TableBody>
                 {
-                  allReview.map((allReview, index) => <StudentReviewRow
+                  allReviews.map((allReview, index) => <StudentReviewRow
                     key={allReview._id}
                     allReview={allReview}
+                    allReviews={allReviews}
+                    setAllReview={setAllReview}
                     index={index}
                     StyledTableRow={StyledTableRow}
                     StyledTableCell={StyledTableCell}
