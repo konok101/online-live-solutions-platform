@@ -53,7 +53,7 @@ function Course() {
   }, []);
   
   const homeStyle={
-    width:'99vw',
+    width:'98.6vw',
    overflowX: 'hidden',
    overflowY: 'hidden',
  }

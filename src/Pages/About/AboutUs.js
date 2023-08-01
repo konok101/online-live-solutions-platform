@@ -8,7 +8,7 @@ import FounderSays from './FounderSays'
 function AboutUs() {
   const homeStyle={
     background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))',
-    width:'99vw',
+    width:'98.6vw',
     overflowX: 'hidden',
     overflowY: 'hidden',
   }

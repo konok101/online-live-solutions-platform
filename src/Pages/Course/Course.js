@@ -52,8 +52,7 @@ useEffect(() => {
 
 
 
-  console.log("courses courses11", courses)
-
+ 
   return (
     <div>
       

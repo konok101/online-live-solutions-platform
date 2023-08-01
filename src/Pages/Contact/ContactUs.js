@@ -7,7 +7,7 @@ import Footer from "../Shared/Footer";
 const ContactUs = () => {
 
     const homeStyle={
-         width:'99vw',
+         width:'98.6vw',
         overflowX: 'hidden',
         overflowY: 'hidden',
       }

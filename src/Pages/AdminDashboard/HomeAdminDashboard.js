@@ -8,7 +8,10 @@ const HomeAdminDashboard = () => {
 
     const dashboardHomeStyle = {
         marginLeft: '-90px',
-        width: '100vw'
+    
+        overflowX: 'hidden',
+        overflowY: 'hidden',
+         width:"98.5vw",
     }
 
     return (

@@ -3,7 +3,7 @@ import MyEnrollment from './MyEnrollment/MyEnrollment';
 
 const UserDashboard = () => {
   const homeStyle={
-     width:'99vw',
+     width:'98.6vw',
     overflowX: 'hidden',
     overflowY: 'hidden',
   }

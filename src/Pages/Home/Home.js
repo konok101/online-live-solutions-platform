@@ -25,7 +25,7 @@ function Home() {
     overflowX: 'hidden',
     overflowY: 'hidden',
     background: 'linear-gradient(to right,rgb(228,231,234), rgb(201,230,235))',
-    width:"99vw",
+    width:"98.5vw",
   
 
   }
