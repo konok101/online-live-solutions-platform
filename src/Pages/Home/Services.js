@@ -4,7 +4,7 @@ import React from 'react'
 import ambulance from '../../images/service-1.png';
 import note from '../../images/service-2.png';
 import injection from '../../images/service-3.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Services() {
   return (
@@ -32,14 +32,14 @@ function Services() {
         <img  width="120px" style={{paddingTop:'6%'}}  src={injection}></img>
         <h4 >Live Solutions</h4>
         <p style={{paddingLeft:'2%', paddingRight:'2%'}}>Online live solutions enable education to be accessible from anywhere, Learners can participate in classes from the comfort of their own homes or any location with an internet connection. </p>
-        <Link style={{ textDecoration: 'none' }} to="/liveSolution" target="_blank"  >
+        <NavLink style={{ textDecoration: 'none' }} to="/liveSolution" target="_blank"  >
         <button variant="outlined" className='readMoreButtonHoverBanner' type="submit" style={{
          
           padding: '8px 35px',  
          fontWeight: '600',
          fontSize: '18px',
          borderRadius: '4px',marginBottom:'3%', paddingBottom:'3%'
-          }}>READ MORE</button></Link>
+          }}>READ MORE</button></NavLink>
         </Card>
         
         

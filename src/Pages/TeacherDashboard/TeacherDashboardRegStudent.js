@@ -205,7 +205,7 @@ function TeacherDashboard() {
         </Main>
 
       </Box>
-      <Footer></Footer>
+    
     </>
   );
 }

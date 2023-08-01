@@ -17,13 +17,15 @@ const HomeTeacherDashboard = () => {
 
     const dashboardHomeStyle = {
         marginLeft: '-90px',
-        width: '100vw'
+        overflowX: 'hidden',
+        overflowY: 'hidden',
+        width: '99vw'
     }
 
+ 
     return (
         <div style={dashboardHomeStyle}>
             <EmployeNumber></EmployeNumber>
-
             <Grid container spacing={15} style={{ margin: '8%', textAlign: 'center' }}>
 
 

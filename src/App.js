@@ -59,7 +59,7 @@ import Gallery from './Pages/UserDashboard/Gallery';
 import VideoCallHome from './Pages/VideoCall/VideoCallHome';
 import VideoRoom from './Pages/VideoCall/VideoRoom';
 import TeacherRoute from './Pages/Login/privateRoute/TeacherRoute';
-import Profile from './Pages/Shared/Profile';
+import ForgotPass from './Pages/Login/ForgotPass';
 
 
 function Appw() {
@@ -104,7 +104,7 @@ function Appw() {
     { path: "/gallery", element: <Gallery /> },
     { path: "/VideoCallHome", element:<PrivateRoute>  <VideoCallHome /> </PrivateRoute>},
     { path: "/room/:roomId", element: <PrivateRoute>  <VideoRoom /></PrivateRoute> },
-    { path: "/Profile", element: <PrivateRoute>  <Profile /></PrivateRoute> },
+    { path: "/forgotPass", element:  <ForgotPass/> },
   ]);
   return routes;
 };

@@ -54,19 +54,25 @@ const StudentRegisted = () => {
         }
     }) 
    
-
+    const homeStyle={
+        width:'99vw',
+       overflowX: 'hidden',
+       overflowY: 'hidden',
+       marginTop:'70px',
+       marginLeft:'-100px',
+     
+     }
 
     return (
-        <>
+        <div style={homeStyle}>
          
-            <div style={{ textAlign: 'center', marginTop: '4%', width: '100vw' }}>
-{/*                 <h1 style={{ fontWeight: '700', color: '#13698b' }}>Total Registered Student for Today: {teacherLists?.length} </h1>
- */}            </div>
+    
 
-
-            <Container style={{   }}>
-                <Paper sx={{ overflowX: 'hidden', overflowY: 'hidden' }}>
-                    <TableContainer sx={{ height: '80vh', }}>
+          
+              <div style={{width:'75%', margin:'auto' , marginBottom:'100px', maxHeight:'800px',  overflowX: 'hidden',
+       overflowY: 'hidden', }}>
+                 
+              <TableContainer sx={{ height: ' ', ml:5 }}>
                         <Table stickyHeader aria-label="sticky table"
                             position="static">
                             <TableHead>
@@ -95,11 +101,14 @@ const StudentRegisted = () => {
                             
                         </Table>
                     </TableContainer>
-                </Paper>
-            </Container>
+               
+              </div>
+        
+
+            <Footer></Footer>
 
  
-         </>
+         </div>
     );
 };
 
