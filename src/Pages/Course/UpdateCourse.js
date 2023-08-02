@@ -8,7 +8,7 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Paper } from '@mui/material';
+import { Paper, TextField } from '@mui/material';
 import UpdateCourseRow from './UpdateCourseRow'
 
 
@@ -43,8 +43,33 @@ const UpdateCourse = () => {
 
     }, [courseLists]);
 
-    console.log('courseListscourseLists', courseLists);
 
+    const [nameSearch, setNameSearch] = useState('');
+    const [emailSearch, setEmailSearch] = useState('');
+   
+   
+
+    function filterData(data) {
+        return data?.filter((item) => {
+            if (nameSearch) {
+                return nameSearch?.toLowerCase() === '' ? item :
+                    item?.teacherName?.toLowerCase().includes(nameSearch?.toLowerCase()) 
+       
+            }
+   
+            else if(emailSearch){
+               return emailSearch?.toLowerCase() === '' ? item :
+               item?.teacherEmail?.toLowerCase().includes(emailSearch?.toLowerCase()) 
+            }
+           
+         
+            return item;
+        })
+      }
+      let allFilterData = filterData(courseLists)
+      
+      
+      
     return (
         <div>
              <div style={{margin:'auto', width:'80vw',   marginLeft:'70px', marginTop:'80px', paddingBottom:"70px"}}>
@@ -55,8 +80,30 @@ const UpdateCourse = () => {
                             <TableHead>
                                 <StyledTableRow>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>
+                                    <TextField
+         value={nameSearch}
+         onChange={(e)=>setNameSearch(e.target.value)}
+          id="standard-search"
+          label="Name Search"
+          type="search"
+          size='sm'
+          sx={{maxWidth:'140px'}}
+          variant="standard"
+        />
+                                    </StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>
+                                    <TextField
+         value={emailSearch}
+         onChange={(e)=>setEmailSearch(e.target.value)}
+          id="standard-search"
+          label="Email Search "
+          type="search"
+          size='sm'
+          sx={{maxWidth:'140px'}}
+          variant="standard"
+        />
+                                    </StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Price</StyledTableCell>
                                     <StyledTableCell align='right' style={{ fontWeight: '700', color: '#102a34', marginLeft:'100px' }}>Actions</StyledTableCell>
@@ -68,7 +115,7 @@ const UpdateCourse = () => {
                             
                             <TableBody>
                                 {
-                                    courseLists.map((courseList, index) => <UpdateCourseRow
+                                    allFilterData.map((courseList, index) => <UpdateCourseRow
                                         key={courseList._id}
                                         courseList={courseList}
                                         courseLists={courseLists}
