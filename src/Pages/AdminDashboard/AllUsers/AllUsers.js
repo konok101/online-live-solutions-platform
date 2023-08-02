@@ -11,6 +11,7 @@ import AllUserRow from './AllUsersRow';
 import { Container } from '@mui/system';
 import Footer from '../../Shared/Footer';
 import Navigation from '../../Shared/Navigation';
+import { TextField } from '@mui/material';
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#5bbce3',
@@ -44,6 +45,32 @@ const AllUsers = () => {
     }, [allUsers]);
 
 
+    
+    const [nameSearch, setNameSearch] = useState('');
+    const [emailSearch, setEmailSearch] = useState('');
+   
+   
+
+    function filterData(data) {
+        return data?.filter((item) => {
+            if (nameSearch) {
+                return nameSearch?.toLowerCase() === '' ? item :
+                    item?.displayName?.toLowerCase().includes(nameSearch?.toLowerCase()) 
+       
+            }
+   
+            else if(emailSearch){
+               return emailSearch?.toLowerCase() === '' ? item :
+               item?.email?.toLowerCase().includes(emailSearch?.toLowerCase()) 
+            }
+           
+         
+            return item;
+        })
+      }
+      let allFilterData = filterData(allUsers)
+
+
     return (
         <>
             
@@ -60,8 +87,31 @@ const AllUsers = () => {
                             <TableHead>
                                 <StyledTableRow>
                                     <StyledTableCell></StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Name</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>User Email</StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>
+                                    <TextField
+         value={nameSearch}
+         onChange={(e)=>setNameSearch(e.target.value)}
+          id="standard-search"
+          label="Name Search"
+          type="search"
+          size='sm'
+          sx={{maxWidth:'140px'}}
+          variant="standard"
+        />
+
+                                    </StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>
+                                    <TextField
+         value={emailSearch}
+         onChange={(e)=>setEmailSearch(e.target.value)}
+          id="standard-search"
+          label="Email Search "
+          type="search"
+          size='sm'
+          sx={{maxWidth:'140px'}}
+          variant="standard"
+        />
+                                    </StyledTableCell>
                                     <StyledTableCell align="center" style={{ fontWeight: '700', color: '#102a34' }}> Action</StyledTableCell>
                                     <StyledTableCell ></StyledTableCell>
                                 </StyledTableRow>
@@ -70,7 +120,7 @@ const AllUsers = () => {
                             
                             <TableBody>
                                 {
-                                    allUsers.map((allUser, index) => <AllUserRow
+                                    allFilterData.map((allUser, index) => <AllUserRow
                                         key={allUser._id}
                                         allUser={allUser}
                                         allUsers={allUsers}
