@@ -32,10 +32,9 @@ import HouseIcon from '@mui/icons-material/House';
 import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
-import BallotIcon from '@mui/icons-material/Ballot';
-import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
-import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle';
+
 
 import TreeView from '@mui/lab/TreeView';
 import TreeItem from '@mui/lab/TreeItem';
@@ -46,10 +45,15 @@ import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 import { Button } from '@mui/material';
 import HomeAdminDashboard from './HomeAdminDashboard';
 import RegStudent from './RegStudent/RegStudent';
-import AddCourse from '../Course/AddCouse';
-import AllUsers from './AllUsers/AllUsers';
-import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import AddTeacher from './AddTeacher';
+import ApplyTeacherData from '../Home/ApplyForTeacher/ApplyTeacherData';
 
+
+
+import BallotIcon from '@mui/icons-material/Ballot';
+import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle';
+import UpdateCourse from '../Course/UpdateCourse';
 
 const drawerWidth = 270;
 
@@ -144,7 +148,7 @@ function AdminDashboard() {
           </Link>
 
 
-         
+          
 
           <Link to='/addCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
@@ -168,27 +172,28 @@ function AdminDashboard() {
               <Button style={{ color: '#08558b' }}>All Users</Button>
             </ListItem>
           </Link>
+
           <Link to='/addTeacher' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
           <ListItem >
             <LibraryAddIcon style={{ color: '#08558b', fontSize: '1rem' }} />
             <Button style={{ color: '#08558b' }}>Add Teacher</Button>
           </ListItem>
         </Link>
+
           <Link to='/contactQuaries' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
               <BallotIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Quaries  </Button>
+              <Button style={{ color: '#08558b' }}>Quaries </Button>
             </ListItem>
           </Link>
+          
           <Link to='/applyTeacherList' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
             <ListItem >
               <ReceiptLongIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}> Apply List </Button>
+              <Button style={{ color: '#08558b' }}>Apply lists  </Button>
             </ListItem>
           </Link>
-
-         
-
+ 
         </Container>
       </Box>
     </div >
@@ -212,8 +217,7 @@ function AdminDashboard() {
               <MenuIcon style={{ color: '#08558b' }} className='buttonHover' />
             </IconButton>
             <Typography style={{ color: '#08558b' }} variant="h6" noWrap component="div">
-              All Users
-            </Typography>
+Course Info            </Typography>
           </Toolbar>
         </AppBar>
         <Drawer
@@ -246,7 +250,7 @@ function AdminDashboard() {
         <Box>
           <Toolbar />
 
-         <AllUsers/>
+    <UpdateCourse/>
 
         </Box>
 

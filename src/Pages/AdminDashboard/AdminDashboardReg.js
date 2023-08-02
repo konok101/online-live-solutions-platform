@@ -32,7 +32,7 @@ import HouseIcon from '@mui/icons-material/House';
 import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import BallotIcon from '@mui/icons-material/Ballot';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle';
@@ -149,7 +149,12 @@ function AdminDashboard() {
               <Button style={{ color: '#08558b' }}>Add Course</Button>
             </ListItem>
           </Link>
-
+          <Link to='/updateCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <ManageSearchIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Manage Course</Button>
+            </ListItem>
+          </Link>
 
           <Link to='/allUsers' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
 
@@ -179,62 +184,7 @@ function AdminDashboard() {
           </Link>
           
 
-          {/*
-          <TreeView
-            style={{ textAlign: 'left', marginLeft: '0%' }}
-            aria-label="file system navigator"
-            defaultExpanded={['1']}
-
-
-            defaultCollapseIcon={
-              <div style={{ padding: '.3rem 0', }}>
-                <ArrowDropUpIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-              </div>}
-            defaultExpandIcon={<div style={{ padding: '.3rem 0', }}>
-              <ArrowDropDownIcon style={{ color: '#08558b', fontSize: '1.5rem' }} />
-            </div>}
-
-            sx={{ flexGrow: 1, overflowY: 'hidden', overflowX: 'hidden' }}
-          >
-
-            <TreeItem nodeId="1" label="Department"
-              style={{ color: '#08558b' }}>
-
-              <Link to='/math' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Math</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/english' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>English</Button>
-                </ListItem>
-              </Link>
-
-              <Link to='/science' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-                <ListItem >
-                  <AppRegistrationIcon style={{ color: '#08558b', fontSize: '1.1rem' }} />
-                  <Button style={{ color: '#08558b' }}>Science</Button>
-                </ListItem>
-              </Link>
-
-            </TreeItem>
-
-
-          </TreeView>
-            
-
-          <Link to='/gallery' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
-            <ListItem >
-              <OtherHousesIcon style={{ color: '#08558b', fontSize: '1rem' }} />
-              <Button style={{ color: '#08558b' }}>Gallery</Button>
-            </ListItem>
-          </Link>
-          */}
-
+          
         </Container>
       </Box>
     </div >

@@ -47,7 +47,7 @@ import { Button } from '@mui/material';
 import HomeAdminDashboard from './HomeAdminDashboard';
 import RegStudent from './RegStudent/RegStudent';
 import AddTeacher from './AddTeacher';
-
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 const drawerWidth = 270;
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -150,7 +150,12 @@ function AdminDashboard() {
             </ListItem>
           </Link>
 
-
+          <Link to='/updateCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <ManageSearchIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Manage Course</Button>
+            </ListItem>
+          </Link>
           <Link to='/allUsers' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
 
             <ListItem >

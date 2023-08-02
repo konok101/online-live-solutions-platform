@@ -159,7 +159,7 @@ function CourseRow({ course, index, ratings }) {
           >
             <CardMedia
               component="img"
-              alt="green iguana"
+              alt="course image"
               // height="0%"
               image={course?.imageURL}
               style={{

@@ -46,7 +46,7 @@ import HomeAdminDashboard from './HomeAdminDashboard';
 import RegStudent from './RegStudent/RegStudent';
 import AddTeacher from './AddTeacher';
 import ApplyTeacherData from '../Home/ApplyForTeacher/ApplyTeacherData';
-
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 
 
 import BallotIcon from '@mui/icons-material/Ballot';
@@ -152,6 +152,13 @@ function AdminDashboard() {
             <ListItem >
               <PlaylistAddCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Course</Button>
+            </ListItem>
+          </Link>
+
+          <Link to='/updateCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <ManageSearchIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Manage Course</Button>
             </ListItem>
           </Link>
 

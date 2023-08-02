@@ -9,6 +9,11 @@ import TableRow from '@mui/material/TableRow';
 import { Button , Alert } from '@mui/material';
 import { useSnackbar } from "notistack";
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 
 
 const RegStudentRow = ({regStudent,regStudents, setRegStudent, index,StyledTableRow,StyledTableCell}) => {
@@ -16,8 +21,25 @@ const RegStudentRow = ({regStudent,regStudents, setRegStudent, index,StyledTable
     const {user, token} = useContext(AuthContext);
     const [approveSucces,  setaApproveSucces] = useState(false);
     const { enqueueSnackbar } = useSnackbar();
-console.log('regStudent', regStudent);
+    const [open, setOpen] = React.useState(false);
+    const [openForDelete, setOpenForDelete] = React.useState(false);
 
+    const handleClickOpen = () => {
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+    };
+
+    const handleClickOpenForDelete = () => {
+      setOpenForDelete(true);
+    };
+  
+    const handleCloseForDelete= () => {
+      setOpenForDelete(false);
+    };
+ 
     const handleDelete = (id) => {
       console.log('id',id);
         fetch(`http://localhost:5000/myCourse/${id}`,{
@@ -32,7 +54,7 @@ console.log('regStudent', regStudent);
             console.log(data);
             if(data.deletedCount){
                
-                enqueueSnackbar("Course delete Success", { variant: 'warning' }); 
+                enqueueSnackbar("Course delete Success", { variant: 'error' }); 
                 setRegStudent(regStudents?.filter((item)=> item?._id !== id))
 
             }
@@ -56,10 +78,12 @@ console.log('regStudent', regStudent);
           if(data.modifiedCount){
             setaApproveSucces(true);
             enqueueSnackbar("Course approve Success", { variant: 'success' })   
-              //setRegStudent(regStudents?.filter((item)=> item?._id !== id))
+            //setRegStudent(regStudents?.filter((item)=> item?._id !== id))
          
           }
       })
+
+      handleClose()
   }
 
 
@@ -92,23 +116,58 @@ console.log('regStudent', regStudent);
         <StyledTableCell component="th" scope="row">
           {subject}
         </StyledTableCell>
-        <StyledTableCell component="th" scope="row"  style={{display:"flex"}}><Button onClick={()=>handleDelete(_id)} variant="contained" size="small" style={{fontWeight: '400',
+        <StyledTableCell component="th" scope="row"  style={{display:"flex"}}><Button onClick={handleClickOpenForDelete} variant="contained" size="small" style={{fontWeight: '400',
         background: 'linear-gradient(to right,  rgb(198,42,66), rgb(198,105,42))',
         borderRadius: '15px'}}>Remove </Button>
         
-         { approveData !=='approve' && <Button onClick={()=>handleApprove(_id)} variant="contained" size="small" style={{fontWeight: '400',marginLeft:"10px",
+         { approveData !=='approve' && <Button onClick={handleClickOpen} variant="contained" size="small" style={{fontWeight: '400',marginLeft:"10px",
         background: 'MediumSeaGreen',
         borderRadius: '15px'}}>Approve </Button>
 
          }
         
         </StyledTableCell>
-        <StyledTableCell></StyledTableCell>
-
+  
         </StyledTableRow>
 
-        {approveSucces && <Alert severity="success"  >{regStudent?.name} is Approve !!...</Alert>}
- 
+
+        <Dialog
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+        Are you sure  Approve this <span style={{color:'orange'}}>{name} </span> ?
+        </DialogTitle>
+      
+        <DialogActions>
+          <Button variant="outlined" onClick={handleClose}>No</Button>
+          <Button variant="contained"   onClick={()=>handleApprove(_id)} autoFocus>
+           Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
+
+
+
+      <Dialog
+        open={openForDelete}
+        onClose={handleCloseForDelete}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">
+        Are you sure want to delete ?
+        </DialogTitle>
+      
+        <DialogActions>
+          <Button variant="outlined" onClick={handleCloseForDelete}>No</Button>
+          <Button variant="contained"   onClick={()=>handleDelete(_id)} autoFocus>
+           Yes
+          </Button>
+        </DialogActions>
+      </Dialog>
         
        
         

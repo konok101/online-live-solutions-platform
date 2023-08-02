@@ -41,7 +41,7 @@ const AllUsers = () => {
             .then((res) => res.json())
             .then((data) => setAllUsers(data));
 
-    }, []);
+    }, [allUsers]);
 
 
     return (
