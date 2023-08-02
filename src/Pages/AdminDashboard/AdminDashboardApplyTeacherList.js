@@ -32,7 +32,7 @@ import HouseIcon from '@mui/icons-material/House';
 import LayersIcon from '@mui/icons-material/Layers';
 import Footer from '../Shared/Footer';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-
+import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import BallotIcon from '@mui/icons-material/Ballot';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 import PlaylistAddCircleIcon from '@mui/icons-material/PlaylistAddCircle';
@@ -148,6 +148,13 @@ function AdminDashboard() {
             <ListItem >
               <PlaylistAddCircleIcon style={{ color: '#08558b', fontSize: '1rem' }} />
               <Button style={{ color: '#08558b' }}>Add Course</Button>
+            </ListItem>
+          </Link>
+
+          <Link to='/updateCourse' style={{ textDecoration: 'none', width: '100%', color: '#08558b' }}>
+            <ListItem >
+              <ManageSearchIcon style={{ color: '#08558b', fontSize: '1rem' }} />
+              <Button style={{ color: '#08558b' }}>Manage Course</Button>
             </ListItem>
           </Link>
 

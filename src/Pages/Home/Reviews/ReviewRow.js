@@ -2,9 +2,10 @@ import React from 'react';
 import { Card, CardMedia, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import { Link } from 'react-router-dom';
+import { Link } from '@mui/material';
 
 const ReviewRow = ({review}) => {
+  console.log('review review', review);
     return (
       
                <Grid   item xs={12} sm={6} md={3.7} style={{marginTop:'40px'}}  >
@@ -20,7 +21,7 @@ const ReviewRow = ({review}) => {
  </Box>
  <Box sx={{display:'flex', alignItems:'center', mt:2, ml:2}}>
 <h5>{review?.teacherList?.teacherName?.slice(0,22)}</h5>
- <Link href={review?.teacherList?.socialUrl} color="inherit">
+ <Link href={review?.teacherList?.socialUrl} target="_blank"  color="inherit">
                         <LinkedInIcon
                           style={{ color: ' #f17917 ', width: '25px', height: '28px', margin: '8px', borderRadius: 3 }}
                         />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navigation from '../Shared/Navigation';
 import Footer from '../Shared/Footer';
-import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Grid, Link, TextField, Typography } from '@mui/material';
 // import Calender from '../Homedashboard/Calender';
 import teacher1 from '../../images/teacher2.jpg';
 import teacher2 from '../../images/teacher8.jpg';
@@ -16,6 +16,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import CourseModal from './CourseModal';
 import { useEffect } from 'react';
 import CourseRow from './CourseRow';
+import isFirstDayOfMonth from 'date-fns/isFirstDayOfMonth/index.js';
 function Course() {
 
   const [openModal, setOpenModal] = React.useState(false);
@@ -58,6 +59,27 @@ function Course() {
    overflowY: 'hidden',
  }
 
+ const [nameSearch, setNameSearch] = useState('');
+
+ const handleSearchName = (e) => {
+     setNameSearch(e.target.value);
+ }
+ function filterData(data) {
+  return data?.filter((item) => {
+      if (nameSearch) {
+          return nameSearch?.toLowerCase() === '' ? item :
+              item?.teacherName?.toLowerCase().includes(nameSearch?.toLowerCase()) ||
+              item?.couseName?.toLowerCase().includes(nameSearch?.toLowerCase())
+
+      }
+   
+      return item;
+  })
+}
+let allFilterData = filterData(courses)
+
+
+
   return (
     <div style={homeStyle}>
       <Navigation />
@@ -67,6 +89,13 @@ function Course() {
       Our Tutors Available Here for Today 
                         </Typography>
 
+                    <Box style={{width:'50%', margin:'auto'}}>
+                    <TextField fullWidth label="Search By Course Name OR Teacher Name"
+                     value={nameSearch}
+                     onChange={handleSearchName}
+                    id="fullWidth" />
+
+                    </Box>
 
 {
   courses?.length > 0 ?               <div>
@@ -74,7 +103,7 @@ function Course() {
     justifyContent="space-around"
     alignItems="center" style={{marginBottom:'4%'}} >
       {
-        courses?.map((course, index) =>
+        allFilterData?.map((course, index) =>
           <CourseRow handleModalOpen={handleModalOpen}
           ratings={ratings}
           course={course}></CourseRow>

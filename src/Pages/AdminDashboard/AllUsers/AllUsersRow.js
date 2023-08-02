@@ -62,7 +62,7 @@ const AllUserRow = ({allUser,setAllUsers, allUsers, index,StyledTableRow,StyledT
             if(data.deletedCount){
                 setDeleteSuccess(true);
                 setAllUsers(allUsers?.filter((item)=> item?._id !== id))
-                enqueueSnackbar("Delete Success", { variant: 'error' }); 
+                enqueueSnackbar("Delete  Success", { variant: 'error' }); 
 
             }
         })
@@ -83,11 +83,12 @@ const AllUserRow = ({allUser,setAllUsers, allUsers, index,StyledTableRow,StyledT
             console.log(data);
             if(data.modifiedCount){
                 setAdminSuccess(true);
-                 setAllUsers(allUsers?.filter((item)=> item?._id !== id))
+                 //setAllUsers(allUsers?.filter((item)=> item?._id !== id))
                  enqueueSnackbar("Make admin Success", { variant: 'success' }); 
 
             }
         })
+        handleClose();
     }
 
     return (

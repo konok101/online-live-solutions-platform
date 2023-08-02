@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -6,12 +8,10 @@ import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import RegStudentRow from './RegStudentRow';
-import { Container } from '@mui/system';
-import Footer from '../../Shared/Footer';
-import Navigation from '../../Shared/Navigation';
-import AdminDashboard from '../AdminDashboard';
+import { Paper } from '@mui/material';
+import UpdateCourseRow from './UpdateCourseRow'
+
+
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
     [`&.${tableCellClasses.head}`]: {
         backgroundColor: '#5bbce3',
@@ -32,26 +32,22 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 
+const UpdateCourse = () => {
 
-
-const RegStudent = () => {
-    const [regStudents, setRegStudent] = useState([]);
+    const [courseLists, setCourseLists] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/courseSubmit`;
+        const url = `http://localhost:5000/addCourse`;
         fetch(url)
             .then((res) => res.json())
-            .then((data) => setRegStudent(data));
+            .then((data) => setCourseLists(data));
 
-    }, [regStudents]);
-    const dashboardHomeStyle = {
-        marginLeft: '-90px',
-        marginRight:'100px',
-       // width: '100vw'
-    }
+    }, [courseLists]);
+
+    console.log('courseListscourseLists', courseLists);
 
     return (
-        <div style={{dashboardHomeStyle}}>
-        <div style={{margin:'auto', width:'80vw',   marginLeft:'70px', marginTop:'80px', paddingBottom:"70px"}}>
+        <div>
+             <div style={{margin:'auto', width:'80vw',   marginLeft:'70px', marginTop:'80px', paddingBottom:"70px"}}>
         <Paper >
                     <TableContainer sx={{ height: '80vh', }}  >
                         <Table stickyHeader aria-label="sticky table"
@@ -60,29 +56,28 @@ const RegStudent = () => {
                                 <StyledTableRow>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>No</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Name</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Teacher</StyledTableCell>
                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Email</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>TrxID</StyledTableCell>
-                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Mobile</StyledTableCell>
-                                     <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
-                                     <StyledTableCell align='center' style={{ fontWeight: '700', color: '#102a34' }}>Actions</StyledTableCell>
-                                   
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Subject</StyledTableCell>
+                                    <StyledTableCell style={{ fontWeight: '700', color: '#102a34' }}>Price</StyledTableCell>
+                                    <StyledTableCell align='right' style={{ fontWeight: '700', color: '#102a34', marginLeft:'100px' }}>Actions</StyledTableCell>
+                                    <StyledTableCell  ></StyledTableCell>
+
                                 </StyledTableRow>
                             </TableHead>
 
                             
                             <TableBody>
                                 {
-                                    regStudents.map((regStudent, index) => <RegStudentRow
-                                        key={regStudent._id}
-                                        regStudent={regStudent}
-                                        regStudents={regStudents}
+                                    courseLists.map((courseList, index) => <UpdateCourseRow
+                                        key={courseList._id}
+                                        courseList={courseList}
+                                        courseLists={courseLists}
                                         index={index}
                                         StyledTableRow={StyledTableRow}
                                         StyledTableCell={StyledTableCell}
-                                        setRegStudent={setRegStudent}
+                                        setCourseLists={setCourseLists}
 
-                                    ></RegStudentRow>)
+                                    ></UpdateCourseRow>)
                                 }
                             </TableBody>
                             
@@ -94,4 +89,4 @@ const RegStudent = () => {
     );
 };
 
-export default RegStudent;
+export default UpdateCourse;
