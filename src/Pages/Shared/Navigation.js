@@ -21,7 +21,7 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
- 
+import logo from '../../images/logos.png'
 
 const drawerWidth = 240;
 
@@ -101,7 +101,19 @@ function DrawerAppBar(props) {
       onClick={handleDrawerToggle}
       sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        Education Live solutions platform
+      <Link style={{textDecoration:'none', color:'white'}} to="/">
+            <span style={{display:'flex'}}>
+            <span>
+             <Avatar  alt="Travis Howard" src={logo} />
+
+             </span>
+
+            <span>
+             Live Solutions 
+
+            </span>
+            </span>
+            </Link>
       </Typography>
       <Divider />
       <List>
@@ -217,7 +229,20 @@ function DrawerAppBar(props) {
             component="div"
             sx={{ flexGrow: 1,  display: { xs: 'none', sm: 'block' } }}
           >
-            Educational Live solution Platform
+            <Link style={{textDecoration:'none', color:'white'}} to="/">
+            <span style={{display:'flex'}}>
+            <span>
+             <Avatar  alt="Travis Howard" src={logo} />
+
+             </span>
+
+            <span>
+             Live Solutions 
+
+            </span>
+            </span>
+            </Link>
+
             
           </Typography>
 
